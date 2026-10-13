@@ -26,6 +26,8 @@ class HostingTests(unittest.TestCase):
                 self.assertFalse(any(n.startswith(('data/','tests/')) or n.endswith('.sqlite3') for n in names))
                 manifest=json.loads(z.read('DEPLOYMENT_MANIFEST.json'))
                 self.assertIn('backups.py',manifest)
+                self.assertIn('.python-version',manifest)
+                self.assertEqual(z.read('.python-version').decode().strip(),'3.12')
                 z.extractall(root/'app') # Locally created allowlisted archive only.
             proc=subprocess.run([sys.executable,'-B','server.py','--help'],cwd=root/'app',capture_output=True,text=True,timeout=20)
             self.assertEqual(proc.returncode,0,proc.stderr)

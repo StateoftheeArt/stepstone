@@ -1,8 +1,10 @@
 # Current release verification
 
-The current source interface is build 120. The public browser demo is revision 2, based on the same lesson and answer bank. The earlier preparation results below are retained as historical evidence.
+The current source interface is build 121. The browser-demo source generates revision 3, based on the same lesson and answer bank. Deployment and browser acceptance are recorded separately from source checks. Earlier preparation results below are historical evidence.
 
-- The corrected source passed all 230 backend tests and all 35 JavaScript/content suites. Backend tests use disposable local accounts and include authentication, ownership, invitation/recovery, Host/Origin, cookie, private-file and backup boundaries.
+- The current source passed all 230 backend tests, all 36 JavaScript/content suites and 55 JavaScript syntax checks. The repeatable release command also builds assets, checks all demo samplers and privacy boundaries, and verifies an allowlisted hosting archive. Backend tests use disposable local accounts and include authentication, ownership, invitation/recovery, Host/Origin, cookie, private-file and backup boundaries.
+- Narration in the full application now excludes online browser voices, including a saved online preference and fallback after a host error. The configured Stepstone host voice remains available. A regression reproduced the prior text transmission to the simulated online voice before the fix and passed after the fix.
+- Repository automation runs the release command with pinned GitHub actions and read-only repository access. It contains no deployment credentials; the shared-host blueprint keeps automatic deployment off. A local pass and a hosted workflow pass are separate evidence.
 - The browser demo renders all 144 lesson opening screens at desktop and 320-pixel widths. Its five main views were checked at 320, 390, 768, 1100, 1240, 1440 and 1699 pixels, including whether navigation contents fit their buttons.
 - Demo security checks reject account actions, restrict scripted connections to the same origin, escape mentor-feedback text, and prevent narration through remote voices. The browser policy blocks inline scripts, eval, embedded objects and service workers.
 - Public repository files and reachable history were inspected for credentials, private records and personal paths. The published commit authors use GitHub noreply addresses. The demo contains code, lesson data, practice answers, assets and notices; it contains no learner database or account records.

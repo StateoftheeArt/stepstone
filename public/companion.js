@@ -1,8 +1,8 @@
-import {playPipAction,stopPipAction} from './pip-moves.js?build=120';
-import {escapeHTML as esc} from './engine.js?build=120';
-import {pipArtwork} from './pip-art.js?build=120';
-import {pipProfileArtwork,PIP_PROFILE_ANCHORS} from './pip-profile-art.js?build=120';
-import {accessoryArtwork} from './pip-items.js?build=120';
+import {playPipAction,stopPipAction} from './pip-moves.js?build=121';
+import {escapeHTML as esc} from './engine.js?build=121';
+import {pipArtwork} from './pip-art.js?build=121';
+import {pipProfileArtwork,PIP_PROFILE_ANCHORS} from './pip-profile-art.js?build=121';
+import {accessoryArtwork} from './pip-items.js?build=121';
 
 export const COMPANIONS=[
   {id:'fox',label:'Fox',colour:'#ce945f',light:'#e8b782'},

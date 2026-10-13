@@ -1,4 +1,4 @@
-import {extendedStartingPoint} from './starting-replay.js?build=120';
+import {extendedStartingPoint} from './starting-replay.js?build=121';
 // Small, dependency-free helpers shared by the learner interface and its tests.
 export function newId(){
   const b=crypto.getRandomValues(new Uint8Array(16));b[6]=(b[6]&15)|64;b[8]=(b[8]&63)|128;

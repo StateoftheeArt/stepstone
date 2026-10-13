@@ -1,6 +1,6 @@
 # Learning with Stepstone
 
-For interface 119 / server 41. Your mentor can help you get started. Home, Learn, Rewards and Mentor are the main menus. **Edit profile** opens your Pip, room, colours and reading settings.
+For interface 121 / server 41. Your mentor can help you get started. Home, Learn, Rewards and Mentor are the main menus. **Edit profile** opens your Pip, room, colours and reading settings.
 
 ## Start and return
 

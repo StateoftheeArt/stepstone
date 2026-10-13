@@ -1,6 +1,6 @@
 # Mentoring with Stepstone
 
-For interface 119 / server 41. This installation remains local. A shared HTTPS address and acceptance on real learner devices remain separate work.
+For interface 121 / server 41. This installation remains local. A shared HTTPS address and acceptance on real learner devices remain separate work.
 
 ## Account and browser access
 
@@ -66,3 +66,13 @@ Use **My test space** for personal learning. Its reset requires confirmation and
 
 
 Verification and remaining limits: [VERIFICATION.md](VERIFICATION.md).
+
+## A first pilot that can show useful learning
+
+Begin with a small group of willing adult learners and one or two mentors. The first milestone is one real learner completing a private invitation, lesson and feedback journey. Choose one practical task the learner wants to improve. Keep sessions around 15–20 minutes and use fictional quantities, names and messages.
+
+Before teaching, ask the learner to try a small version of the task. Record what they can do and the help they use in the private review, without diagnoses or personal circumstances. Work through one relevant module. Then offer a changed situation rather than the same quiz. For Pack the order, try an order for 13 cartons with 6 already packed: ask what to add, why, and how to check it. Speaking, a drawing, the visual tool or another agreed support can all demonstrate the reasoning.
+
+If the learner agrees, revisit a different situation after two or three days. Write one short feedback note: what they handled, what support helped, and one useful next step. Record whether the learner found the activity useful and would use it again. A quiz score, a finished screen and a retained practical skill are separate observations.
+
+For a progress summary, use anonymous totals only: invited, joined, finished a first lesson, received feedback, and demonstrated a changed task at follow-up. Include how many people were actually observed and what remains unknown. Do not publish learner names, explanations, screenshots or private links. Do not treat a tiny voluntary pilot as proof of teaching effectiveness.

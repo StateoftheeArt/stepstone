@@ -1,4 +1,4 @@
-# Browser demo, revision 2
+# Browser demo, revision 3
 
 This is the source for https://try-stepstone.corbett.chatgpt.site. It is separate from the Python account application. No learner database, real invitation or mentor credential belongs in this directory.
 

@@ -1,6 +1,6 @@
-import {stockExampleFrames} from './stock-visual.js?build=120';
-import {lessonDiagram} from './lesson-diagrams.js?build=120';
-import {escapeHTML as esc} from './engine.js?build=120';
+import {stockExampleFrames} from './stock-visual.js?build=121';
+import {lessonDiagram} from './lesson-diagrams.js?build=121';
+import {escapeHTML as esc} from './engine.js?build=121';
 
 export function exampleFrames(unit,mode=unit.exampleMode||'stock'){
   if(unit.id==='math-2')return stockExampleFrames(unit,mode);

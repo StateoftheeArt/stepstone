@@ -1,5 +1,5 @@
-import {PIP_PERSONALITIES} from './pip-personalities.js?build=120';
-import {playPipAction,stopPipAction,pipView} from './pip-moves.js?build=120';
+import {PIP_PERSONALITIES} from './pip-personalities.js?build=121';
+import {playPipAction,stopPipAction,pipView} from './pip-moves.js?build=121';
 
 // Pace, gait and favourite places keep each companion recognisable in the room.
 const characters={

@@ -1,5 +1,5 @@
-import {languageAllowed,LANGUAGE_MESSAGE} from './language.js?build=120';
-import {escapeHTML as esc,readable} from './engine.js?build=120';
+import {languageAllowed,LANGUAGE_MESSAGE} from './language.js?build=121';
+import {escapeHTML as esc,readable} from './engine.js?build=121';
 
 export function narrationText(target){
   const copy=target.cloneNode(true);
@@ -21,11 +21,12 @@ export function speechChunks(text){
   }
   return chunks;
 }
-export function voiceOptions(selected='soft',soft=true){
-  return `<option value="soft" ${selected==='soft'?'selected':''}>${soft?'Soft voice':'Soft voice (not set up here; the device voice reads instead)'}</option><option value="device:auto" ${selected==='device:auto'?'selected':''}>Device default</option>`+(window.speechSynthesis?.getVoices()||[]).filter(v=>v.lang.startsWith('en')).map(v=>`<option value="${esc('device:'+v.voiceURI)}" ${selected==='device:'+v.voiceURI?'selected':''}>${esc(v.name)} · ${esc(v.lang)}</option>`).join('');
+export function voiceOptions(selected='soft',soft=true,localOnly=false){
+  if(localOnly&&selected==='soft')selected='device:auto';
+  return (localOnly?'':`<option value="soft" ${selected==='soft'?'selected':''}>${soft?'Soft voice':'Soft voice (not set up here; a local device voice reads instead)'}</option>`)+`<option value="device:auto" ${selected==='device:auto'?'selected':''}>Local device voice</option>`+(window.speechSynthesis?.getVoices()||[]).filter(v=>v.localService===true&&v.lang.startsWith('en')).map(v=>`<option value="${esc('device:'+v.voiceURI)}" ${selected==='device:'+v.voiceURI?'selected':''}>${esc(v.name)} · ${esc(v.lang)}</option>`).join('');
 }
 
-export function createReader({settings,toast,softVoice=()=>undefined}){
+export function createReader({settings,toast,softVoice=()=>undefined,localOnly=false}){
   let generation=0,controller,context,source,control;
   const player=document.createElement('div');player.className='speech-player';player.hidden=true;
   player.innerHTML='<span role="status" aria-live="polite"></span><button class="btn secondary" type="button">Stop reading</button>';
@@ -38,8 +39,11 @@ export function createReader({settings,toast,softVoice=()=>undefined}){
     control?.removeAttribute('aria-pressed');control?.removeAttribute('aria-busy');control=null;
   }
   function speakDevice(text,chosen,token,note='Reading aloud'){
+    const voices=speechSynthesis.getVoices().filter(v=>v.localService===true&&v.lang.startsWith('en'));
+    const selected=voices.find(v=>'device:'+v.voiceURI===chosen)||voices[0];
+    if(!selected){stop();toast('No local English voice is available on this device. The text is still here to read.');return;}
     const speech=new SpeechSynthesisUtterance(text);speech.rate=.98;
-    const selected=speechSynthesis.getVoices().find(v=>'device:'+v.voiceURI===chosen);if(selected)speech.voice=selected;
+    speech.voice=selected;
     speech.onend=()=>{if(token===generation)stop();};
     speech.onerror=()=>{if(token===generation){stop();toast('That device voice could not play. Choose another voice in Reading & comfort.');}};
     status(note);speechSynthesis.speak(speech);
@@ -50,6 +54,7 @@ export function createReader({settings,toast,softVoice=()=>undefined}){
     stop();const token=generation;control=button;control?.setAttribute('aria-pressed','true');
     (button?.closest('dialog')||document.body).append(player);
     let chosen=settings().voice||'soft';
+    if(localOnly&&chosen==='soft')chosen='device:auto';
     if(!text.trim()){toast('There is no text to read here yet.');stop();return;}
     // The soft voice runs on the Stepstone host. When it is not set up there, read with the device voice.
     if(chosen==='soft'&&softVoice()===false&&window.speechSynthesis)chosen='device:auto';

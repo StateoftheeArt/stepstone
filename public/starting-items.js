@@ -1,4 +1,4 @@
-import {activeUnits,suggestedStart} from './curriculum.js?build=120';
+import {activeUnits,suggestedStart} from './curriculum.js?build=121';
 
 export function startingItemUnits(catalog,result){
   if(!result?.complete)return [];

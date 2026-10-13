@@ -1,4 +1,4 @@
-import {PIP_ANCHORS} from './pip-art.js?build=120';
+import {PIP_ANCHORS} from './pip-art.js?build=121';
 // Room items share their art with card previews; companions supply attachment positions.
 const rect=(x,y,w,h,c,r=3)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${c}"/>`;
 const path=(d,c,stroke='',width=2)=>`<path d="${d}" fill="${c}"${stroke?` stroke="${stroke}" stroke-width="${width}" stroke-linejoin="round"`:''}/>`;

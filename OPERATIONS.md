@@ -4,7 +4,7 @@ The private Mentor space is the daily control room. Only the host owner uses the
 commands below. Do not put account records, private links, backups or passphrases
 in a source repository, chat, funding page or public download.
 
-Current source: interface build 119 / server 41. The
+Current source: interface build 121 / server 41.
 
 This public-source release uses original money-value diagrams, current guides and updated asset versions; it does not rewrite saved records or change the database schema. The build-84 companion
 receipt remains historical evidence for that earlier release.

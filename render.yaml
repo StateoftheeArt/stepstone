@@ -4,6 +4,8 @@ services:
   - type: web
     name: stepstone
     runtime: python
+    branch: Main
+    region: ohio
     plan: 0.5c-512mb
     numInstances: 1
     buildCommand: python -B tools/build_assets.py

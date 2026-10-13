@@ -13,7 +13,7 @@ TOOLS=('build_assets.py','hosted_server.py','backup_records.py','text_filter_ter
 
 
 def source_files(root=ROOT):
-    files=[root/name for name in (*RUNTIME,'render.yaml','LICENSE','HOSTING.md','OPERATIONS.md')]
+    files=[root/name for name in (*RUNTIME,'.python-version','render.yaml','LICENSE','HOSTING.md','OPERATIONS.md')]
     files += [root/'tools'/name for name in TOOLS]
     files += [root/'content/checkpoints.json']
     for path in (root/'public').rglob('*'):

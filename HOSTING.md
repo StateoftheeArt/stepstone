@@ -1,6 +1,6 @@
 # Shared-device pilot handoff
 
-Current local source: interface 119 / server 41. This guide describes a prepared deployment contract, not a completed remote pilot.
+Current source: interface 121 / server 41. This guide describes a prepared deployment contract, not a completed remote pilot.
 
 The application can be run locally. A shared installation requires a configured HTTPS host and persistent storage. Publishing code does not create that service.
 
@@ -42,7 +42,7 @@ voice runtime before promising the same voice experience on the shared host.
 Before provisioning: choose the hosting account and cost limit, create a reviewed app
 repository containing only this app, and review the upload. Do not upload `data/`,
 the parent workspace, personal records, funding drafts, or a voice-runtime path.
-No repository, subscription, account upload, or remote service was created here.
+The reviewed public repository is [StateoftheeArt/stepstone](https://github.com/StateoftheeArt/stepstone), branch `Main`. Its browser demo is a separate static service. No full account service or paid hosting subscription has been provisioned.
 
 After deploying the reviewed app:
 
@@ -82,7 +82,7 @@ return links, expires unused invites and pauses new reward requests/approvals un
 reconciliation of any later real-world deliveries. It also replaces a claimed workspace's
 passphrase and recovery key and prints a one-time recovery key for its mentor.
 
-`python -B tools/package_hosting.py dist/stepstone-host-build-119.zip` creates a
+`python -B tools/package_hosting.py dist/stepstone-host-build-121.zip` creates a
 verified app-only archive with a SHA-256 file manifest. It refuses an existing
 output. Learner data, test receipts, local voice configuration, course documents
 and this parent workspace are outside its allowlist. Saving the archive does
@@ -92,4 +92,14 @@ The previously checked [Render Blueprint reference](https://render.com/docs/blue
 named the small paid compute plan `0.5c-512mb`; the blueprint uses that ID.
 The core-app base excludes tax, exchange rates, overages, a separately hosted
 backup destination and any larger voice-capable instance. Budget and host account
-still require the owner's choice. A cost estimate is not a hard spending cap.
+still require the owner's approval. A cost estimate is not a hard spending cap.
+
+## Deployment prepared on 13 October 2026
+
+The blueprint selects one `0.5c-512mb` service in Ohio, the actual `Main` branch, a 1 GB disk at `/var/data/stepstone`, and manual deployment. `.python-version` selects the latest Python 3.12 patch; local checks use Python 3.12.14. The asset builder needs no external Python packages. Soft voice is outside this starter configuration.
+
+Current [Render pricing](https://render.com/pricing) lists US$7/month for this compute size and US$0.25/month for 1 GB of disk. The Hobby workspace has no workspace subscription charge. The base is **US$7.25/month**, excluding taxes, exchange charges and usage overages. Its [included outbound bandwidth](https://render.com/docs/outbound-bandwidth) is 5 GB per month, shared by the workspace; extra public traffic is US$0.15/GB. Other services in that workspace can consume the allowance. A [build-pipeline spend limit](https://render.com/docs/build-pipeline) only limits extra pipeline minutes; it is not a total hosting or bandwidth cap. Confirm the account's plan and limits before provisioning.
+
+Public access is through the host's HTTPS address. Records are stored in the United States for this proposed region. Use fictional aliases and practice details during acceptance; do not migrate existing records or collect sensitive personal information. A separate private off-host recovery destination still needs selection.
+
+Run `python -B tools/check_release.py` before a release. Repository automation runs these checks on pushes and pull requests without deployment credentials or automatic hosting deployment. A successful workflow is software evidence; it does not complete the live HTTPS, restart, separate-device or real learner acceptance checks.

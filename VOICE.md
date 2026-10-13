@@ -4,7 +4,7 @@
 
 Read aloud works before onboarding is complete. **Stop reading**, another page, closing the voice sample, and hiding the page cancel playback. Audio is unlocked by the learner's tap. Longer text is split into short sections; the following section prepares during playback. A cancelled response cannot start playing late. Nothing speaks automatically on first open.
 
-Soft voice needs a connection to the running Stepstone host. Browser-provided voices remain an explicit option for offline use where the device supports them; the app does not silently switch voices after an error. A missing host runtime displays an actionable message.
+Soft voice needs a connection to the running Stepstone host. If it is unavailable, narration uses an English voice the browser identifies as local to the device. Online browser voices are not offered or used, including when an older saved preference selects one. If no local English voice is available, Stepstone keeps the text on screen and explains that narration is unavailable. The public browser demo uses only local device voices and never requests host narration.
 
 ## Host installation
 

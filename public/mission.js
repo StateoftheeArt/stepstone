@@ -1,10 +1,10 @@
-import {commonPitfall} from './lesson-help.js?build=120';
-import {successMarkup} from './lesson-feedback.js?build=120';
-import {escapeHTML as esc} from './engine.js?build=120';
-import {mountScenario,scenarioReady,nextScenarioTask} from './mission-lab.js?build=120';
-import {wireMoves} from './touch-move.js?build=120';
-import {lessonVisualMarkup} from './lesson-visual.js?build=120';
-import {lessonWords} from './lesson-words.js?build=120';
+import {commonPitfall} from './lesson-help.js?build=121';
+import {successMarkup} from './lesson-feedback.js?build=121';
+import {escapeHTML as esc} from './engine.js?build=121';
+import {mountScenario,scenarioReady,nextScenarioTask} from './mission-lab.js?build=121';
+import {wireMoves} from './touch-move.js?build=121';
+import {lessonVisualMarkup} from './lesson-visual.js?build=121';
+import {lessonWords} from './lesson-words.js?build=121';
 
 // Mission presentation uses the existing lesson phases, rounds and saved draft.
 // It has no separate scoring, currency, account or progression system.

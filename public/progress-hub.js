@@ -1,4 +1,4 @@
-import {escapeHTML as esc} from './engine.js?build=120';
+import {escapeHTML as esc} from './engine.js?build=121';
 
 export function canonicalHubHash(hash){
   const section=/^#rewards-(cards|goals|ai)$/.exec(hash);
