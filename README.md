@@ -4,7 +4,7 @@ Practical learning with worked examples, small activities, a personal Pip compan
 
 Stepstone is an early project for learners building confidence with everyday skills and the people supporting them. It includes 144 active modules across Money & math, Reading & writing, Science, Life skills, Digital skills and Work & jobs. Lessons and interface code are available for review and adaptation under the MIT license. Bundled third-party assets keep their own terms: see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-Current source: interface **119**, server **41**. This is an early supervised pilot. Money examples use original Stepstone value diagrams; the Museum is linked separately for recognising real Canadian cash. Publishing the source does not create a shared online service.
+Current source: interface **120**, server **41**. This is an early supervised pilot. Money examples use original Stepstone value diagrams; the Museum is linked separately for recognising real Canadian cash. Publishing the source does not create a shared online service.
 
 ## Try it in your browser
 
@@ -61,3 +61,6 @@ With Node.js 22 or newer installed, run `node tests/test_content.cjs` and the in
 ## License
 
 Stepstone code and original lesson text use [MIT](LICENSE), allowing use, changes and redistribution, including commercial use, with the notice retained. Preserve the licenses and notices for the bundled font and KaTeX. The original money-value SVG diagrams and their generator use the root MIT license. Stepstone has no affiliation with or endorsement from the Bank of Canada or the Royal Canadian Mint.
+
+Security and private data: [SECURITY.md](SECURITY.md). Current checks and limits: [VERIFICATION.md](VERIFICATION.md).
+

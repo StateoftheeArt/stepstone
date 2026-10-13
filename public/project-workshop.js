@@ -1,9 +1,9 @@
-import {escapeHTML as esc} from './engine.js?build=119';
-import {projectRules,projectBackup,projectDocument,projectPreviewDocument} from './project-runtime.js?build=119';
+import {escapeHTML as esc} from './engine.js?build=120';
+import {projectRules,projectBackup,projectDocument,projectPreviewDocument} from './project-runtime.js?build=120';
 const rules=projectRules();
 let previewRuntime=null;
 // The same file text the server hashes for its policy. HTML parsing normalises line endings, so this does too.
-async function previewCode(){try{previewRuntime??=fetch(new URL('./project-preview-runtime.js?build=119',location.href)).then(r=>{if(!r.ok)throw Error('The preview could not load. Reload and try again.');return r.text();}).then(t=>t.replace(/\r\n?/g,'\n'));return await previewRuntime;}catch(error){previewRuntime=null;throw error;}}
+async function previewCode(){try{previewRuntime??=fetch(new URL('./project-preview-runtime.js?build=120',location.href)).then(r=>{if(!r.ok)throw Error('The preview could not load. Reload and try again.');return r.text();}).then(t=>t.replace(/\r\n?/g,'\n'));return await previewRuntime;}catch(error){previewRuntime=null;throw error;}}
 const names={checklist:'A checklist',inventory:'A hobby inventory',planner:'A practice planner',savings:'A saving-goal tracker'};
 const cases={normal:'Add a short item with a valid value to an empty test copy.',empty:'Try an empty item name.',boundary:'Try adding one more item when the test copy is full.',invalid:'Try a name longer than 80 characters (checklist) or text in the number box (other apps).'};
 const field=(name,label,value='',attrs='')=>`<label class="field"><span>${esc(label)}</span><input name="${name}" value="${esc(value)}" ${attrs}></label>`;

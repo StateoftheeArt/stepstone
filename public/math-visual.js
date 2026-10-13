@@ -1,4 +1,4 @@
-import {escapeHTML as esc} from './engine.js?build=119';
+import {escapeHTML as esc} from './engine.js?build=120';
 
 // One mathematical model renderer for mission and saved legacy lesson drafts.
 export function mountMathVisual({host,kind,state,save,html}){

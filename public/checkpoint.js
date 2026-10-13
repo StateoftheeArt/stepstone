@@ -1,7 +1,7 @@
-import {escapeHTML as esc} from './engine.js?build=119';
-import {companionSprite} from './companion.js?build=119';
-import {canPipPlay} from './pip-food.js?build=119';
-import {firstPasses,previewCompletions,itemIcon} from './wins.js?build=119';
+import {escapeHTML as esc} from './engine.js?build=120';
+import {companionSprite} from './companion.js?build=120';
+import {canPipPlay} from './pip-food.js?build=120';
+import {firstPasses,previewCompletions,itemIcon} from './wins.js?build=120';
 
 export function checkpointCompletion({unit,local,me,unlocks}){
   const completions=me?(me.moduleWins||firstPasses(me.attempts||[],unlocks)):previewCompletions(local,unlocks);

@@ -1,6 +1,9 @@
-import {escapeHTML as esc} from './engine.js?build=119';
+import {escapeHTML as esc} from './engine.js?build=120';
 
 export function dailyDay(at=Date.now()){
+  // Manitoba's permanent UTC-5 rule takes effect on 31 October 2026.
+  // Use the same boundary as daily_tasks.py even with an older browser TZDB.
+  if(at>=Date.UTC(2026,9,31,5))return new Date(at-5*60*60*1000).toISOString().slice(0,10);
   const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Winnipeg',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(at);
   return ['year','month','day'].map(k=>parts.find(p=>p.type===k).value).join('-');
 }

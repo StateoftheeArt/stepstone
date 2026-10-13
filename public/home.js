@@ -1,9 +1,9 @@
-import {courseReadiness} from './foundation.js?build=119';
-import {activeUnits,suggestedStart} from './curriculum.js?build=119';
-import {displayUserText} from './language.js?build=119';
-import {COMPANIONS,companionSprite} from './companion.js?build=119';
-import {escapeHTML as esc} from './engine.js?build=119';
-import {carton,orderGoal} from './mission.js?build=119';
+import {courseReadiness} from './foundation.js?build=120';
+import {activeUnits,suggestedStart} from './curriculum.js?build=120';
+import {displayUserText} from './language.js?build=120';
+import {COMPANIONS,companionSprite} from './companion.js?build=120';
+import {escapeHTML as esc} from './engine.js?build=120';
+import {carton,orderGoal} from './mission.js?build=120';
 
 export function hasStartedLearning({local={},me=null}={}){
   return Object.values(local).some(d=>d?.startedFromPlan===true||(d?.phase??0)>0)

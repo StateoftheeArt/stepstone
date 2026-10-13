@@ -12,3 +12,11 @@ dist/
 .env.*
 .venv/
 node_modules/
+
+.env
+.env.*
+*.pem
+*.key
+*.sqlite
+.test-temp*/
+browser-demo/dist/

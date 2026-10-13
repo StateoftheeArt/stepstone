@@ -1,6 +1,6 @@
-import {escapeHTML as esc} from './engine.js?build=119';
-import {wireMoves} from './touch-move.js?build=119';
-import {canadianCoin,canadianMoneyPiece} from './canadian-money.js?build=119';
+import {escapeHTML as esc} from './engine.js?build=120';
+import {wireMoves} from './touch-move.js?build=120';
+import {canadianCoin,canadianMoneyPiece} from './canadian-money.js?build=120';
 
 export function gameTotal(game,state){
   const selected=new Set(state.selected||[]);

@@ -115,5 +115,20 @@ class DailyDayTests(unittest.TestCase):
         at=lambda s:datetime.fromisoformat(s).replace(tzinfo=timezone.utc).timestamp()
         self.assertEqual(daily_tasks.day_at(at('2026-10-07T04:59:59')),'2026-10-06')
         self.assertEqual(daily_tasks.day_at(at('2026-10-07T05:00:00')),'2026-10-07')
-        self.assertEqual(daily_tasks.day_at(at('2026-12-07T05:59:59')),'2026-12-06')
-        self.assertEqual(daily_tasks.day_at(at('2026-12-07T06:00:00')),'2026-12-07')
+        self.assertEqual(daily_tasks.day_at(at('2026-01-07T05:59:59')),'2026-01-06')
+        self.assertEqual(daily_tasks.day_at(at('2026-01-07T06:00:00')),'2026-01-07')
+
+    def test_permanent_manitoba_time_and_missing_timezone_data(self):
+        from datetime import datetime, timezone
+        at=lambda s:datetime.fromisoformat(s).replace(tzinfo=timezone.utc).timestamp()
+        cases=[('2026-01-07T05:59:59','2026-01-06'),
+               ('2026-10-07T04:59:59','2026-10-06'),
+               ('2026-10-31T04:59:59','2026-10-30'),
+               ('2026-10-31T05:00:00','2026-10-31'),
+               ('2026-12-07T04:59:59','2026-12-06'),
+               ('2026-12-07T05:00:00','2026-12-07')]
+        for missing in (False, True):
+            with patch.object(daily_tasks, 'ZONE', None if missing else daily_tasks.ZONE):
+                for timestamp, expected in cases:
+                    with self.subTest(missing_timezone_data=missing, timestamp=timestamp):
+                        self.assertEqual(daily_tasks.day_at(at(timestamp)), expected)

@@ -1,5 +1,5 @@
-import {languageAllowed,displayUserText,LANGUAGE_MESSAGE} from './language.js?build=119';
-import {escapeHTML as esc} from './engine.js?build=119';
+import {languageAllowed,displayUserText,LANGUAGE_MESSAGE} from './language.js?build=120';
+import {escapeHTML as esc} from './engine.js?build=120';
 
 // A rehearsal inside a lesson draft. It never calls an OS, shell or account API.
 export function pcState(task,work){

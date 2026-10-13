@@ -1,10 +1,10 @@
-import {pipRoomScene,foodBowlArtwork,curtainArtwork} from './pip-items.js?build=119';
-import {escapeHTML as esc} from './engine.js?build=119';
-import {COMPANIONS,companionSprite} from './companion.js?build=119';
-import {AVATARS} from './home.js?build=119';
-import {pictureDropdown,homeShelf,pipFoodControls} from './pip-editor.js?build=119';
-import {canPipPlay} from './pip-food.js?build=119';
-import {itemIcon} from './wins.js?build=119';
+import {pipRoomScene,foodBowlArtwork,curtainArtwork} from './pip-items.js?build=120';
+import {escapeHTML as esc} from './engine.js?build=120';
+import {COMPANIONS,companionSprite} from './companion.js?build=120';
+import {AVATARS} from './home.js?build=120';
+import {pictureDropdown,homeShelf,pipFoodControls} from './pip-editor.js?build=120';
+import {canPipPlay} from './pip-food.js?build=120';
+import {itemIcon} from './wins.js?build=120';
 
 let options={accents:[],motivations:[],interests:[],accessories:[],badges:[],home:{}},acceptable=()=>true;
 export const profileAccent=value=>options.accents.some(a=>a.id===value)?value:'mint';

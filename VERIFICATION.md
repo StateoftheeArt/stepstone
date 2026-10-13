@@ -1,3 +1,19 @@
+# Current release verification
+
+The current source interface is build 120. The public browser demo is revision 2, based on the same lesson and answer bank. The earlier preparation results below are retained as historical evidence.
+
+- The corrected source passed all 230 backend tests and all 35 JavaScript/content suites. Backend tests use disposable local accounts and include authentication, ownership, invitation/recovery, Host/Origin, cookie, private-file and backup boundaries.
+- The browser demo renders all 144 lesson opening screens at desktop and 320-pixel widths. Its five main views were checked at 320, 390, 768, 1100, 1240, 1440 and 1699 pixels, including whether navigation contents fit their buttons.
+- Demo security checks reject account actions, restrict scripted connections to the same origin, escape mentor-feedback text, and prevent narration through remote voices. The browser policy blocks inline scripts, eval, embedded objects and service workers.
+- Public repository files and reachable history were inspected for credentials, private records and personal paths. The published commit authors use GitHub noreply addresses. The demo contains code, lesson data, practice answers, assets and notices; it contains no learner database or account records.
+- Local testing is isolated from the owner's working Stepstone installation. Lesson IDs and grading values are unchanged.
+- A complete browser-demo math lesson passed all six checkpoint answers, saved its result across reload, and left the normal visitor practice empty. Release tests use a separate local scope through the `practice` query parameter.
+- Daily dates use consistent Manitoba time after the [31 October 2026 proclamation](https://web2.gov.mb.ca/laws/statutes/proclamations/2023c4(2026-10-31).php?lang=en), including on browsers with older timezone data. The source's versioned assets and offline cache are rebuilt for build 120.
+
+The public demo is a trial with local practice and fictional mentor feedback. Shared online learner accounts and private mentor reports are not deployed. Physical phone/tablet acceptance, production account hosting, capacity and independent security assessment remain separate checks. No teaching-effectiveness claim is made.
+
+---
+
 # Verification — interface 119 / server 41
 
 ## This candidate's change
