@@ -6,6 +6,12 @@ Stepstone is an early project for learners building confidence with everyday ski
 
 Current source: interface **119**, server **41**. This is an early supervised pilot. Money examples use original Stepstone value diagrams; the Museum is linked separately for recognising real Canadian cash. Publishing the source does not create a shared online service.
 
+## Try it in your browser
+
+[Try the Stepstone browser demo](https://try-stepstone.corbett.chatgpt.site).
+
+No download or sign-in is needed. Explore all 144 modules, practise with worked examples and checks, customise Pip, and try a fictional mentor review. Your practice stays on that browser. Use the full application below for real learner invitations and private shared feedback.
+
 ## Run locally
 
 Install Python 3.10 or newer. In this folder run:
