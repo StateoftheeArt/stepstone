@@ -1,0 +1,425 @@
+{
+  "build": 111,
+  "units": [
+    {
+      "unit": "reading-2",
+      "title": "Who did what?",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "writing-3",
+      "title": "Write steps someone can follow",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "writing-4",
+      "title": "Make one clear point",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "reading-5",
+      "title": "Work out a word",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "writing-5",
+      "title": "Describe a problem clearly",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "reading-6",
+      "title": "Back up what you read",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "reading-7",
+      "title": "Check your first guess",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "writing-7",
+      "title": "Explain how it works",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "writing-8",
+      "title": "Make a supported recommendation",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "reading-9",
+      "title": "Compare two accounts",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "writing-9",
+      "title": "Rewrite for the reader",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "reading-10",
+      "title": "Look behind an argument",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "reading-11",
+      "title": "Trace a source",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "writing-11",
+      "title": "Propose a fair change",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "writing-12",
+      "title": "Plan a small project",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-1",
+      "title": "Record what happened",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-2",
+      "title": "Choose a rain cover",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-3",
+      "title": "Find what limits a habitat",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-4",
+      "title": "Predict how a cart changes speed",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-6",
+      "title": "Track matter through a change",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-7",
+      "title": "Connect power and time",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-8",
+      "title": "Connect cell parts to their jobs",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-9",
+      "title": "Read data without claiming too much",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-10",
+      "title": "Account for the atoms",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-11",
+      "title": "Read current and wave patterns",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "science-12",
+      "title": "Know when a model stops fitting",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "social-5",
+      "title": "Make a team plan",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "social-7",
+      "title": "Adjust a work plan",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "social-11",
+      "title": "Turn feedback into a next step",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    },
+    {
+      "unit": "social-12",
+      "title": "Try a small solution",
+      "cases": 6,
+      "questions": 12,
+      "lessons": [
+        1,
+        2
+      ],
+      "skills": [
+        "apply",
+        "reason"
+      ]
+    }
+  ]
+}

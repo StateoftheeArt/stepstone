@@ -1,0 +1,40 @@
+import {escapeHTML as esc} from './engine.js?build=119';
+
+export const INPUT_METHODS={keyboard:'Physical keyboard',phone:'Phone or tablet keyboard',assistive:'Speech, prediction or other support'};
+export const TARGETS=[75,85,95,100];
+export function accuracy(expected,actual){
+ const a=Array.from(expected),b=Array.from(actual);let row=Array.from({length:b.length+1},(_,i)=>i);
+ for(let i=1;i<=a.length;i++){const next=[i];for(let j=1;j<=b.length;j++)next[j]=Math.min(next[j-1]+1,row[j]+1,row[j-1]+(a[i-1]===b[j-1]?0:1));row=next;}
+ return Math.max(0,Math.round(100*(1-row[b.length]/Math.max(1,a.length,b.length))));
+}
+export function typingState(task,work){
+ const state=work.typing??={text:task.initial||'',method:'phone',target:95,cue:true,assisted:false,paused:false};
+ if(!(state.method in INPUT_METHODS))state.method='phone';
+ if(!TARGETS.includes(state.target))state.target=95;
+ state.text=typeof state.text==='string'?state.text.slice(0,400):'';
+ return state;
+}
+export function typingComplete(task,work){const s=typingState(task,work);return !!s.text.trim()&&accuracy(task.target,s.text)>=(task.exact?100:s.target)&&(!task.edit||s.text!==task.initial);}
+export function typingSummary(u,draft){return (u.mission?.labs||[]).flatMap((tasks,i)=>tasks.filter(t=>t.kind==='typing').flatMap(t=>{const work=draft.scenarioLab?.[i?3:1]?.tasks?.[t.id];if(!work?.checked||!typingComplete(t,work))return [];const s=typingState(t,work);return [{task:t.id,accuracy:accuracy(t.target,s.text),target:t.exact?100:s.target,method:s.method,assisted:!!s.assisted||s.method==='assistive'}];}));}
+export function typingReport(records=[]){return records.length?`<details class="typing-report"><summary>Typing practice · ${records.length} saved drills</summary><p class="legend">Practice reported by the device. Final-text accuracy after corrections, not unaided typing speed or a proctored test.</p><ul>${records.map(r=>`<li>${esc(INPUT_METHODS[r.method]||'Input method not recorded')}: ${r.accuracy}% match · ${r.target}% chosen target${r.assisted?' · supported input or paste':''}</li>`).join('')}</ul><p class="legend">Phone and physical-keyboard speed are not compared. No speed requirement affects rewards.</p></details>`:'';}
+
+export function mountTyping(host,task,work,onChange){
+ const s=typingState(task,work);
+ host.innerHTML=`<div class="typing-lab"><div class="typing-settings"><label class="field">How are you entering text?<select data-typing-method>${Object.entries(INPUT_METHODS).map(([v,label])=>`<option value="${v}" ${s.method===v?'selected':''}>${label}</option>`).join('')}</select></label>${!task.exact?`<label class="field">My practice target<select data-typing-target>${TARGETS.map(n=>`<option value="${n}" ${s.target===n?'selected':''}>${n}% match</option>`).join('')}</select></label>`:'<p class="legend">This detail task needs the exact wording. Use any comfortable input method.</p>'}</div><p class="legend">Use a comfortable pace. Take a break whenever you need.</p><div class="typing-target"><strong>${task.edit?'Make your text match this':'Text to practise'}</strong><pre>${esc(task.target)}</pre></div><label class="check-label"><input type="checkbox" data-typing-cue ${s.cue?'checked':''}>Show a next-letter cue</label><p class="typing-cue" data-typing-next></p><div class="typing-keys" aria-label="Keyboard landmarks"><kbd>F · left landmark</kbd><kbd>J · right landmark</kbd><kbd>Space · gap</kbd><kbd>↵ · new line</kbd><kbd>⌫ · erase left</kbd><kbd>Shift · capital</kbd></div><label class="field">Your practice text<textarea data-typing-input maxlength="400" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" ${s.paused?'readonly':''}>${esc(s.text)}</textarea></label>${task.edit?'<div class="buttons typing-edit"><button class="btn secondary small" data-type-edit="select">Select all</button><button class="btn secondary small" data-type-edit="copy">Copy selection</button><button class="btn secondary small" data-type-edit="paste">Paste in this exercise</button><button class="btn secondary small" data-type-edit="undo">Undo my edit</button></div><p class="legend">These buttons use a private practice clipboard that clears when you leave or reload this exercise. Your device also has its own copy/paste menu. On Windows, select text then use Ctrl+C, Ctrl+V or Ctrl+Z. On Mac, use Command instead of Ctrl.</p>':''}<p data-typing-score class="typing-score" role="status"></p><details><summary>How practice is checked</summary><p>We compare your corrected text with the example. There is no speed test.</p></details><div class="buttons"><button class="btn secondary small" data-typing-pause>${s.paused?'Resume typing':'Pause typing'}</button><button class="btn secondary small" data-typing-reset>Start this text again</button></div></div>`;
+ const input=host.querySelector('[data-typing-input]');let previous=s.text,undo=null,clip='',selection={start:0,end:0};
+ const refresh=()=>{const score=accuracy(task.target,s.text),prefix=Array.from(task.target).findIndex((c,i)=>c!==Array.from(s.text)[i]);const n=prefix<0?task.target.length:prefix,c=Array.from(task.target)[n];host.querySelector('[data-typing-next]').textContent=s.paused?'Paused. Your text is saved.':!s.cue?'Cue off. Compare your text with the example.':c?`Look at position ${n+1}: ${c===' '?'Space':c==='\n'?'Enter / new line':c}.`:'All expected characters are present. Check for anything extra.';host.querySelector('[data-typing-score]').textContent=`${s.text?score:0}% final-text match${s.assisted||s.method==='assistive'?' · supported input or paste':''}. ${typingComplete(task,work)?'Ready to check.':'Compare spaces, letters and punctuation.'}`;};
+ const changed=()=>{work.checked=false;onChange();refresh();};
+ input.oninput=e=>{undo=previous;s.text=input.value;previous=s.text;if(['insertFromPaste','insertReplacementText','insertFromDrop','insertFromDictation'].includes(e.inputType))s.assisted=true;changed();};
+ input.onpaste=()=>{s.assisted=true;};
+ input.onselect=input.onkeyup=input.onclick=()=>{selection={start:input.selectionStart,end:input.selectionEnd};};
+ input.onblur=()=>{s.paused=true;input.readOnly=true;host.querySelector('[data-typing-pause]').textContent='Resume typing';refresh();onChange();};
+ const resume=()=>{s.paused=false;input.readOnly=false;host.querySelector('[data-typing-pause]').textContent='Pause typing';input.focus();refresh();onChange();};
+ host.querySelector('[data-typing-method]').onchange=e=>{s.method=e.target.value;changed();};
+ host.querySelector('[data-typing-target]')?.addEventListener('change',e=>{s.target=Number(e.target.value);changed();});
+ host.querySelector('[data-typing-cue]').onchange=e=>{s.cue=e.target.checked;refresh();onChange();};
+ host.querySelector('[data-typing-pause]').onpointerdown=e=>e.preventDefault();
+ host.querySelector('[data-typing-pause]').onclick=()=>{if(s.paused)resume();else{input.blur();s.paused=true;input.readOnly=true;host.querySelector('[data-typing-pause]').textContent='Resume typing';refresh();onChange();}};
+ host.querySelector('[data-typing-reset]').onclick=()=>{undo=s.text;s.text=task.initial||'';previous=s.text;input.value=s.text;s.assisted=false;resume();changed();};
+ host.querySelectorAll('[data-type-edit]').forEach(b=>{b.onpointerdown=e=>e.preventDefault();b.onclick=()=>{const op=b.dataset.typeEdit;if(op==='select'){resume();input.select();selection={start:0,end:s.text.length};return;}if(op==='copy'){clip=s.text.slice(selection.start,selection.end);host.querySelector('[data-typing-score]').textContent=clip?'Selection copied inside this exercise.':'Select the text you want to copy first.';return;}if(op==='paste'){if(!clip){host.querySelector('[data-typing-score]').textContent='Copy some selected text first.';return;}undo=s.text;s.text=s.text.slice(0,selection.start)+clip+s.text.slice(selection.end);s.text=s.text.slice(0,400);s.assisted=true;}if(op==='undo'){if(undo===null){host.querySelector('[data-typing-score]').textContent='No edit to undo in this open exercise yet. Your saved text is still here.';return;}[s.text,undo]=[undo,s.text];}input.value=s.text;previous=s.text;resume();changed();};});
+ refresh();
+}

@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {dailyDay,previewDaily,dailyTasksMarkup} from '../public/daily-tasks.js';
+const values=new Map(),storage={getItem:k=>values.get(k),setItem:(k,v)=>values.set(k,v)};
+const before=Date.parse('2026-10-07T04:59:59Z'),after=Date.parse('2026-10-07T05:00:00Z');
+assert.equal(dailyDay(before),'2026-10-06');assert.equal(dailyDay(after),'2026-10-07');
+previewDaily(storage,'one','visit',before);previewDaily(storage,'one','play',before);
+assert.deepEqual(previewDaily(storage,'one',null,before).completed,['visit','play']);
+assert.deepEqual(previewDaily(storage,'two',null,before).completed,[]);
+assert.deepEqual(previewDaily(storage,'one','visit',after).completed,['visit']);
+assert.deepEqual(previewDaily(storage,'one','visit',after).completed,['visit']);
+values.set('one','{"day":"2026-10-07","completed":{}}');
+assert.deepEqual(previewDaily(storage,'one','module',after).completed,['module']);
+assert.equal(dailyDay(Date.parse('2026-12-07T06:00:00Z')),'2026-12-07');
+const markup=dailyTasksMarkup({day:dailyDay(),completed:['visit'],total:3},{name:'<Pip>',connected:true,next:{id:'math-1'}});
+assert.match(markup,/Log in/);assert.match(markup,/Play with &lt;Pip&gt;/);
+assert.match(markup,/1 of 3 done/);assert.match(markup,/#lesson\/math-1/);
+assert.doesNotMatch(dailyTasksMarkup({day:'2000-01-01',completed:['visit','module','play']}),/3 of 3 done/);
+console.log('Daily tasks: day boundaries, reload, separate learners, invalid saved data and escaped Pip names passed.');

@@ -1,0 +1,19 @@
+# Proposed deployment; nothing is purchased or deployed by saving this file.
+# Use this app directory as the repository root. Paid compute + persistent disk.
+services:
+  - type: web
+    name: stepstone
+    runtime: python
+    plan: 0.5c-512mb
+    numInstances: 1
+    buildCommand: python -B tools/build_assets.py
+    startCommand: python -B tools/hosted_server.py
+    healthCheckPath: /api/health
+    autoDeployTrigger: "off"
+    disk:
+      name: stepstone-records
+      mountPath: /var/data/stepstone
+      sizeGB: 1
+    envVars:
+      - key: STEPSTONE_DATA_DIR
+        value: /var/data/stepstone

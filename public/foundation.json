@@ -1,0 +1,66 @@
+{
+  "version": 2,
+  "title": "Your everyday path",
+  "groups": [
+    {
+      "id": "everyday",
+      "title": "Everyday decisions",
+      "description": "Money, messages, and checking an idea.",
+      "units": [
+        "math-cash",
+        "math-prices",
+        "math-budget",
+        "math-pay",
+        "reading-3",
+        "writing-2",
+        "writing-1",
+        "science-5"
+      ]
+    },
+    {
+      "id": "life",
+      "title": "Care and everyday life",
+      "description": "Personal care, cooking, appointments and support.",
+      "units": [
+        "life-hands",
+        "life-teeth",
+        "life-prep",
+        "life-cook",
+        "life-leftovers",
+        "life-appointment",
+        "life-health-card",
+        "life-find-support"
+      ]
+    },
+    {
+      "id": "work-home",
+      "title": "Work, travel, and home",
+      "description": "Plan a shift, a trip, and everyday costs.",
+      "units": [
+        "life-job-apply",
+        "life-first-shift",
+        "life-work-problem",
+        "life-bus-trip",
+        "life-driver-plan",
+        "life-rental-costs",
+        "life-home-bills",
+        "life-meal-plan"
+      ]
+    },
+    {
+      "id": "technology",
+      "title": "Get ready for technology",
+      "description": "Use accounts, spot scams, manage files and use your computer.",
+      "units": [
+        "digital-1",
+        "digital-2",
+        "digital-3",
+        "digital-4",
+        "pc-safe",
+        "pc-files",
+        "digital-7",
+        "digital-8"
+      ]
+    }
+  ]
+}

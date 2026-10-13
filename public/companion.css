@@ -1,0 +1,299 @@
+html{scroll-padding-top:calc(var(--topbar-height,84px) + 16px)}
+.companion-sprite{image-rendering:pixelated;flex-shrink:0;overflow:visible}.sprite-brows,.sprite-pop{display:none}.sprite-body{transform-origin:32px 44px}
+#profile-slot{min-width:0}
+.profile-account{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}.profile-account p{font-size:.85rem;color:var(--muted)}
+.companion-dock{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr);align-items:center;gap:6px;width:100%;height:var(--header-profile-height,84px);padding:6px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--world) 65%,#142a32),color-mix(in srgb,var(--world) 40%,#283449))}
+.companion-dock[hidden],.companion-profile[hidden]{display:none}.companion-pet{display:grid;place-items:center;flex-shrink:0;width:56px;height:56px;padding:0;border:0;border-radius:8px;background:none;box-shadow:none;touch-action:none;user-select:none;-webkit-user-select:none}.companion-pet::before{display:none}.companion-pet.pointer-interaction{outline:none}.companion-pet svg{width:56px;height:56px}
+.companion-profile{grid-column:2;grid-row:1;min-width:0;width:100%;text-align:left;padding:5px 7px;background:transparent;border:1px solid #82d7c750;border-radius:10px;line-height:1.25}
+.companion-profile strong{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.companion-profile span{display:block;font-size:12.5px;color:#bfded8;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.companion-profile .companion-edit-label{color:#a4f0dd;font-size:12.5px}
+#profile-slot .companion-dock{grid-template-columns:44px minmax(0,1fr);gap:6px;padding:4px 7px;border-radius:12px}
+#profile-slot .companion-pet,#profile-slot .companion-magnet{width:44px;height:44px}
+#profile-slot .companion-pet svg{width:44px;height:44px}
+#profile-slot .companion-pet.is-guiding,#profile-slot .companion-pet.is-floating{width:64px;height:64px}
+#profile-slot .companion-pet.is-guiding svg,#profile-slot .companion-pet.is-floating svg{width:58px;height:58px}
+#profile-slot .companion-profile{padding:4px 6px;min-height:0}
+#profile-slot .companion-profile strong{font-size:14px;line-height:1.2}
+#profile-slot .companion-profile span{font-size:12px;line-height:1.2;margin-top:2px}
+#profile-slot .companion-profile .companion-edit-label{font-size:12px}
+.companion-dock [data-pip-note]{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.companion-dock[data-badge=aurora]{border-color:#b7a5f5;background:linear-gradient(135deg,#214e57,#483665)}.companion-dock[data-badge=sunset]{border-color:#f6b891;background:linear-gradient(135deg,#493b56,#635044)}
+
+@keyframes pip-inflate{to{transform:translateY(-3px) scale(1.171,1.135)}}@keyframes pip-puff{from{opacity:1;transform:scale(0.865);transform-origin:center}to{opacity:0;transform:scale(1.18);transform-origin:center}}
+.companion-picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.companion-choice{position:relative;min-width:0;cursor:pointer}.companion-choice>input{position:absolute;top:10px;left:10px;width:18px;height:18px;accent-color:#97eed6}.companion-choice>span{display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px 8px 12px;border:1px solid #729497;border-radius:14px;background:#18323f;font-size:.85rem}.companion-choice:has(input:checked)>span{border:2px solid #a2f7da;background:#24594f}.companion-choice:has(input:focus-visible)>span{outline:3px solid #f5d493;outline-offset:3px}
+.message-thread-list{display:grid;gap:12px;margin:18px 0;max-height:45vh;overflow-y:auto}.text-message{padding:15px;border:1px solid #789798;border-radius:14px;background:#183843;white-space:pre-wrap;overflow-wrap:anywhere}.text-message.mentor-message{border-left:4px solid #c6b4ef;background:#333e59}.text-message small{display:block;color:#b8cbcf;white-space:normal;margin-bottom:8px}.message-inbox-row{display:flex;justify-content:space-between;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);align-items:center}.message-inbox-row>div{min-width:0;overflow-wrap:anywhere}.message-inbox-row .btn{flex-shrink:0}.message-unread{color:#f6d38d}
+@media(max-width:760px){html{scroll-padding-top:16px}.companion-dock{grid-template-columns:48px minmax(0,1fr);padding:4px;gap:5px}.companion-pet{width:48px;height:48px}.companion-pet svg{width:46px;height:46px}.companion-profile{padding:5px 7px;min-height:48px}.companion-profile strong{font-size:.72rem}.companion-profile span{font-size:.58rem}.companion-profile .companion-edit-label{font-size:.59rem}
+ .companion-picker{grid-template-columns:repeat(2,minmax(0,1fr))}.message-inbox-row{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){.companion-dock *{animation:none!important}.companion-dock[data-pose=inflate] .sprite-body{transform:none}}
+.quiet .companion-dock *{animation:none!important}
+
+@media(prefers-reduced-motion:no-preference){html:not(.quiet) .companion-choice:has(input:checked) .sprite-body{animation:pip-preview .95s ease-in-out}}
+.has-companion dialog[open]{display:flex;flex-direction:column;overflow:hidden}
+.has-companion #dialog-content{min-height:0;overflow-y:auto}
+#dialog>.companion-dock{display:flex;align-self:flex-end;flex-shrink:0;width:auto;height:auto;max-width:calc(100% - 36px);margin:8px 18px 12px;padding:5px 10px;min-height:58px}
+#dialog>.companion-dock .companion-edit-label{display:none}
+
+.support-composer{margin-top:22px}.support-composer legend{font-size:1.18rem;font-weight:750;margin-bottom:14px}.support-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.support-choice{position:relative;display:flex;align-items:center;gap:10px;padding:16px;border:1px solid #94b8c3;border-radius:12px;background:#24444e;cursor:pointer;min-height:64px}.support-choice:has(input:checked){border:2px solid #a0f4de;padding:15px;background:#29645d}.support-choice:has(input:focus-visible){outline:3px solid var(--focus);outline-offset:3px}.support-choice input{flex-shrink:0;width:20px;height:20px;accent-color:#8de0ca}.support-choice span{font-size:.92rem;line-height:1.45}.support-composer [data-message-draft]{margin:16px 0}.support-composer [data-message-status]{margin-top:12px}
+@media(max-width:600px){.support-choices{grid-template-columns:1fr}}
+
+@keyframes pip-preview{0%,100%{transform:none}50%{transform:translateY(-2.5px) rotate(2.75deg)}}
+.companion-pet{cursor:grab;overflow:visible}.companion-pet:active{cursor:grabbing}.companion-pet.is-floating{position:fixed;z-index:70;width:64px;height:64px;transition:left .18s ease-out,top .18s ease-out}.companion-pet.is-floating svg{width:58px;height:58px}.companion-pet.is-dragging{transition:none}.quiet .companion-pet.is-floating{transition:none}
+@media(prefers-reduced-motion:reduce){.companion-pet.is-floating{transition:none}}
+
+.companion-magnet{grid-column:1;grid-row:1;display:grid;place-items:center;width:56px;height:56px;padding:0;border:1px dashed var(--strong);border-radius:10px;background:transparent;color:var(--strong);font-size:0}
+.companion-magnet[hidden]{display:none}.companion-pet{grid-column:1;grid-row:1}
+.companion-pet.is-guiding{position:fixed;z-index:70;width:64px;height:64px;cursor:pointer;transition:left .18s ease-out,top .18s ease-out}.companion-pet.is-guiding svg{width:58px;height:58px}
+@media(max-width:760px){.companion-magnet{width:48px;height:48px}}
+@media(prefers-reduced-motion:reduce){.companion-pet.is-guiding{transition:none}}.quiet .companion-pet.is-guiding{transition:none}
+
+
+.sprite-tail,.sprite-wing-left,.sprite-wing-right,.sprite-ears,.sprite-feet,.sprite-eyes,.sprite-smile{transform-box:fill-box}
+.sprite-tail{transform-origin:15% 80%}.sprite-wing-left{transform-origin:85% 20%}.sprite-wing-right{transform-origin:15% 20%}.sprite-ears{transform-origin:50% 100%}.sprite-feet{transform-origin:50% 30%}.sprite-eyes,.sprite-smile{transform-origin:center}
+@media(prefers-reduced-motion:no-preference){
+ html:not(.quiet) [data-pose=idle] .sprite-body{animation:pip-breathe 5.2s ease-in-out infinite}
+ html:not(.quiet) [data-pose=idle][data-species=cloud] .sprite-body{animation:pip-drift 4.8s ease-in-out infinite}
+ html:not(.quiet) :is(.companion-dock,[data-home-room])[data-pose=idle] .sprite-eyes{animation:pip-blink 8.4s linear infinite}
+}
+[data-pose=dance] .sprite-tail{animation:pip-tail .48s ease-in-out 3}
+[data-pose=dance] .sprite-wing-left{animation:pip-wing-left .48s ease-in-out 3}
+[data-pose=dance] .sprite-wing-right{animation:pip-wing-right .48s ease-in-out 3}
+[data-pose=dance] .sprite-ears{animation:pip-ears .4s ease-in-out 4}
+[data-pose=dance] .sprite-rain{animation:pip-rain .4s ease-in-out 4}
+[data-pose=dance] .sprite-feet{animation:pip-step .4s ease-in-out 4}
+[data-pose=dance] .sprite-shadow{animation:pip-shadow .8s ease-in-out 2;transform-origin:32px 61px}
+[data-pose=inflate] .sprite-body{animation:pip-inflate 1.2s ease-in forwards}
+[data-pose=pop] .sprite-body{visibility:hidden}
+[data-pose=pop] .sprite-pop{display:block;animation:pip-puff .4s ease-out forwards}
+[data-pose=annoyed] .sprite-brows{display:block}
+[data-pose=annoyed] .sprite-smile{transform:scaleY(-1)}
+@keyframes pip-breathe{0%,100%{transform:none}50%{transform:translateY(-0.3px) scale(1.004,1.009)}}
+@keyframes pip-drift{0%,100%{transform:none}50%{transform:translateY(-1px)}}
+@keyframes pip-blink{0%,44%,46%,100%{transform:scaleY(1)}45%{transform:scaleY(.15)}}
+@keyframes pip-tail{0%,100%{transform:none}50%{transform:rotate(-8.25deg)}}
+@keyframes pip-wing-left{0%,100%{transform:none}50%{transform:rotate(13.2deg)}}
+@keyframes pip-wing-right{0%,100%{transform:none}50%{transform:rotate(-13.2deg)}}
+@keyframes pip-ears{0%,100%{transform:none}50%{transform:rotate(3.3deg) scaleY(0.982)}}
+@keyframes pip-rain{0%,100%{transform:none;opacity:1}50%{transform:translateY(1px);opacity:.6}}
+@keyframes pip-step{0%,100%{transform:none}25%{transform:skewX(-4.4deg) translateX(-0.5px)}75%{transform:skewX(4.4deg) translateX(0.5px)}}
+@keyframes pip-shadow{0%,100%{transform:none;opacity:.3}50%{transform:scaleX(0.8875);opacity:.18}}
+[data-pose=dance][data-species=fox][data-dance="1"] .sprite-body{animation:pip-fox-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-fox-1{0%,100%{transform:none}18%{transform:translate(-1.5px,-2.5px) rotate(-4.4deg)}38%{transform:translate(1.5px,-4px) rotate(4.4deg)}58%{transform:translate(-1px,-2px) rotate(-2.75deg)}80%{transform:scale(1.018,0.982)}}
+[data-pose=dance][data-species=fox][data-dance="2"] .sprite-body{animation:pip-fox-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-fox-2{0%,100%{transform:none}15%,55%{transform:translateX(-2.5px) rotate(-4.95deg)}35%,75%{transform:translateX(2.5px) rotate(4.95deg)}90%{transform:translateY(-1.5px)}}
+[data-pose=dance][data-species=fox][data-dance="3"] .sprite-body{animation:pip-fox-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-fox-3{0%,100%{transform:none}20%{transform:rotate(-8.8deg) scale(1.018,0.973)}45%{transform:translateY(-4px) rotate(8.8deg)}70%{transform:rotate(-4.4deg)}}
+[data-pose=dance][data-species=cat][data-dance="1"] .sprite-body{animation:pip-cat-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-cat-1{0%,100%{transform:none}25%{transform:scale(0.973,1.036) rotate(-2.75deg)}50%{transform:scale(1.027,0.9775) rotate(2.75deg)}75%{transform:translateY(-1px) rotate(-1.65deg)}}
+[data-pose=dance][data-species=cat][data-dance="2"] .sprite-body{animation:pip-cat-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-cat-2{0%,100%{transform:none}15%{transform:translate(-2px,-1px) rotate(-6.6deg)}35%{transform:translate(2px,-1px) rotate(6.6deg)}60%{transform:translate(-2px,-1px) rotate(-6.6deg)}80%{transform:translate(2px,-1px) rotate(6.6deg)}}
+[data-pose=dance][data-species=cat][data-dance="3"] .sprite-body{animation:pip-cat-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-cat-3{0%,100%{transform:none}18%{transform:scale(1.045,0.9415)}40%{transform:translateY(-6px) scale(0.973,1.018)}63%{transform:scale(1.036,0.964)}82%{transform:translateY(-2px)}}
+[data-pose=dance][data-species=frog][data-dance="1"] .sprite-body{animation:pip-frog-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-frog-1{0%,100%{transform:none}15%,58%{transform:scale(1.045,0.937)}32%{transform:translate(-2px,-5.5px) scale(0.973,1.036)}75%{transform:translate(2px,-4.5px) scale(0.982,1.022)}90%{transform:scale(1.022,0.9775)}}
+[data-pose=dance][data-species=frog][data-dance="2"] .sprite-body{animation:pip-frog-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-frog-2{0%,100%{transform:none}18%{transform:translateX(-3px) rotate(-4.95deg)}40%{transform:translateX(3px) rotate(4.95deg)}62%{transform:translateX(-3px) rotate(-4.95deg)}84%{transform:translateX(3px) rotate(4.95deg)}}
+[data-pose=dance][data-species=frog][data-dance="3"] .sprite-body{animation:pip-frog-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-frog-3{0%,100%{transform:none}20%{transform:scale(1.054,0.928)}38%{transform:translateY(-6.5px) rotate(-4.4deg)}55%{transform:translateY(-3.5px) rotate(4.4deg)}72%{transform:scale(1.04,0.955)}87%{transform:translateY(-1.5px)}}
+[data-pose=dance][data-species=axolotl][data-dance="1"] .sprite-body{animation:pip-axolotl-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-axolotl-1{0%,100%{transform:none}20%{transform:translate(-2px,-1.5px) rotate(-5.5deg)}45%{transform:translate(2px,-2.5px) rotate(5.5deg)}70%{transform:translate(-1px,-1px) rotate(-2.75deg)}}
+[data-pose=dance][data-species=axolotl][data-dance="2"] .sprite-body{animation:pip-axolotl-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-axolotl-2{0%,100%{transform:none}20%,70%{transform:scale(1.027,0.982) rotate(-3.3deg)}45%{transform:translateY(-3px) scale(0.9775,1.027) rotate(3.3deg)}85%{transform:scale(1.014,0.991)}}
+[data-pose=dance][data-species=axolotl][data-dance="3"] .sprite-body{animation:pip-axolotl-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-axolotl-3{0%,100%{transform:none}20%{transform:translateX(-3px) rotate(-6.6deg)}45%{transform:translateY(-2.5px) rotate(6.6deg)}70%{transform:translateX(3px) rotate(-3.3deg)}}
+[data-pose=dance][data-species=owl][data-dance="1"] .sprite-body{animation:pip-owl-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-owl-1{0%,100%{transform:none}20%{transform:rotate(-7.7deg)}40%{transform:rotate(7.7deg)}60%{transform:rotate(-5.5deg)}80%{transform:rotate(5.5deg)}}
+[data-pose=dance][data-species=owl][data-dance="2"] .sprite-body{animation:pip-owl-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-owl-2{0%,100%{transform:none}18%{transform:scale(1.022,0.973)}38%{transform:translateY(-4.5px)}58%{transform:translateY(-2.5px) rotate(-2.75deg)}78%{transform:translateY(-3.5px) rotate(2.75deg)}}
+[data-pose=dance][data-species=owl][data-dance="3"] .sprite-body{animation:pip-owl-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-owl-3{0%,100%{transform:none}20%{transform:translateX(-2.5px) rotate(-3.85deg)}40%{transform:translateX(2.5px) rotate(3.85deg)}60%{transform:translateX(-1.5px) rotate(-3.85deg)}80%{transform:translateX(1.5px) rotate(3.85deg)}}
+[data-pose=dance][data-species=bunny][data-dance="1"] .sprite-body{animation:pip-bunny-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-bunny-1{0%,100%{transform:none}16%,58%{transform:scale(1.036,0.955)}32%{transform:translateY(-5px) scale(0.982,1.022)}75%{transform:translateY(-4px) scale(0.982,1.022)}90%{transform:scale(1.018,0.982)}}
+[data-pose=dance][data-species=bunny][data-dance="2"] .sprite-body{animation:pip-bunny-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-bunny-2{0%,100%{transform:none}20%{transform:translate(-2.5px,-2.5px) rotate(-4.95deg)}45%{transform:translate(2.5px,-2.5px) rotate(4.95deg)}70%{transform:translate(-1.5px,-1.5px) rotate(-2.75deg)}}
+[data-pose=dance][data-species=bunny][data-dance="3"] .sprite-body{animation:pip-bunny-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-bunny-3{0%,100%{transform:none}18%{transform:scale(1.036,0.955) rotate(-2.2deg)}40%{transform:translateY(-6.5px) rotate(7.7deg)}65%{transform:scale(1.036,0.964) rotate(-5.5deg)}82%{transform:translateY(-2px) rotate(2.2deg)}}
+[data-pose=dance][data-species=robot][data-dance="1"] .sprite-body{animation:pip-robot-1 1.6s steps(2,end)}
+@keyframes pip-robot-1{0%,100%{transform:none}15%,35%{transform:translateX(-2.5px)}36%,55%{transform:translateX(2.5px)}56%,75%{transform:translateX(-1.5px)}76%,90%{transform:translateX(1.5px)}}
+[data-pose=dance][data-species=robot][data-dance="2"] .sprite-body{animation:pip-robot-2 1.6s steps(2,end)}
+@keyframes pip-robot-2{0%,100%{transform:none}15%,32%{transform:rotate(-7.7deg)}33%,50%{transform:rotate(7.7deg)}51%,70%{transform:translateY(-3px)}71%,86%{transform:scale(1.018,0.982)}}
+[data-pose=dance][data-species=robot][data-dance="3"] .sprite-body{animation:pip-robot-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-robot-3{0%,100%{transform:none}20%{transform:translate(-2.5px,-1.5px) rotate(-5.5deg)}40%{transform:translate(2.5px,-1.5px) rotate(5.5deg)}60%{transform:translate(-2.5px,-1.5px) rotate(-5.5deg)}80%{transform:translate(2.5px,-1.5px) rotate(5.5deg)}}
+[data-pose=dance][data-species=cloud][data-dance="1"] .sprite-body{animation:pip-cloud-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-cloud-1{0%,100%{transform:none}25%{transform:translate(-3px,-2.5px) rotate(-2.75deg)}50%{transform:translate(0,-4px)}75%{transform:translate(3px,-2.5px) rotate(2.75deg)}}
+[data-pose=dance][data-species=cloud][data-dance="2"] .sprite-body{animation:pip-cloud-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-cloud-2{0%,100%{transform:none}20%{transform:scale(1.04,0.973)}45%{transform:translateY(-3.5px) scale(0.982,1.036)}70%{transform:scale(1.036,0.982)}85%{transform:translateY(-1px)}}
+[data-pose=dance][data-species=cloud][data-dance="3"] .sprite-body{animation:pip-cloud-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-cloud-3{0%,100%{transform:none}20%{transform:translateY(-2.5px) rotate(-6.6deg)}45%{transform:translateY(-4.5px) rotate(6.6deg)}70%{transform:translateY(-2px) rotate(-4.4deg)}}
+[data-pose=dance][data-species=duck][data-dance="1"] .sprite-body{animation:pip-duck-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-duck-1{0%,100%{transform:none}15%{transform:translateX(-2px) rotate(-6.6deg)}35%{transform:translateX(2px) rotate(6.6deg)}60%{transform:translateX(-2px) rotate(-6.6deg)}80%{transform:translateX(2px) rotate(6.6deg)}}
+[data-pose=dance][data-species=duck][data-dance="2"] .sprite-body{animation:pip-duck-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-duck-2{0%,100%{transform:none}20%{transform:scale(1.022,0.973)}40%{transform:translateY(-4px) rotate(-3.3deg)}60%{transform:translateY(-3px) rotate(3.3deg)}80%{transform:scale(1.022,0.9775)}}
+[data-pose=dance][data-species=duck][data-dance="3"] .sprite-body{animation:pip-duck-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-duck-3{0%,100%{transform:none}20%{transform:rotate(-8.8deg)}45%{transform:translateY(-2px) rotate(8.8deg)}70%{transform:rotate(-5.5deg)}85%{transform:rotate(2.75deg)}}
+[data-pose=dance][data-species=penguin][data-dance="1"] .sprite-body{animation:pip-penguin-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-penguin-1{0%,100%{transform:none}18%{transform:translateX(-2.5px) rotate(-7.7deg)}38%{transform:translateX(2.5px) rotate(7.7deg)}62%{transform:translateX(-2px) rotate(-5.5deg)}82%{transform:translateX(2px) rotate(5.5deg)}}
+[data-pose=dance][data-species=penguin][data-dance="2"] .sprite-body{animation:pip-penguin-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-penguin-2{0%,100%{transform:none}20%{transform:translateX(-3.5px) rotate(-2.75deg)}40%{transform:translateX(3.5px) rotate(2.75deg)}60%{transform:translateX(-3.5px) rotate(-2.75deg)}80%{transform:translateX(3.5px) rotate(2.75deg)}}
+[data-pose=dance][data-species=penguin][data-dance="3"] .sprite-body{animation:pip-penguin-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-penguin-3{0%,100%{transform:none}18%{transform:scale(1.036,0.964)}38%{transform:translateY(-4.5px) rotate(-3.3deg)}60%{transform:scale(1.027,0.9775)}80%{transform:translateY(-2.5px) rotate(3.3deg)}}
+[data-pose=dance][data-species=turtle][data-dance="1"] .sprite-body{animation:pip-turtle-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-turtle-1{0%,100%{transform:none}25%{transform:translateX(-2px) rotate(-3.85deg)}50%{transform:translateX(2px) rotate(3.85deg)}75%{transform:translateX(-1px) rotate(-2.2deg)}}
+[data-pose=dance][data-species=turtle][data-dance="2"] .sprite-body{animation:pip-turtle-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-turtle-2{0%,100%{transform:none}20%{transform:scale(1.027,0.955)}45%{transform:translateY(-2.5px) scale(0.991,1.018)}70%{transform:scale(1.018,0.973)}85%{transform:translateY(-1px)}}
+[data-pose=dance][data-species=turtle][data-dance="3"] .sprite-body{animation:pip-turtle-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-turtle-3{0%,100%{transform:none}20%{transform:rotate(-6.6deg)}45%{transform:translateX(2px) rotate(6.6deg)}70%{transform:translateX(-1.5px) rotate(-4.4deg)}}
+[data-pose=dance][data-species=dragon][data-dance="1"] .sprite-body{animation:pip-dragon-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-dragon-1{0%,100%{transform:none}18%{transform:scale(1.027,0.9685)}38%{transform:translateY(-5px) rotate(-3.3deg)}58%{transform:translateY(-3.5px) rotate(3.3deg)}80%{transform:scale(1.022,0.9775)}}
+[data-pose=dance][data-species=dragon][data-dance="2"] .sprite-body{animation:pip-dragon-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-dragon-2{0%,100%{transform:none}20%{transform:translate(-2.5px,-1.5px) rotate(-6.6deg)}45%{transform:translate(2.5px,-2.5px) rotate(6.6deg)}70%{transform:translate(-1.5px,-1.5px) rotate(-3.3deg)}}
+[data-pose=dance][data-species=dragon][data-dance="3"] .sprite-body{animation:pip-dragon-3 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-dragon-3{0%,100%{transform:none}20%{transform:rotate(-9.9deg) scale(1.014,0.9775)}45%{transform:translateY(-4px) rotate(9.9deg)}70%{transform:rotate(-4.95deg)}87%{transform:translateY(-1.5px)}}
+.quiet .companion-sprite *{animation:none!important}
+@media(prefers-reduced-motion:reduce){.companion-sprite *{animation:none!important}}
+
+@media(max-width:360px){
+ #profile-slot .companion-dock{grid-template-columns:36px minmax(0,1fr);gap:4px}
+ #profile-slot .companion-pet:not(.is-guiding):not(.is-floating),#profile-slot .companion-magnet{width:36px;height:36px}
+ #profile-slot .companion-pet:not(.is-guiding):not(.is-floating) svg{width:36px;height:36px}
+}
+
+@keyframes pip-hamster-1{0%,100%{transform:none}25%{transform:translateY(-4px) rotate(-3.85deg)}50%{transform:translateY(-1px) scale(1.036,0.973)}75%{transform:translateY(-4px) rotate(3.85deg)}}
+[data-pose=dance][data-species=hamster][data-dance="1"] .sprite-body{animation:pip-hamster-1 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-hamster-2{0%,100%{transform:none}25%{transform:translateX(-4px) rotate(-8.8deg)}50%{transform:translateY(-3px)}75%{transform:translateX(4px) rotate(8.8deg)}}
+[data-pose=dance][data-species=hamster][data-dance="2"] .sprite-body{animation:pip-hamster-2 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-hamster-3{0%,100%{transform:none}30%{transform:scale(0.973,1.036)}60%{transform:translateY(-6px) rotate(198deg)}80%{transform:scale(1.045,0.955)}}
+[data-pose=dance][data-species=hamster][data-dance="3"] .sprite-body{animation:pip-hamster-3 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-raccoon-1{0%,100%{transform:none}25%{transform:translateX(-3.5px) rotate(-5.5deg)}75%{transform:translateX(3.5px) rotate(5.5deg)}}
+[data-pose=dance][data-species=raccoon][data-dance="1"] .sprite-body{animation:pip-raccoon-1 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-raccoon-2{0%,100%{transform:none}20%{transform:translateY(-4px) rotate(-6.6deg)}40%{transform:translateY(-2px) rotate(6.6deg)}60%{transform:translateY(-4px) rotate(-6.6deg)}80%{transform:translateY(-2px) rotate(6.6deg)}}
+[data-pose=dance][data-species=raccoon][data-dance="2"] .sprite-body{animation:pip-raccoon-2 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-raccoon-3{0%,100%{transform:none}35%{transform:translateY(-4px) rotate(-99deg)}70%{transform:translateY(-1px) rotate(-198deg)}}
+[data-pose=dance][data-species=raccoon][data-dance="3"] .sprite-body{animation:pip-raccoon-3 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-bee-1{0%,100%{transform:none}25%{transform:translate(-3.5px,-3.5px) rotate(-4.4deg)}50%{transform:translate(0,-6px)}75%{transform:translate(3.5px,-3.5px) rotate(4.4deg)}}
+[data-pose=dance][data-species=bee][data-dance="1"] .sprite-body{animation:pip-bee-1 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-bee-2{0%,100%{transform:none}25%{transform:translate(4px,-4px)}50%{transform:translate(0,-7.5px) rotate(9.9deg)}75%{transform:translate(-4px,-4px) rotate(-9.9deg)}}
+[data-pose=dance][data-species=bee][data-dance="2"] .sprite-body{animation:pip-bee-2 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-bee-3{0%,100%{transform:none}30%{transform:translateY(-5px) rotate(-5.5deg)}65%{transform:translateY(-7.5px) rotate(198deg)}}
+[data-pose=dance][data-species=bee][data-dance="3"] .sprite-body{animation:pip-bee-3 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-octopus-1{0%,100%{transform:none}25%{transform:scale(1.054,0.955) rotate(-3.3deg)}50%{transform:translateY(-3.5px) scale(0.973,1.036)}75%{transform:scale(1.054,0.955) rotate(3.3deg)}}
+[data-pose=dance][data-species=octopus][data-dance="1"] .sprite-body{animation:pip-octopus-1 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-octopus-2{0%,100%{transform:none}25%{transform:translateX(-4px) rotate(-7.7deg)}50%{transform:translateY(-5px)}75%{transform:translateX(4px) rotate(7.7deg)}}
+[data-pose=dance][data-species=octopus][data-dance="2"] .sprite-body{animation:pip-octopus-2 1.6s cubic-bezier(.36,0,.26,1)}
+
+@keyframes pip-octopus-3{0%,100%{transform:none}30%{transform:translateY(-4px) scale(0.955,1.054)}65%{transform:translateY(-6px) rotate(198deg)}85%{transform:scale(1.045,0.955)}}
+[data-pose=dance][data-species=octopus][data-dance="3"] .sprite-body{animation:pip-octopus-3 1.6s cubic-bezier(.36,0,.26,1)}
+
+[data-pose=dance][data-species=bee] .sprite-wing-left{animation:pip-wing-left .16s ease-in-out 10}
+[data-pose=dance][data-species=bee] .sprite-wing-right{animation:pip-wing-right .16s ease-in-out 10}
+[data-pose=dance][data-species=octopus] .sprite-feet{animation:pip-step .3s ease-in-out 5}
+
+.sprite-gills,.sprite-head,.sprite-wings,.sprite-arms,.sprite-tentacles,.sprite-cheeks{transform-box:fill-box;transform-origin:50% 70%}
+[data-species=fox] .sprite-eyes{animation-delay:-1.1s}[data-species=cat] .sprite-eyes{animation-delay:-4.3s}[data-species=frog] .sprite-eyes{animation-delay:-2.4s}[data-species=axolotl] .sprite-eyes{animation-delay:-6.1s}
+[data-species=owl] .sprite-eyes{animation-delay:-.7s}[data-species=bunny] .sprite-eyes{animation-delay:-3.7s}[data-species=robot] .sprite-eyes{animation-delay:-5.2s}[data-species=cloud] .sprite-eyes{animation-delay:-2.9s}
+[data-species=duck] .sprite-eyes{animation-delay:-6.6s}[data-species=penguin] .sprite-eyes{animation-delay:-1.6s}[data-species=turtle] .sprite-eyes{animation-delay:-4.8s}[data-species=dragon] .sprite-eyes{animation-delay:-.3s}
+[data-species=hamster] .sprite-eyes{animation-delay:-3.1s}[data-species=raccoon] .sprite-eyes{animation-delay:-5.9s}[data-species=bee] .sprite-eyes{animation-delay:-1.9s}[data-species=octopus] .sprite-eyes{animation-delay:-4.1s}
+
+/* Additional companions share the quiet-motion preference and have three distinct dances. */
+.sprite-facets,.sprite-spines,.sprite-shell,.sprite-cap{transform-box:fill-box;transform-origin:50% 75%}
+@media(prefers-reduced-motion:no-preference){
+@keyframes pip-dog-1{0%,100%{transform:none}25%{transform:translate(-2.3px,-2.5px) rotate(-3.0deg)}50%{transform:translateY(-3.5px)}75%{transform:translate(2.3px,-2.5px) rotate(3.0deg)}}
+html:not(.quiet) [data-pose=dance][data-species=dog][data-dance="1"] .sprite-body{animation:pip-dog-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-dog-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-3.0deg)}45%{transform:translateY(-4.5px) rotate(3.0deg)}70%{transform:translateX(2.3px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=dog][data-dance="2"] .sprite-body{animation:pip-dog-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-dog-3{0%,100%{transform:none}25%{transform:translateX(2.3px) rotate(5.0deg)}50%{transform:translateY(-2.5px) rotate(-6.0deg)}75%{transform:translateX(-2.3px) rotate(3.0deg)}}
+html:not(.quiet) [data-pose=dance][data-species=dog][data-dance="3"] .sprite-body{animation:pip-dog-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=dog] .sprite-eyes{animation-delay:-0.5s}
+@keyframes pip-badger-1{0%,100%{transform:none}25%{transform:translate(-2.41px,-2.5px) rotate(-3.23deg)}50%{transform:translateY(-3.5px)}75%{transform:translate(2.41px,-2.5px) rotate(3.23deg)}}
+html:not(.quiet) [data-pose=dance][data-species=badger][data-dance="1"] .sprite-body{animation:pip-badger-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-badger-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-3.23deg)}45%{transform:translateY(-4.5px) rotate(3.23deg)}70%{transform:translateX(2.41px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=badger][data-dance="2"] .sprite-body{animation:pip-badger-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-badger-3{0%,100%{transform:none}25%{transform:translateX(2.41px) rotate(5.23deg)}50%{transform:translateY(-2.5px) rotate(-6.23deg)}75%{transform:translateX(-2.41px) rotate(3.23deg)}}
+html:not(.quiet) [data-pose=dance][data-species=badger][data-dance="3"] .sprite-body{animation:pip-badger-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=badger] .sprite-eyes{animation-delay:-0.91s}
+@keyframes pip-rat-1{0%,100%{transform:none}25%{transform:translate(-2.52px,-2.5px) rotate(-3.46deg)}50%{transform:translateY(-3.5px)}75%{transform:translate(2.52px,-2.5px) rotate(3.46deg)}}
+html:not(.quiet) [data-pose=dance][data-species=rat][data-dance="1"] .sprite-body{animation:pip-rat-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-rat-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-3.46deg)}45%{transform:translateY(-4.5px) rotate(3.46deg)}70%{transform:translateX(2.52px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=rat][data-dance="2"] .sprite-body{animation:pip-rat-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-rat-3{0%,100%{transform:none}25%{transform:translateX(2.52px) rotate(5.46deg)}50%{transform:translateY(-2.5px) rotate(-6.46deg)}75%{transform:translateX(-2.52px) rotate(3.46deg)}}
+html:not(.quiet) [data-pose=dance][data-species=rat][data-dance="3"] .sprite-body{animation:pip-rat-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=rat] .sprite-eyes{animation-delay:-1.32s}
+@keyframes pip-squirrel-1{0%,100%{transform:none}25%{transform:translate(-2.63px,-2.5px) rotate(-3.69deg)}50%{transform:translateY(-3.5px)}75%{transform:translate(2.63px,-2.5px) rotate(3.69deg)}}
+html:not(.quiet) [data-pose=dance][data-species=squirrel][data-dance="1"] .sprite-body{animation:pip-squirrel-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-squirrel-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-3.69deg)}45%{transform:translateY(-4.5px) rotate(3.69deg)}70%{transform:translateX(2.63px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=squirrel][data-dance="2"] .sprite-body{animation:pip-squirrel-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-squirrel-3{0%,100%{transform:none}25%{transform:translateX(2.63px) rotate(5.6899999999999995deg)}50%{transform:translateY(-2.5px) rotate(-6.6899999999999995deg)}75%{transform:translateX(-2.63px) rotate(3.69deg)}}
+html:not(.quiet) [data-pose=dance][data-species=squirrel][data-dance="3"] .sprite-body{animation:pip-squirrel-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=squirrel] .sprite-eyes{animation-delay:-1.73s}
+@keyframes pip-bat-1{0%,100%{transform:none}25%{transform:translate(-2.74px,-4.0px) rotate(-3.92deg)}50%{transform:translateY(-5.0px)}75%{transform:translate(2.74px,-4.0px) rotate(3.92deg)}}
+html:not(.quiet) [data-pose=dance][data-species=bat][data-dance="1"] .sprite-body{animation:pip-bat-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-bat-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-3.92deg)}45%{transform:translateY(-6.0px) rotate(3.92deg)}70%{transform:translateX(2.74px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=bat][data-dance="2"] .sprite-body{animation:pip-bat-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-bat-3{0%,100%{transform:none}25%{transform:translateX(2.74px) rotate(5.92deg)}50%{transform:translateY(-4.0px) rotate(-6.92deg)}75%{transform:translateX(-2.74px) rotate(3.92deg)}}
+html:not(.quiet) [data-pose=dance][data-species=bat][data-dance="3"] .sprite-body{animation:pip-bat-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=bat] .sprite-eyes{animation-delay:-2.14s}
+@keyframes pip-goblin-1{0%,100%{transform:none}25%{transform:translate(-2.85px,-2.5px) rotate(-4.15deg)}50%{transform:translateY(-3.5px)}75%{transform:translate(2.85px,-2.5px) rotate(4.15deg)}}
+html:not(.quiet) [data-pose=dance][data-species=goblin][data-dance="1"] .sprite-body{animation:pip-goblin-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-goblin-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-4.15deg)}45%{transform:translateY(-4.5px) rotate(4.15deg)}70%{transform:translateX(2.85px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=goblin][data-dance="2"] .sprite-body{animation:pip-goblin-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-goblin-3{0%,100%{transform:none}25%{transform:translateX(2.85px) rotate(6.15deg)}50%{transform:translateY(-2.5px) rotate(-7.15deg)}75%{transform:translateX(-2.85px) rotate(4.15deg)}}
+html:not(.quiet) [data-pose=dance][data-species=goblin][data-dance="3"] .sprite-body{animation:pip-goblin-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=goblin] .sprite-eyes{animation-delay:-2.55s}
+@keyframes pip-rock-1{0%,100%{transform:none}25%{transform:translate(-2.96px,-1.5px) rotate(-4.38deg)}50%{transform:translateY(-2.5px)}75%{transform:translate(2.96px,-1.5px) rotate(4.38deg)}}
+html:not(.quiet) [data-pose=dance][data-species=rock][data-dance="1"] .sprite-body{animation:pip-rock-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-rock-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-4.38deg)}45%{transform:translateY(-3.5px) rotate(4.38deg)}70%{transform:translateX(2.96px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=rock][data-dance="2"] .sprite-body{animation:pip-rock-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-rock-3{0%,100%{transform:none}25%{transform:translateX(2.96px) rotate(6.38deg)}50%{transform:translateY(-1.5px) rotate(-7.38deg)}75%{transform:translateX(-2.96px) rotate(4.38deg)}}
+html:not(.quiet) [data-pose=dance][data-species=rock][data-dance="3"] .sprite-body{animation:pip-rock-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=rock] .sprite-eyes{animation-delay:-2.96s}
+@keyframes pip-hedgehog-1{0%,100%{transform:none}25%{transform:translate(-3.07px,-2.5px) rotate(-4.61deg)}50%{transform:translateY(-3.5px)}75%{transform:translate(3.07px,-2.5px) rotate(4.61deg)}}
+html:not(.quiet) [data-pose=dance][data-species=hedgehog][data-dance="1"] .sprite-body{animation:pip-hedgehog-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-hedgehog-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-4.61deg)}45%{transform:translateY(-4.5px) rotate(4.61deg)}70%{transform:translateX(3.07px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=hedgehog][data-dance="2"] .sprite-body{animation:pip-hedgehog-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-hedgehog-3{0%,100%{transform:none}25%{transform:translateX(3.07px) rotate(6.61deg)}50%{transform:translateY(-2.5px) rotate(-7.61deg)}75%{transform:translateX(-3.07px) rotate(4.61deg)}}
+html:not(.quiet) [data-pose=dance][data-species=hedgehog][data-dance="3"] .sprite-body{animation:pip-hedgehog-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=hedgehog] .sprite-eyes{animation-delay:-3.37s}
+@keyframes pip-otter-1{0%,100%{transform:none}25%{transform:translate(-3.18px,-2.5px) rotate(-4.84deg)}50%{transform:translateY(-3.5px)}75%{transform:translate(3.18px,-2.5px) rotate(4.84deg)}}
+html:not(.quiet) [data-pose=dance][data-species=otter][data-dance="1"] .sprite-body{animation:pip-otter-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-otter-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-4.84deg)}45%{transform:translateY(-4.5px) rotate(4.84deg)}70%{transform:translateX(3.18px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=otter][data-dance="2"] .sprite-body{animation:pip-otter-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-otter-3{0%,100%{transform:none}25%{transform:translateX(3.18px) rotate(6.84deg)}50%{transform:translateY(-2.5px) rotate(-7.84deg)}75%{transform:translateX(-3.18px) rotate(4.84deg)}}
+html:not(.quiet) [data-pose=dance][data-species=otter][data-dance="3"] .sprite-body{animation:pip-otter-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=otter] .sprite-eyes{animation-delay:-3.78s}
+@keyframes pip-moth-1{0%,100%{transform:none}25%{transform:translate(-3.29px,-4.0px) rotate(-5.07deg)}50%{transform:translateY(-5.0px)}75%{transform:translate(3.29px,-4.0px) rotate(5.07deg)}}
+html:not(.quiet) [data-pose=dance][data-species=moth][data-dance="1"] .sprite-body{animation:pip-moth-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-moth-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-5.07deg)}45%{transform:translateY(-6.0px) rotate(5.07deg)}70%{transform:translateX(3.29px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=moth][data-dance="2"] .sprite-body{animation:pip-moth-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-moth-3{0%,100%{transform:none}25%{transform:translateX(3.29px) rotate(7.07deg)}50%{transform:translateY(-4.0px) rotate(-8.07deg)}75%{transform:translateX(-3.29px) rotate(5.07deg)}}
+html:not(.quiet) [data-pose=dance][data-species=moth][data-dance="3"] .sprite-body{animation:pip-moth-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=moth] .sprite-eyes{animation-delay:-4.19s}
+@keyframes pip-snail-1{0%,100%{transform:none}25%{transform:translate(-3.4px,-1.5px) rotate(-5.3deg)}50%{transform:translateY(-2.5px)}75%{transform:translate(3.4px,-1.5px) rotate(5.3deg)}}
+html:not(.quiet) [data-pose=dance][data-species=snail][data-dance="1"] .sprite-body{animation:pip-snail-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-snail-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-5.3deg)}45%{transform:translateY(-3.5px) rotate(5.3deg)}70%{transform:translateX(3.4px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=snail][data-dance="2"] .sprite-body{animation:pip-snail-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-snail-3{0%,100%{transform:none}25%{transform:translateX(3.4px) rotate(7.3deg)}50%{transform:translateY(-1.5px) rotate(-8.3deg)}75%{transform:translateX(-3.4px) rotate(5.3deg)}}
+html:not(.quiet) [data-pose=dance][data-species=snail][data-dance="3"] .sprite-body{animation:pip-snail-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=snail] .sprite-eyes{animation-delay:-4.6s}
+@keyframes pip-mushroom-1{0%,100%{transform:none}25%{transform:translate(-3.51px,-2.5px) rotate(-5.53deg)}50%{transform:translateY(-3.5px)}75%{transform:translate(3.51px,-2.5px) rotate(5.53deg)}}
+html:not(.quiet) [data-pose=dance][data-species=mushroom][data-dance="1"] .sprite-body{animation:pip-mushroom-1 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-mushroom-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-5.53deg)}45%{transform:translateY(-4.5px) rotate(5.53deg)}70%{transform:translateX(3.51px) scale(.985,1.02)}}
+html:not(.quiet) [data-pose=dance][data-species=mushroom][data-dance="2"] .sprite-body{animation:pip-mushroom-2 1.6s cubic-bezier(.36,0,.26,1)}
+@keyframes pip-mushroom-3{0%,100%{transform:none}25%{transform:translateX(3.51px) rotate(7.53deg)}50%{transform:translateY(-2.5px) rotate(-8.530000000000001deg)}75%{transform:translateX(-3.51px) rotate(5.53deg)}}
+html:not(.quiet) [data-pose=dance][data-species=mushroom][data-dance="3"] .sprite-body{animation:pip-mushroom-3 1.6s cubic-bezier(.36,0,.26,1)}
+html:not(.quiet) [data-species=mushroom] .sprite-eyes{animation-delay:-5.01s}
+}
+
+/* A resting Pip still breathes and blinks; food continues to gate active play. */
+@media(prefers-reduced-motion:no-preference){
+ html:not(.quiet) [data-pose=resting] .sprite-body{animation:pip-breathe 7.8s ease-in-out infinite}
+ html:not(.quiet) :is(.companion-dock,[data-home-room])[data-pose=resting] .sprite-eyes{animation:pip-blink 10.4s linear infinite}
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" class="is-opening">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-title" content="Stepstone"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#203b43"><meta name="description" content="Stepstone: money and maths, reading and writing, practical science, independent living, digital skills, and work. Learn at your pace with a trusted mentor.">
+  <title>Stepstone · Your next step</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="alternate icon" href="icons/stepstone.ico" type="image/x-icon"><link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png"><link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="vendor/fonts/atkinson-hyperlegible-next.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css"><link rel="stylesheet" href="app.css?build=119"><link rel="stylesheet" href="adventure.css?build=119"><link rel="stylesheet" href="interface.css?build=119"><link rel="stylesheet" href="companion.css?build=119">
+<link rel="stylesheet" href="pip-life.css?build=119"><link rel="stylesheet" href="lesson-visual.css?build=119"><link rel="stylesheet" href="pip-editor.css?build=119"><link rel="stylesheet" href="refinements.css?build=119">
+  <script defer src="vendor/katex/katex.min.js"></script><script type="module" src="app.js?build=119"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to learning</a>
+  <header class="app-header" id="app-header">
+    <div class="header-main">
+      <div class="header-navigation">
+        <div class="header-brand"><a class="brand" href="#home" aria-label="Stepstone home"><img src="icon.svg" alt="" width="48" height="48"><span class="brand-wordmark" aria-hidden="true"><span>Step</span><span>Stone</span></span></a><button class="header-install" type="button" data-action="add-app" aria-label="Add app to this device" title="Add app to this device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/></svg><span>Install</span></button></div>
+        <nav class="primary-nav" aria-label="Main navigation" id="navigation"></nav>
+      </div>
+      <div class="profile-area">
+        <a href="#mentor" class="mentor-link" id="mentor-control" aria-label="Mentor space"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg><span>Mentor</span></a>
+        <div id="profile-slot"></div>
+      </div>
+    </div>
+  </header>
+  <div class="workspace">
+    <main id="main" tabindex="-1"><div class="loading">Opening your next step…</div></main>
+  </div>
+  <dialog id="dialog"><div id="dialog-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>This app needs JavaScript for lessons and saved progress.</noscript>
+</body></html>

@@ -1,0 +1,380 @@
+/* Titles have their own hierarchy; task statements keep a plain reading surface. */
+#main :is(h1,h2,h3),dialog :is(h2,h3){text-decoration:none!important;font-weight:780;letter-spacing:-.026em;line-height:1.2;color:#f5c4d2;text-shadow:0 2px 0 #092b3840}
+#main h1,dialog #dialog-title{letter-spacing:-.04em;color:#fbd1dc}
+#main h1::after,dialog #dialog-title::after{content:'';display:block;width:44px;height:3px;border-radius:3px;margin-top:10px;background:linear-gradient(90deg,#b2ece2,#e9bbcc);opacity:.8}
+#main .question-focus,#main .scenario-prompt,#main .reflection-instruction{letter-spacing:normal;text-shadow:none;text-decoration:none!important}
+.world-card h3{display:flex;gap:10px;align-items:start;line-height:1.3}
+.course-order{display:inline-grid;place-items:center;font-size:12px;line-height:1;width:24px;height:24px;border:1px solid currentColor;border-radius:50%;flex:none;margin-top:4px;color:var(--world-accent,var(--strong))}
+.course-order-label{font-size:14px;color:var(--muted);margin:6px 0 0}
+.world-work{--world-accent:#a9c9f3;border-top-color:#a9c9f3;background:linear-gradient(135deg,#354d68,#253e52)}
+[data-area=work]{--strong:#b7d6f4}
+[data-area=life]{--strong:#e7bac4}
+.filters{grid-template-columns:repeat(6,minmax(0,1fr))}
+.starting-areas{grid-template-columns:repeat(6,minmax(0,1fr))}
+.lesson-words{margin:20px 0 0;border-top:1px solid var(--line);padding-top:12px}
+.lesson-words summary{font-size:14px;color:#c0ddd6;cursor:pointer}
+.lesson-words dl{display:grid;grid-template-columns:minmax(100px,auto) 1fr;gap:8px 16px;margin:14px 0 0;font-size:16px;line-height:1.5}
+.lesson-words dt{font-weight:700;color:#ead0d6}.lesson-words dd{margin:0}
+.task-example-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:stretch}
+.task-example-step{padding:18px 12px;background:#21454d;border:1px solid #64848a;border-radius:14px;opacity:.58}
+.task-example-step.active{opacity:1;background:#326364;border-color:#b0ddcf}
+.task-example-step svg{width:42px;height:42px;display:block;margin:0 auto 10px;color:#c1e1d1}
+.task-example-step span{display:block;text-align:center;font-size:13px;color:#c9ded7}
+.task-example-scene{font-size:16px;text-align:center;line-height:1.5;margin:18px 0 0}
+dialog.profile-overlay{width:min(980px,calc(100vw - 24px))}
+.profile-form.pip-studio-form{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:'home home' 'colour reading';grid-template-rows:auto auto;align-content:start;gap:14px}
+.pip-studio-form .pip-home-editor{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px}
+.pip-studio{position:static}
+.pip-studio-form .pip-home-large.identity-card{overflow:clip;height:240px;aspect-ratio:auto;border-radius:18px}
+.pip-studio-form .profile-name{width:min(100%,190px);margin-bottom:10px}
+.pip-studio-form .profile-name input{min-height:38px}
+.pip-editor-rail{display:flex;flex-direction:column;gap:12px;min-width:0}
+.pip-editor-rail .profile-symbols{grid-area:auto;padding:10px;gap:7px}
+.pip-card-dropdown summary{min-height:60px;padding:8px 10px}
+.pip-dropdown-value{margin-top:2px;gap:8px;font-size:14px}.pip-dropdown-value .companion-sprite{width:32px;height:32px}
+.pip-option-cards{max-height:245px;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:8px;scrollbar-gutter:stable}
+.pip-option-card{padding:8px 3px;font-size:11px;min-height:94px;justify-content:center}
+.pip-item-shelf{padding:12px;border-radius:14px;overflow:hidden}
+.pip-item-shelf h3{font-size:17px;margin:0 0 8px}
+.pip-shelf-scroll{max-height:186px;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding-right:2px;scrollbar-width:thin}
+.pip-shelf-group{border:1px solid #52717b;border-radius:10px;background:#183a46;margin:0 0 6px;overflow:hidden}
+.pip-shelf-group summary{list-style:none;height:56px;padding:6px 10px;cursor:pointer;color:#c1d7d2;font-size:12px;line-height:1.3}
+.pip-shelf-group summary::-webkit-details-marker{display:none}
+.pip-home-choice{display:flex;align-items:center;gap:8px;font-size:13px;margin-top:2px;color:#e4ece3}
+.pip-home-choice svg{width:26px;height:26px;flex:none}.pip-home-choice>span:last-child{margin-left:auto;font-size:20px}
+.pip-shelf-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:8px;border-top:1px solid var(--line)}
+.pip-shelf-item{min-height:92px;font-size:11px;padding:6px 3px;gap:3px}
+.pip-shelf-picture{width:42px;height:38px}.pip-shelf-picture svg{width:42px;height:38px}
+.pip-shelf-item small{font-size:10px}.pip-shelf-item.is-locked{opacity:.72}
+.pip-care{margin-top:10px;padding-top:10px}.pip-care meter{height:10px;margin:5px 0 8px}
+.pip-care-buttons [data-pip-feed]{min-height:40px;padding:8px;font-size:13px}
+.profile-form .pip-home-large .pip-room-piece svg{fill:initial;stroke-width:initial;transform:none}
+.profile-form .pip-home-large [data-placed-kind=rug] .pip-room-piece svg{transform:none;width:100%;height:100%;overflow:visible}
+.pip-placed-item[data-placed-kind=rug]{width:160px;height:70px}
+.profile-form .pip-home-large [data-placed-kind=rug] .pip-room-piece{position:relative}
+.profile-form .pip-home-large [data-placed-kind=rug] .pip-room-piece svg{position:absolute;inset:0;aspect-ratio:auto;transform:none}
+.pip-placed-item[data-placed-kind=furniture]{width:86px;height:92px}
+.pip-studio-form .pip-home-stage,.pip-studio-form .pip-home-large .pip-home-pet{width:88px;height:98px}
+.pip-studio-form .pip-home-large .pip-home-pet svg{width:88px;height:88px}
+.pip-placed-item[data-placed-kind=decor]{width:62px;height:70px}
+.food-review-label{font-size:14px;color:#c6dfc8!important;line-height:1.5;margin:0 0 14px!important}
+.path-series-heading{grid-column:1/-1;font-size:24px;margin:12px 0 0}
+.path-unit .module-meta{justify-content:flex-end}
+.learner-mentor-space{width:100%;max-width:940px;margin-inline:auto}
+.learner-hub.manager-nav{grid-template-columns:repeat(2,minmax(0,1fr));margin:20px 0 16px;gap:16px}
+.learner-hub .manager-card{min-height:180px;gap:10px;padding:20px}
+.learner-hub .manager-card>strong{color:#f5c4d2;font-weight:760;letter-spacing:-.02em}
+.learner-hub .manager-card-open{padding-top:8px}
+.pip-home-large .pip-home-name{top:12px;right:14px;max-width:155px}
+.pip-home-name h2::after{display:none}.pip-home-large .pip-home-status{max-width:140px;font-size:11px}
+
+.pip-studio-form .profile-colours,.pip-studio-form .profile-reading{padding:10px}
+.pip-studio-form .profile-colours .profile-choice{min-height:38px;padding:6px;font-size:12px}
+.pip-studio-form .profile-reading .field{gap:5px;margin:8px 0}
+.pip-studio-form .profile-reading .toggle-row{padding-left:16px;min-height:40px}
+.pip-studio-form .profile-reading select{min-height:40px}.pip-studio-form .profile-reading .btn{min-height:38px;font-size:13px;padding:8px}
+@media(max-width:700px){
+ .filters{grid-template-columns:repeat(2,minmax(0,1fr))}.starting-areas{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .profile-form.pip-studio-form{display:flex}.pip-studio-form .pip-home-editor{grid-template-columns:1fr}
+ .pip-editor-rail{gap:10px}.pip-shelf-scroll{max-height:186px}.pip-option-cards{max-height:230px}
+ .pip-studio-form .pip-home-large.identity-card{height:220px}
+ .pip-placed-item[data-placed-kind=rug]{width:120px;height:56px}.pip-placed-item[data-placed-kind=furniture]{width:60px;height:66px}
+ .task-example-flow{gap:5px}.task-example-step{padding:12px 5px}.task-example-step span{font-size:11px}
+ .lesson-words dl{grid-template-columns:1fr;gap:4px}.lesson-words dd{margin-bottom:8px}
+}
+@media(max-width:500px){.learner-hub.manager-nav{grid-template-columns:1fr}.learner-hub .manager-card{min-height:160px}}
+
+
+/* Compact cards keep a shared grid while text stays left aligned. */
+#main .path-unit h3,#main .resume-summary>h1{ text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:5px }
+.card,.world-card,.manager-card,.reward-card{ text-align:left;border-width:1px;border-radius:16px }
+.card{padding:20px}
+.path-grid{gap:14px;align-items:stretch}
+.path-unit.card{display:grid;grid-template-rows:subgrid;grid-row:span 4;padding:17px 20px;gap:8px;border-top-width:2px;justify-content:normal;align-items:center;min-height:0}
+.path-unit .module-meta{min-height:28px;width:100%;margin:0;align-items:center}
+.path-unit h3{margin:0;line-height:1.35;align-self:start}
+.path-unit .module-body{width:100%;align-self:start}
+.path-unit .module-body .food-review-label{margin-top:8px}
+.path-unit p{margin:0;line-height:1.55;text-align:left;width:100%}
+.path-unit .btn{margin-top:0;align-self:center;justify-self:start}
+.path-unit .module-unlock{margin:2px 0 0;padding-top:10px}
+.world-card{padding:18px;border-top-width:2px;gap:0 10px;align-content:center}
+.world-card p{margin:6px 0 12px;line-height:1.5}
+.world-card>span:last-child{padding-top:10px}
+.manager-card{padding:20px;gap:10px;border-top-width:2px;align-items:flex-start;justify-content:center}
+.manager-card-open{width:100%;margin-top:0}
+.tour-training-card>.path-unit{justify-content:center;text-align:left;align-items:flex-start}
+.course-locked{border-style:solid}.course-locked>span:last-child{font-size:.72rem}
+.course-gate{border:1px solid #85999f;border-radius:14px;padding:18px;margin:14px 0 18px;background:#243f4d}
+.course-gate h3{font-size:20px;margin:0 0 8px}.course-gate p{margin:0;max-width:76ch;line-height:1.6}
+.course-gate ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:0;list-style:none;gap:8px 18px;margin:14px 0}
+.course-gate li{display:flex;justify-content:space-between;gap:8px;font-size:14px}.course-gate.is-complete{border-color:#a0d3b1}
+.daily-tasks{margin:22px 0}.daily-tasks .section-title{margin:0 0 12px;align-items:center}
+.daily-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.daily-task{border:1px solid #68818a;border-radius:14px;background:#203d49;padding:16px;display:flex;gap:12px;align-items:center;min-width:0}
+.daily-mark{font-size:23px;color:#b1dbd1;flex:none}.daily-task h3{font-size:18px!important;margin:0 0 6px;overflow-wrap:anywhere}
+.daily-task p{font-size:14px;margin:0 0 5px;line-height:1.5;color:#c2d6d3}.daily-task .text-link{font-size:14px;min-height:44px;display:inline-flex;align-items:center;padding:0;text-align:left}
+.daily-state{font-size:13px;color:#b3dfc5}.daily-task.is-done{border-color:#84b3a1;background:#26484b}
+.laptop-finder>p{line-height:1.6}.laptop-finder [data-laptop-results]{margin-top:16px}
+.laptop-offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.laptop-offer{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:16px;min-width:0;overflow-wrap:anywhere}
+.laptop-offer h3{font-size:20px;margin:0}.laptop-offer p{margin:0}.laptop-offer ul{padding-left:20px;line-height:1.6;font-size:14px;margin:0}.laptop-offer .btn{margin-top:auto}
+.finder-coverage{line-height:1.6;padding-left:20px;font-size:14px}
+
+/* Four deeper palette choices; all colours remain available to every learner. */
+:root[data-accent=navy]{--world:#203755;--strong:#aac9f3;--page-glow:#426bb746;--heading:#e0d7bd}
+:root[data-accent=forest]{--world:#254935;--strong:#aed5a0;--page-glow:#44834b42;--heading:#f0d6ac}
+:root[data-accent=steel]{--world:#344f62;--strong:#b6d2e4;--page-glow:#618ba746;--heading:#ead6c3}
+:root[data-accent=charcoal]{--world:#353d46;--strong:#cbd2d9;--page-glow:#71809340;--heading:#e8d6c2}
+[data-profile-accent=navy]{--profile-shade:#203755;--profile-colour:#aac9f3}
+[data-profile-accent=forest]{--profile-shade:#254935;--profile-colour:#aed5a0}
+[data-profile-accent=steel]{--profile-shade:#344f62;--profile-colour:#b6d2e4}
+[data-profile-accent=charcoal]{--profile-shade:#353d46;--profile-colour:#cbd2d9}
+.profile-choice[data-profile-accent=navy] .colour-dot{background:#769cc9}
+.profile-choice[data-profile-accent=forest] .colour-dot{background:#719b5d}
+.profile-choice[data-profile-accent=steel] .colour-dot{background:#90b0c3}
+.profile-choice[data-profile-accent=charcoal] .colour-dot{background:#87919b}
+.identity-card:is([data-profile-accent=navy],[data-profile-accent=forest],[data-profile-accent=steel],[data-profile-accent=charcoal]){background:linear-gradient(130deg,var(--profile-shade),#20323d)}
+@media(min-width:701px){.profile-colours .profile-choice-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.daily-grid{grid-template-columns:1fr}.course-gate ul{grid-template-columns:1fr}.laptop-offers{grid-template-columns:1fr}.path-unit.card{padding:16px}.world-card{padding:16px}}
+
+
+
+
+/* Shared finishing treatment, including narrow screens and keyboard use. */
+:root{--control-ink:#12343e;--passage-line:#e4c38c}
+.btn.light{background:linear-gradient(115deg,#c7eee6,#9cddd4);color:var(--control-ink);border-color:#b7ece1;text-shadow:none}
+.mission-hero .resume-button.btn.light{background:linear-gradient(115deg,#c7eee6,#9cddd4);color:var(--control-ink);border-color:#b7ece1;text-shadow:none;box-shadow:0 4px 12px #0b273933,inset 0 1px #f0fff650}
+.resume-button.btn.light>span{color:inherit}
+.question-passage{border:2px solid var(--passage-line);border-left-width:4px;border-radius:4px 16px 4px 4px;background:#213943;color:#e7f0e9;box-shadow:inset 0 1px #ffffff08}
+.course-section-title{gap:12px 20px;align-items:center}
+.course-section-title>div{flex:1;min-width:180px}
+.course-section-title>.all-modules-link{flex:none;max-width:none;white-space:nowrap;text-align:center;gap:10px;padding:10px 16px;line-height:1.3}
+#main .world-card{display:grid;grid-template-columns:42px minmax(0,1fr);grid-template-rows:auto 1fr auto;align-content:start;align-items:start;gap:10px 12px;padding:18px;min-height:0}
+#main .world-card>.subject-symbol{grid-column:1;grid-row:1;width:42px;height:42px;border-radius:11px;align-self:center;font-size:1.5rem}
+#main .world-card h3{grid-column:2;grid-row:1;align-self:center;align-items:center;margin:0;gap:8px;line-height:1.3;font-size:1rem}
+#main .world-card .course-order{margin:0;width:22px;height:22px;font-size:11px}
+#main .world-card p{grid-column:1/-1;grid-row:2;margin:0;align-self:start;line-height:1.55;font-size:.82rem}
+#main .world-card>span:last-child{grid-column:1/-1;grid-row:3;align-self:end;margin:0;padding-top:4px;line-height:1.4;font-size:.74rem}
+@supports(grid-template-rows:subgrid){#main .world-card{grid-template-rows:subgrid;grid-row:span 3}}
+.daily-tasks{margin:28px 0;padding:20px;border:1px solid #a58d67;border-top:3px solid #e4c38c;border-radius:18px;background:linear-gradient(135deg,#304856,#203640);box-shadow:0 8px 24px #071a2424}
+.daily-tasks .section-title{margin:0 0 16px;gap:12px}
+#main .daily-tasks h2{color:#f0d7a7;font-size:1.15rem;letter-spacing:-.02em}
+.daily-tasks .pill{background:#223843;border-color:#a9916b;color:#e9d3b0}
+.daily-task{padding:16px;border-radius:12px;background:#182e3999;border-color:#627c87;align-items:flex-start}
+.daily-task>div{min-width:0;flex:1}
+.daily-mark{display:grid;place-items:center;flex:none;width:26px;height:26px;line-height:1;margin-top:2px}.daily-mark svg{width:24px;height:24px}
+.daily-task .text-link{padding:8px 12px;line-height:1.35;margin-top:5px;min-height:44px;border-radius:8px}
+.daily-task.is-done{background:#294b46;border-color:#89b9a0}
+.daily-state{display:inline-block;margin-top:5px;color:#c1e9ce}
+.daily-task h3{line-height:1.3}
+.manager-card-top{width:100%;min-width:0;gap:12px;line-height:1.4}
+.manager-card-top>svg{display:block;flex:0 0 24px;width:24px;height:24px}
+.manager-card-top>span:last-child{min-width:0;text-align:right;overflow-wrap:anywhere;font-size:.78rem}
+.manager-card-detail{line-height:1.5;overflow-wrap:anywhere}
+.primary-nav .nav-item,#mentor-control{gap:8px;padding-inline:8px;line-height:1.25;font-size:15px}
+.primary-nav .nav-item>svg,#mentor-control>svg{display:block;flex:0 0 20px;width:20px;height:20px}
+.primary-nav .nav-item>span,#mentor-control>span{display:block;line-height:1.25;white-space:nowrap}
+#mentor-control[aria-current=page]{background:linear-gradient(120deg,color-mix(in srgb,var(--strong) 50%,#fff),var(--strong));color:#06303b;border-color:var(--strong);box-shadow:inset 0 -3px #0a515b;font-weight:800}
+.dialog-head{gap:16px}.dialog-head button{display:grid;place-items:center;padding:0;font-size:26px;line-height:1}
+.pip-card-dropdown summary,.pip-shelf-group summary{transition:background-color .15s ease,border-color .15s ease}
+.pip-card-dropdown summary:hover,.pip-shelf-group summary:hover{background:#254f5a}
+.pip-option-card:has(input:focus-visible),.pip-shelf-item:focus-visible{outline:3px solid var(--focus);outline-offset:-3px}
+.pip-item-return{min-height:32px;width:32px;height:32px}
+.pip-home-pet:disabled{opacity:1}
+.profile-form .profile-tabs button{min-height:44px;line-height:1.25}
+.pip-dropdown-value strong,.pip-home-choice strong{min-width:0;overflow-wrap:anywhere}
+.table-wrap{max-width:100%;overscroll-behavior:contain}
+.result-details summary{padding:12px 16px;line-height:1.45}
+.pill{font-variant-numeric:tabular-nums}
+.points-value,.score{font-variant-numeric:tabular-nums}
+.learning-hub-summary .hub-points{flex-wrap:wrap;gap:5px 9px}
+.hub-points>span{line-height:1.3;white-space:normal}
+.empty,.loading{line-height:1.6}
+#toast{bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:min(92vw,620px);overflow-wrap:anywhere;line-height:1.45;padding:14px 18px}
+@media(max-width:1240px) and (min-width:861px){.app-header{--header-button-width:102px}.primary-nav .nav-item,#mentor-control{font-size:14px;gap:6px;padding-inline:8px}.primary-nav .nav-item>svg,#mentor-control>svg{flex-basis:18px;width:18px;height:18px}}
+@media(max-width:760px){#main .world-card{padding:16px;gap:9px 10px}.course-section-title>.all-modules-link{font-size:.8rem;max-width:none;text-align:center}.daily-tasks{padding:16px}.daily-grid{gap:10px}.daily-task{padding:14px}.dialog-head{gap:12px}}
+@media(max-width:560px){.world-grid{grid-template-columns:1fr}#main .world-card{grid-template-columns:40px minmax(0,1fr)}.daily-tasks .section-title{align-items:center}.daily-tasks .pill{font-size:.68rem}.primary-nav .nav-item,#mentor-control{font-size:14px;gap:6px;padding-inline:8px}}
+@media(max-width:420px){.primary-nav .nav-item,#mentor-control{flex-direction:column;font-size:13px;gap:3px;padding:8px;line-height:1.25}.primary-nav .nav-item>svg,#mentor-control>svg{flex-basis:18px;width:18px;height:18px}.course-section-title>div{min-width:160px}#main .world-card h3{font-size:.96rem}.daily-tasks{padding:14px}.daily-task .text-link{font-size:13px;max-width:100%}.hub-header .learning-hub-summary{width:auto;max-width:100%}.loading{padding:28px 12px}}
+@media(hover:none){.pip-item-return{opacity:1;pointer-events:auto;width:40px;height:40px;min-height:40px}}
+@media(prefers-reduced-motion:reduce){.pip-card-dropdown summary,.pip-shelf-group summary{transition:none}}
+
+/* Invitation spacing belongs to this action, not every form button. */
+form[data-form=join]>.buttons>.btn{margin-top:26px}
+/* The wide profile has two populated rows. Pickers overlay it instead of growing it. */
+@media(min-width:701px){
+ .profile-overlay .pip-card-dropdown{position:relative}
+ .profile-overlay .pip-card-dropdown[open]{z-index:6}
+ .profile-overlay .pip-card-dropdown>.pip-option-cards{position:absolute;z-index:6;left:-1px;right:-1px;top:100%;max-height:245px;background:#173b46;border:1px solid #6a8e98;border-radius:0 0 12px 12px;box-shadow:0 12px 26px #061b2570}
+}
+/* Each profile tab is one focused scene at every window size. */
+.profile-overlay .profile-form.pip-studio-form{display:flex;flex-direction:column;gap:12px}
+.profile-overlay .pip-studio-form .profile-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.profile-overlay .pip-studio-form [data-profile-panel]{display:none!important}
+.profile-overlay .pip-studio-form[data-panel=pip] .pip-home-editor[data-profile-panel]{display:grid!important}
+.profile-overlay .pip-studio-form[data-panel=pip] .profile-symbols[data-profile-panel]{display:flex!important}
+.profile-overlay .pip-studio-form[data-panel=colour] .profile-colours[data-profile-panel],.profile-overlay .pip-studio-form[data-panel=reading] .profile-reading[data-profile-panel]{display:block!important}
+.profile-overlay .pip-studio-form>.error-text:empty{display:none}
+.profile-overlay .pip-studio-form .profile-name{align-self:flex-start;margin-left:0;margin-right:0}
+.profile-overlay .pip-care-buttons>button{flex:1 1 0;min-width:0;line-height:1.3}
+.profile-overlay .profile-colours .profile-choice-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.profile-overlay .profile-colours .profile-choice{min-height:48px}
+.pip-add-item{display:grid;place-items:center;width:26px;height:26px;font-size:22px;flex:none;color:var(--strong)}
+
+.pip-placed-item:is([data-placed-kind=painting],[data-placed-kind=shelf]){z-index:2;filter:drop-shadow(0 3px 2px #0a26323a)}
+.pip-placed-item[data-placed-kind=painting]{width:100px;height:94px}
+.pip-placed-item[data-placed-kind=shelf]{width:118px;height:76px}
+@media(max-width:700px){.pip-placed-item[data-placed-kind=painting]{width:78px;height:75px}.pip-placed-item[data-placed-kind=shelf]{width:92px;height:60px}}
+
+/* Grow the room so its care controls align with the bottom of the item rail. */
+@media(min-width:600px){
+ .profile-overlay .pip-studio-form .pip-home-editor{align-items:stretch}
+ .profile-overlay .pip-studio-form .pip-home-editor{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+ .profile-overlay .pip-studio{display:flex;flex-direction:column;min-height:0}
+ .profile-overlay .pip-studio>[data-profile-preview]{display:flex;flex:1;min-height:240px}
+ .profile-overlay .pip-studio-form .pip-home-large.identity-card{flex:1;height:auto;min-height:240px}
+}
+@media(min-width:701px) and (max-height:700px){.profile-overlay .pip-studio>[data-profile-preview],.profile-overlay .pip-studio-form .pip-home-large.identity-card{min-height:190px}}
+.profile-form .pip-placed-item[data-placed-kind=curtains]{left:18.6%;top:30%;width:30.4%;height:36.1%;z-index:2;filter:none}
+.profile-form .pip-placed-item[data-placed-kind=curtains] .pip-room-piece svg{width:100%;height:100%;transform:none}
+@media(max-width:599px){
+ .profile-overlay .pip-studio-form .pip-home-large.identity-card{height:180px}
+ .profile-overlay .pip-home-editor{gap:10px}
+ .profile-overlay .pip-editor-rail{gap:10px}
+ .profile-overlay .pip-studio-form[data-panel=pip] .profile-symbols[data-profile-panel]{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .profile-overlay .pip-card-dropdown summary{font-size:11px;padding:6px;min-height:62px}
+ .profile-overlay .pip-dropdown-value{gap:4px;font-size:12px}
+ .profile-overlay .pip-dropdown-value .companion-sprite{width:26px;height:26px}
+ .profile-overlay .pip-shelf-scroll{max-height:96px}
+ .profile-overlay .profile-colours .profile-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.pip-trash{position:absolute;left:92%;top:65%;transform:translate(-50%,-50%);z-index:4;display:grid;place-items:center;width:48px;height:60px;padding:0;border:0;background:transparent;box-shadow:none;color:#c7d8cf}
+.pip-trash svg{width:48px;height:60px;overflow:visible}.pip-trash::before{display:none}
+.pip-trash:focus-visible{outline:2px solid #d3e9b5;outline-offset:2px;border-radius:8px}
+.pip-trash-lid{transform-box:fill-box;transform-origin:90% 75%;transition:transform .18s ease}
+.pip-room-dragging .pip-trash-lid{transform:translateY(-2px) rotate(32deg)}
+.pip-trash.is-drop-target{filter:drop-shadow(0 0 5px #d4e9bb);background:#cee3c31c;border-radius:8px}
+.pip-drag-preview{position:fixed;z-index:200;pointer-events:none;opacity:.97;margin:0;transition:none;filter:drop-shadow(0 8px 5px #071a2460)}
+.pip-drag-preview svg{width:100%;height:100%}.pip-drag-preview[data-placed-kind=rug] svg{transform:none;aspect-ratio:auto}
+.pip-item-dragging{opacity:.22!important}.pip-room-piece{user-select:none;-webkit-user-select:none}
+.quiet .pip-trash-lid{transition:none}
+@media(prefers-reduced-motion:reduce){.pip-trash-lid{transition:none}}
+
+/* Help stays concise; Canadian currency credits are legible without crowding the example. */
+.hint>strong,.message-hint>strong{display:block;margin-bottom:6px}
+.money-source{margin:10px 0 0;font-size:.78rem;line-height:1.4;color:var(--muted)}
+.money-source a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.canadian-coin-scene>strong{display:block;font-size:1.15rem}
+.canadian-coin-scene figure{margin:14px 0 18px;text-align:center}
+.canadian-coin-scene figure>svg{display:block;width:100%;max-width:620px;height:auto;margin:auto}
+.canadian-coin-scene figcaption{font-size:.85rem;line-height:1.5;color:var(--muted)}
+.canadian-coin-scene .game-next{margin-top:12px}
+
+
+/* Match module headings, bodies and controls to their neighbouring cards. */
+.path-unit.card{grid-row:span 3;align-items:start;padding:16px 18px;gap:12px}
+.module-card-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:10px;width:100%}
+.path-unit .module-meta{min-height:0;width:auto;display:flex;justify-content:flex-end}
+.path-unit .module-meta .pill{padding:5px 9px;font-size:.66rem;line-height:1.3;white-space:nowrap}
+.path-unit h3{font-size:1rem;line-height:1.4;padding-top:1px}
+.path-unit .module-controls{align-self:end;width:100%}
+.path-unit .module-controls .module-unlock{margin:0;padding-top:10px}
+.path-unit .module-body .food-review-label{font-size:.72rem;line-height:1.5;color:var(--muted)}
+.path-unit .module-controls .btn{display:inline-flex;align-items:center;gap:8px}
+
+/* The install action belongs with the app identity, outside the learning cards. */
+.header-brand{grid-column:1;grid-row:1;display:flex;align-items:center;gap:12px;min-width:0}
+.header-brand .brand{flex:0 1 auto}
+.header-install{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex-shrink:0;min-width:44px;min-height:44px;padding:8px;border:1px solid #6ab8b37a;border-radius:10px;background:#102f3c80;color:#d1e7e6;font:inherit;font-size:14px;cursor:pointer}
+.header-install svg{width:20px;height:20px;flex-shrink:0}
+.header-install:hover{background:#34616d;border-color:#a8e8dd}
+.header-install:focus-visible{outline:3px solid var(--strong);outline-offset:3px}
+#main{padding-bottom:24px}
+
+/* The Rewards overview fits the scene; opened records keep their natural height. */
+.learning-hub{max-width:1120px;margin-inline:auto}
+.learning-hub .hub-header{margin-bottom:18px;gap:12px}
+.learning-hub .hub-header h1::after{margin-top:12px}
+.learning-hub .hub-section-head,.learning-hub .hub-rewards>h2{margin-bottom:10px}
+.learning-hub .hub-section-head h2,.learning-hub .hub-rewards>h2{font-size:1.25rem;margin-top:0}
+.learning-hub .wins-subjects{gap:8px}
+.learning-hub .wins-subject>summary{padding:10px 14px;min-height:46px;gap:10px}
+.learning-hub .wins-subject-name{font-size:1rem}
+.learning-hub .wins-subject-count{font-size:.72rem}
+.learning-hub .wins-subject-storage{font-size:.72rem;line-height:1.5;margin:10px 0 0}
+.learning-hub .hub-rewards{margin-top:20px}
+.learning-hub .reward-empty{grid-template-columns:64px minmax(0,1fr);padding:18px;gap:18px;align-items:center}
+.learning-hub .reward-illustration{width:64px;height:64px;border-radius:18px}
+.learning-hub .reward-illustration svg{width:36px;height:36px}
+.learning-hub .reward-intro h3{font-size:1.1rem;margin:0 0 6px}
+.learning-hub .reward-intro p{font-size:.82rem;line-height:1.5;margin:0 0 14px}
+.learning-hub .reward-intro .btn{font-size:.78rem;padding:10px 14px;min-height:44px}
+.starting-areas:has(li:nth-child(4):last-child){grid-template-columns:repeat(4,minmax(0,1fr))}
+
+@media(min-width:1000px){
+ .learning-hub:has(.hub-wins){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 24px;align-items:start}
+ .learning-hub .hub-header{grid-column:1/-1;margin-bottom:0}
+ .learning-hub:has(.hub-wins) .hub-rewards{margin-top:0}
+}
+@media(max-width:1240px){.header-install span{display:none}}
+@media(max-width:860px){.header-brand{grid-column:1/7;grid-row:1;gap:10px}}
+@media(max-width:600px){
+ .module-card-heading{gap:8px}
+ .path-unit.card{padding:16px}
+ .learning-hub .hub-header h1{font-size:1.75rem}
+ .learning-hub .hub-header .learning-hub-summary{padding:8px 10px}
+ .learning-hub .reward-empty{gap:12px;padding:16px}
+ .starting-areas:has(li:nth-child(4):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:420px){
+ .header-brand{gap:7px}.header-install{min-width:38px;padding:8px}
+ .learning-hub .wins-subject>summary{flex-wrap:wrap;gap:4px 8px}
+ .learning-hub .wins-subject-count{margin-left:auto}
+ .learning-hub .reward-empty{grid-template-columns:44px minmax(0,1fr)}
+ .learning-hub .reward-illustration{width:44px;height:44px;border-radius:14px}
+ .learning-hub .reward-illustration svg{width:28px;height:28px}
+}
+
+/* A tab owns its whole dialog surface, independent of the former two-column grid. */
+.profile-overlay .pip-studio-form>.profile-colours,.profile-overlay .pip-studio-form>.profile-reading{width:100%;align-self:stretch;max-width:none}
+dialog.profile-overlay:has(.profile-form[data-panel=colour]){width:min(760px,calc(100vw - 24px))}
+dialog.profile-overlay:has(.profile-form[data-panel=reading]){width:min(560px,calc(100vw - 24px))}
+.profile-overlay .profile-colours .profile-choice-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.profile-overlay .profile-colours .profile-choice{padding:10px 8px;gap:6px}
+.profile-overlay .profile-reading .toggle-row{padding:10px;min-height:44px}
+.profile-overlay .profile-reading .field{margin-top:12px}
+.profile-overlay .profile-reading .buttons{margin-top:12px}
+:root[data-accent=plum]{--world:#58334e;--strong:#eabadd;--page-glow:#98568442;--heading:#f2dfbf}
+:root[data-accent=copper]{--world:#60422e;--strong:#edc297;--page-glow:#a86b4242;--heading:#c9e8ee}
+:root[data-accent=olive]{--world:#444e2d;--strong:#d4dfa4;--page-glow:#77884942;--heading:#efcbdc}
+:root[data-accent=ice]{--world:#2e5364;--strong:#b9e8f2;--page-glow:#5792b342;--heading:#f0dac7}
+[data-profile-accent=plum]{--profile-shade:#58334e;--profile-colour:#eabadd}
+[data-profile-accent=copper]{--profile-shade:#60422e;--profile-colour:#edc297}
+[data-profile-accent=olive]{--profile-shade:#444e2d;--profile-colour:#d4dfa4}
+[data-profile-accent=ice]{--profile-shade:#2e5364;--profile-colour:#b9e8f2}
+.profile-choice[data-profile-accent=plum] .colour-dot{background:#cc9bbc}
+.profile-choice[data-profile-accent=copper] .colour-dot{background:#d79e6c}
+.profile-choice[data-profile-accent=olive] .colour-dot{background:#afb977}
+.profile-choice[data-profile-accent=ice] .colour-dot{background:#a7dce8}
+.identity-card:is([data-profile-accent=plum],[data-profile-accent=copper],[data-profile-accent=olive],[data-profile-accent=ice]){background:linear-gradient(130deg,var(--profile-shade),#20323d)}
+.lesson-sources{margin-top:24px;padding-top:14px;border-top:1px solid var(--line)}
+.lesson-sources .money-source{margin:0;font-size:.72rem}
+.lesson-sources .money-source a{padding:0;border:0;border-radius:0}
+.lesson-sources .lesson-resources{margin-bottom:12px}
+/* The counter holds actual Canadian teaching money, with tap and keyboard alternatives. */
+.game-cash .game-pieces{grid-template-columns:repeat(4,minmax(0,1fr));align-items:start;gap:12px}
+.game-cash .coin-piece{align-items:center;text-align:center;padding:10px 6px;min-height:126px;gap:6px;background:#193a4866;border:1px solid #6f919f;border-radius:14px;box-shadow:none;touch-action:none}
+.money-art{display:block;width:72px;height:72px;object-fit:contain;user-select:none;-webkit-user-drag:none}
+.money-art.money-coin{border-radius:50%}
+.money-art.money-note{width:130px;height:72px}
+.game-cash .coin-piece .money-art{max-width:100%;filter:drop-shadow(0 3px 2px #06192566)}
+.game-cash .coin-piece strong{font-size:.8rem;line-height:1.35}
+.game-cash .coin-piece small{font-size:.65rem;color:var(--muted)}
+.game-cash .game-coins{min-height:84px;align-items:center;gap:8px}
+.game-cash .game-coins>.counter-money{display:grid;place-items:center;border:0;padding:2px;border-radius:0}
+.game-cash .game-coins .money-art{width:62px;height:62px}
+.game-cash .game-coins .money-note{width:112px;height:62px}
+.game-cash .game-counter{min-height:156px}
+.move-ghost:has(.money-art){width:auto;height:auto;filter:drop-shadow(0 8px 5px #06192580)}
+.move-ghost .money-art{width:72px;height:72px}
+.move-ghost .money-note{width:130px;height:72px}
+@media(max-width:599px){.profile-overlay .profile-colours .profile-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.game-cash .game-pieces{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}

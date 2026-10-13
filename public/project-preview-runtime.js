@@ -1,0 +1,100 @@
+// Keeps names and item names suitable for a PG-16 learning space. Mirrors text_filter.py;
+// language.js applies the boundary to human-authored text and narration.
+const LEET={'0':'o','1':'i','3':'e','4':'a','5':'s','7':'t','@':'a','$':'s','!':'i','|':'i'};
+
+function textWords(text){
+  const folded=String(text).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[013457@$!|]/g,c=>LEET[c]);
+  return folded.match(/[a-z*]+/g)||[];
+}
+
+function candidates(tokens){
+  const found=tokens.map(t=>[t,true]);
+  for(const n of [2,3])for(let i=0;i+n<=tokens.length;i++)found.push([tokens.slice(i,i+n).join(''),false]);
+  let run=[];
+  for(const t of [...tokens,'']){if(t.length===1)run.push(t);else{if(run.length>=2)found.push([run.join(''),true]);run=[];}}
+  if(tokens.length>3)found.push([tokens.join(''),false]);
+  return found;
+}
+
+function createTextFilter(record){
+  const t=JSON.parse(atob(record.terms)),exact=new Set(t.exact),phrases=new Set(t.phrases),allow=new Set(t.allow);
+  const hit=(form,whole)=>{
+    if(allow.has(form))return false;
+    if(phrases.has(form)||t.contains.some(c=>form.includes(c)))return true;
+    return whole&&(exact.has(form)||t.prefix.some(p=>form.startsWith(p)));
+  };
+  return function acceptable(text){
+    if(typeof text!=='string')return true;
+    let stars=0;
+    for(const [value,whole] of candidates(textWords(text))){
+      for(const form of new Set([value,value.replace(/(.)\1+/g,'$1'),value.replace(/(.)\1{2,}/g,'$1$1')])){
+        if(!form.includes('*')){if(hit(form,whole))return false;continue;}
+        // A star may hide one letter; limited so long text stays quick.
+        const parts=form.split('*');
+        if(!whole||parts.length>3||form.length>12||stars>=10)continue;
+        stars++;
+        const letters='abcdefghijklmnopqrstuvwxyz';
+        for(const a of letters){
+          if(parts.length===2){if(hit(parts[0]+a+parts[1],true))return false;continue;}
+          for(const b of letters)if(hit(parts[0]+a+parts[1]+b+parts[2],true))return false;
+        }
+      }
+    }
+    return true;
+  };
+}
+
+const projectLanguageFilter=createTextFilter({
+ "version": 2,
+ "note": "Encoded list for the name and item filter. View or change it with tools/text_filter_terms.py.",
+ "terms": "eyJleGFjdCI6WyJhcGVzaGl0IiwiYXJzZWhvbGUiLCJhcnNlaG9sZXMiLCJhc3Nob2xlIiwiYXNzaG9sZXMiLCJhc3N3aXBlIiwiYmF0c2hpdCIsImJlYW5lciIsImJlYW5lcnMiLCJiZXN0aWFsaXR5IiwiYmlhdGNoIiwiYmlvdGNoIiwiYml0Y2giLCJiaXRjaGVzIiwiYml0Y2hpbmciLCJiaXRjaHkiLCJibG93am9iIiwiYmxvd2pvYnMiLCJidWtrYWtlIiwiYnVsbHNoaXQiLCJidXR0cGx1ZyIsImJ1dHRwbHVncyIsImNoaW5rIiwiY2hpbmtzIiwiY29jayIsImNvY2tzIiwiY29ja3N1Y2tlciIsImNvY2tzdWNrZXJzIiwiY29ja3N1Y2tpbmciLCJjb29uIiwiY29vbnMiLCJjcmVhbXBpZSIsImN1bXNob3QiLCJjdW1zaG90cyIsImN1bnQiLCJjdW50cyIsImRhZ28iLCJkYWdvcyIsImRhcmtpZSIsImRhcmtpZXMiLCJkZWVwdGhyb2F0IiwiZGljayIsImRpY2toZWFkIiwiZGlja2hlYWRzIiwiZGlja3MiLCJkaWxkbyIsImRpbGRvcyIsImRpbGYiLCJkaXBzaGl0IiwiZGlwc2hpdHMiLCJkeWtlIiwiZHlrZXMiLCJmYWciLCJmYWdnb3QiLCJmYWdnb3RzIiwiZmFncyIsImZhcCIsImZhcHBpbmciLCJmY2siLCJmY2tpbmciLCJmY2tuIiwiZmNrcyIsImZvb3Rqb2IiLCJmdWNrIiwiZnVja2VkIiwiZnVja2VyIiwiZnVja2VycyIsImZ1Y2tmYWNlIiwiZnVja2hlYWQiLCJmdWNraGVhZHMiLCJmdWNraW4iLCJmdWNraW5nIiwiZnVja29mZiIsImZ1Y2tzIiwiZnVja3UiLCJmdWNrdXAiLCJmdWNrdXBzIiwiZnVja3dpdCIsImZ1Y2t5b3UiLCJmdWsiLCJmdWtlZCIsImZ1a2VyIiwiZnVraW5nIiwiZnVrcyIsImZ1cSIsImZ2Y2siLCJnYW5nYmFuZyIsImdhbmdiYW5ncyIsImdpbGYiLCJnb2xsaXdvZyIsImdvb2siLCJnb29rcyIsImhhbGZicmVlZCIsImhhbmRqb2IiLCJoYW5kam9icyIsImhhbmd5b3Vyc2VsZiIsImhlaWxoaXRsZXIiLCJoZW50YWkiLCJoaXRsZXIiLCJob3JzZXNoaXQiLCJoeW1pZSIsImluY2VzdCIsImluanVuIiwiaW5qdW5zIiwiamFja29mZiIsImphcCIsImphcHMiLCJqZXJrb2ZmIiwiamlnYWJvbyIsImppenoiLCJqaXp6ZWQiLCJqdW5nbGVidW5ueSIsImtpa2UiLCJraWtlcyIsImtpbGx1cnNlbGYiLCJraWxseW9zZWxmIiwia2lsbHlvdXJzZWxmIiwia2trIiwia3lzIiwibGVzYm8iLCJsZXNib3MiLCJtaWxmIiwibW9mdWNrYSIsIm1vbGVzdCIsIm1vbGVzdGVkIiwibW9sZXN0ZXIiLCJtb2xlc3RlcnMiLCJtb2xlc3RpbmciLCJtb2xlc3RzIiwibW9sb3RvdiIsIm1vbG90b3ZzIiwibW9uZ29sb2lkIiwibW9uZ29sb2lkcyIsIm1vdGhlcmZ1Y2tlciIsIm1vdGhlcmZ1Y2tlcnMiLCJtb3RoZXJmdWNraW5nIiwibmF6aSIsIm5hemlzIiwibmVja3lvdXJzZWxmIiwibmVjcm9waGlsaWEiLCJuZW9uYXppIiwibmVvbmF6aXMiLCJuaWJiYSIsIm5pZ2dhIiwibmlnZ2FzIiwibmlnZ2F6IiwibmlnZ2VyIiwibmlnZ2VycyIsIm5pZ2d1aCIsIm5pZ2xldCIsIm5pZ2xldHMiLCJuaXFxYSIsIm5pcXFlciIsIm9ubHlmYW5zIiwib3JnYXNtIiwib3JnYXNtcyIsIm9yZ2llcyIsIm9yZ3kiLCJwYWVkbyIsInBhZWRvcGhpbGUiLCJwYWVkb3BoaWxlcyIsInBhZWRvcyIsInBha2kiLCJwYWtpcyIsInBlZG8iLCJwZWRvcGhpbGUiLCJwZWRvcGhpbGVzIiwicGVkb3BoaWxpYSIsInBlZG9zIiwicGh1Y2siLCJwaHVja2luZyIsInBodWsiLCJwaXBlYm9tYiIsInBpcGVib21icyIsInBvbGFjayIsInBvbGFja3MiLCJwb29mdGVyIiwicG9yY2htb25rZXkiLCJwb3JuIiwicG9ybmh1YiIsInBvcm5vIiwicG9ybm9zIiwicG9ybnMiLCJwdXNzaWVzIiwicHVzc3kiLCJyYWdoZWFkIiwicmFnaGVhZHMiLCJyYXBlIiwicmFwZWQiLCJyYXBlcyIsInJhcGluZyIsInJhcGlzdCIsInJhcGlzdHMiLCJyZWRza2luIiwicmVkc2tpbnMiLCJyZXRhcmQiLCJyZXRhcmRlZCIsInJldGFyZHMiLCJyaW1qb2IiLCJyaW1qb2JzIiwic2FuZG5pZ2dlciIsInNoZW1hbGUiLCJzaGVtYWxlcyIsInNoaXQiLCJzaGl0YmFnIiwic2hpdGZhY2UiLCJzaGl0ZmFjZWQiLCJzaGl0aGVhZCIsInNoaXRoZWFkcyIsInNoaXRob2xlIiwic2hpdGhvbGVzIiwic2hpdHMiLCJzaGl0c2hvdyIsInNoaXR0ZXIiLCJzaGl0dHkiLCJzaWVnaGFpbCIsInNpZWdoZWlsIiwic2thbmsiLCJza2Fua3MiLCJza2Fua3kiLCJzbHV0Iiwic2x1dHMiLCJzbHV0dHkiLCJzcGF6Iiwic3BhenoiLCJzcXVhdyIsInRhcmQiLCJ0YXJkcyIsInRob3QiLCJ0aG90cyIsInRpdGZ1Y2siLCJ0aXRqb2IiLCJ0aXR0aWVzIiwidG93ZWxoZWFkIiwidG93ZWxoZWFkcyIsInRyYW5uaWVzIiwidHJhbm55IiwidHdhdCIsInR3YXRzIiwid2FuayIsIndhbmtlciIsIndhbmtlcnMiLCJ3YW5raW5nIiwid2Fua3MiLCJ3ZXRiYWNrIiwid2V0YmFja3MiLCJ3aGl0ZXBvd2VyIiwid2hpdGVwcmlkZSIsIndob3JlIiwid2hvcmVob3VzZSIsIndob3JlcyIsIndvcCIsIndvcHMiLCJ4aGFtc3RlciIsInh2aWRlb3MiLCJ6aXBwZXJoZWFkIiwiem9vcGhpbGUiLCJ6b29waGlsaWEiXSwicGhyYXNlcyI6WyJibG93am9iIiwiYnV0dHBsdWciLCJjdW1zaG90IiwiZGVlcHRocm9hdCIsImVhdGFkaWNrIiwiZWF0bXlkaWNrIiwiZ2FuZ2JhbmciLCJnYXN0aGVqZXdzIiwiaGFuZGpvYiIsImhhbmd5b3Vyc2VsZiIsImhlaWxoaXRsZXIiLCJqYWNrb2ZmIiwiamVya29mZiIsImp1bmdsZWJ1bm55Iiwia2lsbGFsbGpld3MiLCJraWxsdXJzZWxmIiwia2lsbHlvc2VsZiIsImtpbGx5b3Vyc2VsZiIsIm5lY2t5b3Vyc2VsZiIsInBpcGVib21iIiwicGlwZWJvbWJzIiwicG9yY2htb25rZXkiLCJyaW1qb2IiLCJzYW5kbmlnZ2VyIiwic2llZ2hhaWwiLCJzaWVnaGVpbCIsInNsaXR5b3Vyd3Jpc3RzIiwic29ub2ZhYml0Y2giXSwicHJlZml4IjpbImJpdGNoIiwiYmxvd2pvYiIsImNvY2tzdWNrIiwiY3VudCIsImRpbGRvIiwiZmFnZyIsImZ1Y2siLCJtb3RoZXJmdWNrIiwibmlnZ2EiLCJuaWdnZXIiLCJwYWVkb3BoaWwiLCJwZWRvcGhpbCIsInBvcm4iLCJzbHV0Iiwid2hvcmUiXSwiY29udGFpbnMiOlsiY29ja3N1Y2siLCJmYWdnb3QiLCJmdWNrIiwibW90aGVyZnVjayIsIm5pZ2dhIiwibmlnZ2VyIl0sImFsbG93IjpbIm5pZ2dhcmQiLCJuaWdnYXJkbGluZXNzIiwibmlnZ2FyZGx5IiwibmlnZ2FyZHMiLCJzbmlnZ2VyIiwic25pZ2dlcmVkIiwic25pZ2dlcmVyIiwic25pZ2dlcmluZyIsInNuaWdnZXJzIl19"
+}
+);
+// Shared with the exported app. It contains no network, AI or payment calls.
+// Stepstone preview and export flows embed the filter, so the copy remains self-contained.
+function projectRules(allowed=()=>true){
+ const kinds=['checklist','inventory','planner','savings'];
+ const number=(kind,raw)=>{if(kind==='checklist')return 0;raw=String(raw).trim();if(kind==='savings'){if(!/^\d{1,6}(\.\d{1,2})?$/.test(raw))throw Error('Use dollars and up to two cents digits, such as 2.50.');const [a,b='']=raw.split('.'),n=Number(a)*100+Number(b.padEnd(2,'0'));if(n<1||n>100000000)throw Error('Use a positive amount up to 1000000.00.');return n;}if(!/^\d{1,4}$/.test(raw))throw Error('Use a whole number, such as 3.');const n=Number(raw),lo=kind==='inventory'?0:1,hi=kind==='inventory'?9999:1440;if(n<lo||n>hi)throw Error(`Use a value from ${lo} to ${hi}.`);return n;};
+ const add=(d,label,raw)=>{if(typeof label!=='string'||label.trim().length<1||label.trim().length>80)throw Error('Write an item name from 1 to 80 characters.');if(!allowed(label))throw Error('Use different words for this item. Names and items in Stepstone need to suit everyone.');if(d.items.length>=d.limit)throw Error('Your list is full. Remove an item or increase the limit.');const value=number(d.kind,raw);d.items.push({id:Math.max(0,...d.items.map(i=>i.id))+1,label:label.trim(),value,done:false});};
+ const money=n=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(n/100);
+ const total=d=>{const n=d.items.reduce((s,i)=>s+i.value,0);return d.kind==='savings'?`${money(n)} saved · ${money(Math.max(0,d.goal-n))} to your goal`:d.kind==='planner'?`${n} minutes planned`:d.kind==='inventory'?`${n} items in stock`:`${d.items.filter(i=>i.done).length} of ${d.items.length} done`;};
+ const validate=b=>{if(!b||b.format!=='stepstone-project'||b.version!==1)throw Error('Choose a Stepstone project backup, version 1.');const d=b.data;if(!d||!kinds.includes(d.kind)||!Number.isInteger(d.limit)||d.limit<1||d.limit>30||!Number.isInteger(d.goal)||d.goal<1||d.goal>100000000)throw Error('Check the app type, limit and goal.');for(const [k,lo,hi] of [['title',3,60],['purpose',8,500],['label',2,32]])if(typeof d[k]!=='string'||d[k].trim().length<lo||d[k].trim().length>hi)throw Error('Check the project '+k+'.');if(!Array.isArray(d.behaviours)||d.behaviours.length!==3||d.behaviours.some(s=>typeof s!=='string'||s.trim().length<3||s.trim().length>180))throw Error('This plan needs three behaviours.');if(![d.title,d.purpose,d.label,...d.behaviours].every(s=>allowed(s)))throw Error('Use different words in your app plan. Names and items in Stepstone need to suit everyone.');if(!Array.isArray(d.items)||d.items.length>d.limit)throw Error('This backup has too many items.');const seen=new Set();const items=d.items.map(i=>{if(!i||!Number.isInteger(i.id)||i.id<1||i.id>100000000||seen.has(i.id)||typeof i.done!=='boolean'||typeof i.label!=='string'||!i.label.trim()||i.label.trim().length>80||!Number.isInteger(i.value)||i.value<0||i.value>100000000)throw Error('An item in the backup is invalid.');if(!allowed(i.label))throw Error('Use different words for this item. Names and items in Stepstone need to suit everyone.');seen.add(i.id);if(d.kind==='checklist'&&i.value!==0||d.kind==='inventory'&&i.value>9999||d.kind==='planner'&&(i.value<1||i.value>1440)||d.kind==='savings'&&i.value<1)throw Error('A saved amount is outside this app’s range.');return {id:i.id,label:i.label.trim(),value:i.value,done:i.done};});return {version:1,kind:d.kind,title:d.title.trim(),purpose:d.purpose.trim(),label:d.label.trim(),limit:d.limit,goal:d.goal,accent:['teal','violet','amber'].includes(d.accent)?d.accent:'teal',behaviours:d.behaviours.map(s=>s.trim()),items};};
+ return {add,number,money,total,validate};
+}
+
+function standalone(rulesFactory){
+ const rules=rulesFactory(),initial=JSON.parse(document.querySelector('#app-data').textContent),key=initial.key;
+ let data=rules.validate(initial.backup),history=[];const preview=initial.preview===true;
+ const $=s=>document.querySelector(s),notice=$('#notice');
+ try{const saved=preview?null:localStorage.getItem(key);if(saved)data=rules.validate(JSON.parse(saved));}catch{notice.textContent='Browser saving is unavailable or its saved copy was invalid. Use a backup to keep changes.';}
+ if(preview){notice.textContent='Practice copy: changes stay inside this preview. Download your saved app using the controls outside it.';$('#backup').hidden=true;}
+ const backup=()=>({format:'stepstone-project',version:1,data});
+ function download(name,content,type){const url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);}
+ function show(message=''){
+  $('#title').textContent=data.title;document.title=data.title;$('#purpose').textContent=data.purpose;$('#item-label').textContent=data.label;$('#summary').textContent=rules.total(data);$('#value-wrap').hidden=data.kind==='checklist';$('#value-label').textContent={inventory:'Quantity (whole number)',planner:'Minutes (whole number)',savings:'Amount in Canadian dollars'}[data.kind]||'';$('#items').replaceChildren();
+  for(const item of data.items){const li=document.createElement('li'),label=document.createElement('label'),check=document.createElement('input'),span=document.createElement('span'),remove=document.createElement('button');check.type='checkbox';check.checked=item.done;span.textContent=item.label+(data.kind==='checklist'?'':` · ${data.kind==='savings'?rules.money(item.value):item.value+(data.kind==='planner'?' min':'')}`);label.append(check,span);remove.textContent='Remove';remove.setAttribute('aria-label','Remove '+item.label);check.addEventListener('change',()=>change(()=>item.done=check.checked,'Item updated.'));remove.addEventListener('click',()=>change(()=>data.items=data.items.filter(i=>i.id!==item.id),'Removed. Undo brings it back.'));li.append(label,remove);$('#items').append(li);}
+  if(!data.items.length){const p=document.createElement('p');p.textContent='Your list is empty. Add one useful item.';$('#items').append(p);}$('#undo').disabled=!history.length;document.body.dataset.accent=data.accent;if(message)notice.textContent=message;
+ }
+ function change(fn,message){const before=JSON.stringify(data);try{fn();history.push(before);history=history.slice(-5);persist(message);}catch(e){data=JSON.parse(before);notice.textContent=e.message;}}
+ function persist(message){if(preview){show(message.replace('and saved in this browser','in this practice copy'));return;}try{localStorage.setItem(key,JSON.stringify(backup()));}catch{message+=' Browser saving is unavailable. Download a backup before closing.';}show(message);}
+ $('#entry').addEventListener('submit',e=>{e.preventDefault();const before=data.items.length;change(()=>rules.add(data,$('#name').value,$('#value').value),'Added and saved in this browser.');if(data.items.length>before){$('#entry').reset();$('#name').focus();}});
+ $('#undo').addEventListener('click',()=>{if(history.length){data=JSON.parse(history.pop());persist('Previous change restored.');}});
+ $('#backup').addEventListener('click',()=>download('my-project-backup.json',JSON.stringify(backup(),null,2),'application/json'));
+ $('#restore').addEventListener('click',()=>{try{const proposed=rules.validate(JSON.parse($('#backup-text').value));change(()=>data=proposed,'Backup restored. Check the title, items and total. Undo keeps your earlier copy.');}catch(e){notice.textContent=e instanceof SyntaxError?'That is not a readable project backup. Choose the .json backup file, or paste its full contents. Your saved app is unchanged.':'Backup not restored: '+e.message;}});
+ $('#file').addEventListener('change',async()=>{const file=$('#file').files[0];if(!file)return;if(file.size>100000){notice.textContent='Use a project backup smaller than 100 KB.';return;}$('#backup-text').value=await file.text();notice.textContent='Backup loaded. Choose Restore this backup to replace the current copy.';});
+ show();
+}
+
+function projectBackup(data){const {history,tests,review,explanation,accessNote,backupNote,...clean}=data;return {format:'stepstone-project',version:1,data:clean};}
+function projectDocument(data,key='stepstone-app-'+crypto.randomUUID(),preview=false){
+ const json=JSON.stringify({key,preview,backup:projectBackup(data)}).replace(/</g,'\\u003c');
+ return `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My useful app</title><style>
+ *{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:#132a32;color:#dfefef;font:19px/1.6 system-ui,sans-serif;padding:clamp(12px,4vw,32px);--accent:#93e8d7}body[data-accent=violet]{--accent:#c7b7ff}body[data-accent=amber]{--accent:#f6cd8e}main{max-width:750px;margin:auto}h1{line-height:1.2;color:var(--accent);overflow-wrap:anywhere}button,input,textarea{font:inherit}button,input,textarea,details{border:1px solid #7fa8ad;border-radius:12px;padding:12px;background:#203e48;color:inherit;max-width:100%}button{cursor:pointer}button:disabled{opacity:.5}button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}label{display:grid;gap:8px;margin:12px 0}input,textarea{width:100%}form{padding:16px;border:1px solid #577880;border-radius:18px}ul{list-style:none;padding:0}li{display:flex;gap:12px;align-items:center;justify-content:space-between;border-bottom:1px solid #577880;padding:8px 0}li label{display:flex;align-items:center;overflow-wrap:anywhere}li input{width:24px;height:24px;flex-shrink:0}li button{flex-shrink:0}#summary{color:var(--accent);font-weight:bold}#notice{min-height:3em}summary{cursor:pointer}details{margin-top:20px}textarea{min-height:140px}small{display:block;color:#b3c9cf}.buttons{display:flex;flex-wrap:wrap;gap:10px}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}</style>
+ <main><p>MY USEFUL APP</p><h1 id="title"></h1><p id="purpose"></p><p id="summary" aria-live="polite"></p><form id="entry"><label><span id="item-label">Item</span><input id="name" maxlength="80" autocomplete="off"></label><label id="value-wrap"><span id="value-label">Value</span><input id="value" inputmode="decimal" maxlength="12" autocomplete="off"></label><button type="submit">Add item</button></form><p id="notice" role="status"></p><ul id="items"></ul><div class="buttons"><button id="undo">Undo last change</button><button id="backup">Download data backup</button></div><details><summary>Restore a backup</summary><p>This replaces this app's current items. Undo can bring back the previous copy.</p><label>Choose backup file<input type="file" id="file" accept=".json,application/json"></label><label>Or paste backup text<textarea id="backup-text"></textarea></label><button id="restore">Restore this backup</button></details><details><summary>Keep this app and its data</summary><p>Keep your app HTML file and a separate data backup. Browser storage may be cleared.</p></details></main><script type="application/json" id="app-data">${json}<\/script><script>(${standalone.toString()})(${projectRules.toString()});<\/script></html>`;
+}
+
+// A sandboxed preview has an opaque origin, so it cannot load a script from this app. The page passes
+// in this build's preview runtime text; the server allows exactly that inline script by its hash.
+function projectPreviewDocument(data,runtime,preview=true){const doc=projectDocument(data,undefined,preview);return doc.slice(0,doc.lastIndexOf("<script>"))+"<script>"+runtime+"<\/script></html>";}
+
+standalone(()=>projectRules(projectLanguageFilter));

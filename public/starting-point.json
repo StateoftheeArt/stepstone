@@ -1,0 +1,4723 @@
+{
+  "version": 2,
+  "subjects": [
+    "math",
+    "reading",
+    "writing",
+    "science",
+    "social",
+    "digital"
+  ],
+  "questions": [
+    {
+      "kind": "number",
+      "prompt": "How many drinks are there in all?",
+      "answer": 7,
+      "scene": "You have 4 drinks. You add 3 more.",
+      "answerLabel": "Your answer",
+      "visual": {
+        "groups": [
+          4,
+          3
+        ],
+        "label": "4 drinks, then 3 more"
+      },
+      "id": "s2-math-0-0",
+      "subject": "math",
+      "band": 0
+    },
+    {
+      "kind": "number",
+      "prompt": "How many more do you need?",
+      "answer": 4,
+      "scene": "The order needs 9 items. You have packed 5.",
+      "answerLabel": "Your answer",
+      "id": "s2-math-0-1",
+      "subject": "math",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which calculation counts all the items?",
+      "options": [
+        "$3\\times4=12$",
+        "$3+4=7$",
+        "$4-3=1$"
+      ],
+      "answer": 0,
+      "scene": "There are 3 bags. Each bag holds 4 items.",
+      "id": "s2-math-0-2",
+      "subject": "math",
+      "band": 0
+    },
+    {
+      "kind": "number",
+      "prompt": "What change should you get?",
+      "answer": 3.75,
+      "scene": "You pay 10 dollars for an item costing 6.25 dollars.",
+      "answerLabel": "Change, in dollars",
+      "id": "s2-math-1-0",
+      "subject": "math",
+      "band": 1
+    },
+    {
+      "kind": "number",
+      "prompt": "What is half of 18?",
+      "answer": 9,
+      "scene": "",
+      "answerLabel": "Your answer",
+      "id": "s2-math-1-1",
+      "subject": "math",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which amount is the same as $\\frac{3}{4}$?",
+      "options": [
+        "$0.34$",
+        "$0.75$",
+        "$3.4$"
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-math-1-2",
+      "subject": "math",
+      "band": 1
+    },
+    {
+      "kind": "number",
+      "prompt": "What is $25\\%$ of 40?",
+      "answer": 10,
+      "scene": "",
+      "answerLabel": "Your answer",
+      "id": "s2-math-2-0",
+      "subject": "math",
+      "band": 2
+    },
+    {
+      "kind": "number",
+      "prompt": "Find $x$: $2x+3=11$.",
+      "answer": 4,
+      "scene": "",
+      "answerLabel": "Your answer",
+      "id": "s2-math-2-1",
+      "subject": "math",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which expression gives the total cost?",
+      "options": [
+        "$3+2x$",
+        "$3x+2$",
+        "$5x$"
+      ],
+      "answer": 0,
+      "scene": "A service costs 3 dollars to start, then 2 dollars per hour. You use it for $x$ hours.",
+      "id": "s2-math-2-2",
+      "subject": "math",
+      "band": 2
+    },
+    {
+      "kind": "number",
+      "prompt": "If $y=x^2$, what is $y$ when $x=3$?",
+      "answer": 9,
+      "scene": "",
+      "answerLabel": "Your answer",
+      "id": "s2-math-3-0",
+      "subject": "math",
+      "band": 3
+    },
+    {
+      "kind": "number",
+      "prompt": "How long is the longest side?",
+      "answer": 5,
+      "scene": "A right triangle has shorter sides of 3 cm and 4 cm.",
+      "answerLabel": "Length, in centimetres",
+      "id": "s2-math-3-1",
+      "subject": "math",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "For $y=x^2$, which calculation gives the slope at $x=2$?",
+      "options": [
+        "$2x=4$",
+        "$x^2=4$",
+        "$x+2=4$"
+      ],
+      "answer": 0,
+      "scene": "Different methods can give the same number. Choose the method that finds the slope.",
+      "id": "s2-math-3-2",
+      "subject": "math",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Where should you go?",
+      "options": [
+        "The main door",
+        "The side door",
+        "The back gate"
+      ],
+      "answer": 1,
+      "scene": "Please use the side door today.",
+      "id": "s2-reading-0-0",
+      "subject": "reading",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "What should you bring?",
+      "options": [
+        "A pen",
+        "A book",
+        "A bag"
+      ],
+      "answer": 0,
+      "scene": "Meet Lee at the library at 3 pm. Bring a pen.",
+      "id": "s2-reading-0-1",
+      "subject": "reading",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which detail is missing?",
+      "options": [
+        "The day",
+        "The place",
+        "The time"
+      ],
+      "answer": 2,
+      "scene": "Meet me at the park gate tomorrow.",
+      "id": "s2-reading-0-2",
+      "subject": "reading",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "What is the main point?",
+      "options": [
+        "Sam is getting ready for work.",
+        "Sam is buying new clothes.",
+        "Sam is changing jobs."
+      ],
+      "answer": 0,
+      "scene": "Sam checks the bus time, packs lunch, and puts their work shirt by the door.",
+      "id": "s2-reading-1-0",
+      "subject": "reading",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Why does Jo cover the bag?",
+      "options": [
+        "To keep the rain out",
+        "To make it lighter",
+        "To show what is inside"
+      ],
+      "answer": 0,
+      "scene": "Rain is forecast, so Jo covers the bag before going outside.",
+      "id": "s2-reading-1-1",
+      "subject": "reading",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "What does “charge” mean here?",
+      "options": [
+        "Fill a battery",
+        "A fee",
+        "Run forward"
+      ],
+      "answer": 1,
+      "scene": "The receipt lists a delivery charge of five dollars.",
+      "id": "s2-reading-1-2",
+      "subject": "reading",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which detail supports the idea that Ari is planning ahead?",
+      "options": [
+        "Ari has a blue coat.",
+        "Ari checks tomorrow’s route tonight.",
+        "Ari walks past a shop."
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-reading-2-0",
+      "subject": "reading",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "What can this message support?",
+      "options": [
+        "Every bus is always late.",
+        "This bus was late today.",
+        "The driver chose to be late."
+      ],
+      "answer": 1,
+      "scene": "My bus arrived ten minutes late this morning.",
+      "id": "s2-reading-2-1",
+      "subject": "reading",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which detail should you check before treating this as current news?",
+      "options": [
+        "The date of the event",
+        "The colour of the headline",
+        "The number of emojis"
+      ],
+      "answer": 0,
+      "scene": "A post shared today describes a road closure. The linked notice was written three years ago.",
+      "id": "s2-reading-2-2",
+      "subject": "reading",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which conclusion uses both pieces of evidence?",
+      "options": [
+        "Later hours have no cost.",
+        "Try later hours and compare use with staffing costs.",
+        "Visitor counts prove all residents want later hours."
+      ],
+      "answer": 1,
+      "scene": "A library trial found more evening visitors. Staffing the extra hours also cost more.",
+      "id": "s2-reading-3-0",
+      "subject": "reading",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which wording matches the evidence?",
+      "options": [
+        "Everyone benefits from the service.",
+        "People who replied reported benefits; others may differ.",
+        "Nobody outside the survey can benefit."
+      ],
+      "answer": 1,
+      "scene": "A voluntary survey of service users reports mostly positive experiences.",
+      "id": "s2-reading-3-1",
+      "subject": "reading",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "What extra information would help compare these reports?",
+      "options": [
+        "Whether both measured the same time and group",
+        "Which writer has the shorter name",
+        "Whether their headings use the same font"
+      ],
+      "answer": 0,
+      "scene": "One report says attendance rose. Another says it fell. They do not give their dates or who they counted.",
+      "id": "s2-reading-3-2",
+      "subject": "reading",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which message gives a clear action?",
+      "options": [
+        "My blue folder.",
+        "Please bring my blue folder.",
+        "Blue, please."
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-writing-0-0",
+      "subject": "writing",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which version is a complete sentence?",
+      "options": [
+        "At the bus stop.",
+        "The bus stops here.",
+        "Because the bus."
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-writing-0-1",
+      "subject": "writing",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which detail makes the message useful?",
+      "options": [
+        "Meet me sometime.",
+        "Meet me at the library at 4 pm.",
+        "Meet me, you know."
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-writing-0-2",
+      "subject": "writing",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which order makes the instructions easy to follow?",
+      "options": [
+        "Open the lid, put the items in, close the lid.",
+        "Close the lid, put the items in, open the lid.",
+        "Put the items in, close the lid, open the lid."
+      ],
+      "answer": 0,
+      "scene": "Explain how to pack an empty box with a closed lid.",
+      "id": "s2-writing-1-0",
+      "subject": "writing",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which sentence belongs in this paragraph?",
+      "options": [
+        "I water them when the soil is dry.",
+        "My bus has new seats.",
+        "My phone needs charging."
+      ],
+      "answer": 0,
+      "scene": "I grow herbs by the window. They need light and water.",
+      "id": "s2-writing-1-1",
+      "subject": "writing",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which question asks for the missing detail clearly?",
+      "options": [
+        "What?",
+        "Which shelf should I use for these boxes?",
+        "Why is everything confusing?"
+      ],
+      "answer": 1,
+      "scene": "Someone asks you to put boxes on a shelf but does not say which shelf.",
+      "id": "s2-writing-1-2",
+      "subject": "writing",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which revision gives the reader enough information?",
+      "options": [
+        "It happened there.",
+        "Water is leaking under the kitchen sink.",
+        "The thing is doing that again."
+      ],
+      "answer": 1,
+      "scene": "You are reporting a leak so someone can arrange a repair.",
+      "id": "s2-writing-2-0",
+      "subject": "writing",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which sentence supports the request with evidence?",
+      "options": [
+        "We need more chairs because I said so.",
+        "All meetings everywhere lack chairs.",
+        "At our last meeting, four people had no chair."
+      ],
+      "answer": 2,
+      "scene": "You want to explain why this meeting room needs more chairs.",
+      "id": "s2-writing-2-1",
+      "subject": "writing",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which subject line helps the reader find your message?",
+      "options": [
+        "Hi",
+        "Question about my Friday shift",
+        "IMPORTANT!!!"
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-writing-2-2",
+      "subject": "writing",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which revision avoids claiming more than the evidence shows?",
+      "options": [
+        "This trial suggests the new layout may help.",
+        "The layout will always work for everyone.",
+        "The trial proves nobody needs help."
+      ],
+      "answer": 0,
+      "scene": "In one short trial, people found items faster with a new layout.",
+      "id": "s2-writing-3-0",
+      "subject": "writing",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which sentence addresses a reasonable concern?",
+      "options": [
+        "There are no downsides.",
+        "A trial would let us measure the benefit before paying for a full change.",
+        "People who disagree do not count."
+      ],
+      "answer": 1,
+      "scene": "A proposal may save time, but the new equipment costs money.",
+      "id": "s2-writing-3-1",
+      "subject": "writing",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "What would make the proposal easier to judge?",
+      "options": [
+        "More impressive words",
+        "A clear goal, steps, costs and a way to check the result",
+        "Removing every source"
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-writing-3-2",
+      "subject": "writing",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which is something you can observe?",
+      "options": [
+        "The cup feels cold.",
+        "The cup is the best cup.",
+        "The cup wants more water."
+      ],
+      "answer": 0,
+      "scene": "",
+      "id": "s2-science-0-0",
+      "subject": "science",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which item soaks up a small spill?",
+      "options": [
+        "A metal spoon",
+        "A paper towel",
+        "A glass lid"
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-science-0-1",
+      "subject": "science",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which place helps an earthworm stay damp?",
+      "options": [
+        "Dry pavement in the sun",
+        "Moist soil under leaves",
+        "An empty glass shelf"
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-science-0-2",
+      "subject": "science",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "What should you keep the same?",
+      "options": [
+        "Plant type, water and soil",
+        "The amount of light only",
+        "Nothing else"
+      ],
+      "answer": 0,
+      "scene": "You want to test whether more light changes plant growth.",
+      "id": "s2-science-1-0",
+      "subject": "science",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "What happens to the total mass?",
+      "options": [
+        "It stays the same.",
+        "It disappears.",
+        "It doubles."
+      ],
+      "answer": 0,
+      "scene": "Ice melts in a closed jar. Nothing enters or leaves.",
+      "id": "s2-science-1-1",
+      "subject": "science",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which force pulls a dropped ball toward the ground?",
+      "options": [
+        "Gravity",
+        "Friction with a table",
+        "A push from the ceiling"
+      ],
+      "answer": 0,
+      "scene": "",
+      "id": "s2-science-1-2",
+      "subject": "science",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which result would best support the claim?",
+      "options": [
+        "Repeated trials show less cooling with the cover.",
+        "The covered cup looks nicer.",
+        "Someone likes the cover."
+      ],
+      "answer": 0,
+      "scene": "You are testing whether a cover slows a cup of water cooling.",
+      "id": "s2-science-2-0",
+      "subject": "science",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "Where does some of the electrical energy go?",
+      "options": [
+        "Into light and heat",
+        "It is all destroyed",
+        "It turns into extra mass in the wire"
+      ],
+      "answer": 0,
+      "scene": "A lamp lights up and gets warm.",
+      "id": "s2-science-2-1",
+      "subject": "science",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "What do cells use a membrane for?",
+      "options": [
+        "Controlling what enters and leaves",
+        "Making every cell the same shape",
+        "Stopping all movement forever"
+      ],
+      "answer": 0,
+      "scene": "",
+      "id": "s2-science-2-2",
+      "subject": "science",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "What should you conclude?",
+      "options": [
+        "The result suggests a link; other factors may matter.",
+        "The result proves one thing caused the other.",
+        "Every possible explanation is equally supported."
+      ],
+      "answer": 0,
+      "scene": "Two things increase together in a set of observations. No controlled test was done.",
+      "id": "s2-science-3-0",
+      "subject": "science",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which change raises a wave’s frequency?",
+      "options": [
+        "More cycles in the same time",
+        "A taller wave with the same timing",
+        "Moving the drawing upward"
+      ],
+      "answer": 0,
+      "scene": "",
+      "id": "s2-science-3-1",
+      "subject": "science",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "What should you do when a model misses some results?",
+      "options": [
+        "Check its assumptions and revise or limit it.",
+        "Hide the results it misses.",
+        "Assume the measurements must all be wrong."
+      ],
+      "answer": 0,
+      "scene": "",
+      "id": "s2-science-3-2",
+      "subject": "science",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which reply helps you start the right task?",
+      "options": [
+        "Which item do you mean, and where should it go?",
+        "I will guess.",
+        "I will move every item."
+      ],
+      "answer": 0,
+      "scene": "Someone says, “Put it over there.” You are not sure what they mean.",
+      "id": "s2-social-0-0",
+      "subject": "social",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "What could help you finish the task?",
+      "options": [
+        "Skip the missing step.",
+        "Ask them to repeat or write down step two.",
+        "Start a different task without saying."
+      ],
+      "answer": 1,
+      "scene": "You heard steps one and three, but missed step two.",
+      "id": "s2-social-0-1",
+      "subject": "social",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "What could you say?",
+      "options": [
+        "I need a hand with this box. Can someone help?",
+        "I must lift it without help.",
+        "I will leave it in the doorway."
+      ],
+      "answer": 0,
+      "scene": "A box is too heavy for you to lift comfortably.",
+      "id": "s2-social-0-2",
+      "subject": "social",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which request explains what would help?",
+      "options": [
+        "Could you write the steps so I can check them?",
+        "I will pretend I heard.",
+        "Nobody should speak again."
+      ],
+      "answer": 0,
+      "scene": "A noisy room makes spoken instructions hard to follow.",
+      "id": "s2-social-1-0",
+      "subject": "social",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which response gives you time to understand?",
+      "options": [
+        "I agree to everything.",
+        "Could you show one example, then let me try?",
+        "Please do every task for me."
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-social-1-1",
+      "subject": "social",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "What should the group agree first?",
+      "options": [
+        "Who will do each part and when to check in",
+        "That nobody can ask questions",
+        "That the fastest person makes every decision"
+      ],
+      "answer": 0,
+      "scene": "Three people are sharing a packing task.",
+      "id": "s2-social-1-2",
+      "subject": "social",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which message gives useful information?",
+      "options": [
+        "I will be there sometime.",
+        "The bus is late. I expect to arrive at 9:15, fifteen minutes late.",
+        "The bus is annoying."
+      ],
+      "answer": 1,
+      "scene": "Your shift starts at 9 am. Your bus is delayed.",
+      "id": "s2-social-2-0",
+      "subject": "social",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "What is a useful next step?",
+      "options": [
+        "Check which instruction applies before continuing.",
+        "Pick one and tell nobody.",
+        "Assume the other person is trying to cause trouble."
+      ],
+      "answer": 0,
+      "scene": "Two people give you different instructions for the same task.",
+      "id": "s2-social-2-1",
+      "subject": "social",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which reply sets a clear boundary?",
+      "options": [
+        "I can help until 4 pm, then I need to leave.",
+        "Fine, I will stay as long as anyone wants.",
+        "You always ask too much."
+      ],
+      "answer": 0,
+      "scene": "You can help with a task today, but you have another commitment at 4 pm.",
+      "id": "s2-social-2-2",
+      "subject": "social",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which feedback is specific enough to act on?",
+      "options": [
+        "Your report is bad.",
+        "The report is clear. Adding the delivery date would help us schedule it.",
+        "Be more professional somehow."
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-social-3-0",
+      "subject": "social",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which reply moves the disagreement toward a solution?",
+      "options": [
+        "Let’s compare the deadlines and decide which task comes first.",
+        "My idea must win.",
+        "We should never work together again."
+      ],
+      "answer": 0,
+      "scene": "You and a coworker disagree about which task is most urgent.",
+      "id": "s2-social-3-1",
+      "subject": "social",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which example gives useful evidence of a skill?",
+      "options": [
+        "I am perfect at organising.",
+        "I labelled our shared supplies so people could find them.",
+        "Only paid work counts as experience."
+      ],
+      "answer": 1,
+      "scene": "You are asked about being organised in a job conversation.",
+      "id": "s2-social-3-2",
+      "subject": "social",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which name makes the file easier to find?",
+      "options": [
+        "thing-final-new2",
+        "Friday-shift-notes",
+        "untitled"
+      ],
+      "answer": 1,
+      "scene": "You save notes about your Friday shift.",
+      "id": "s2-digital-0-0",
+      "subject": "digital",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "How can you include a saved file in an email?",
+      "options": [
+        "Use the attachment control and select the file.",
+        "Only type the file name in the message.",
+        "Rename the email app."
+      ],
+      "answer": 0,
+      "scene": "",
+      "id": "s2-digital-0-1",
+      "subject": "digital",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "Who should get your sign-in password?",
+      "options": [
+        "Anyone who says they need it",
+        "Nobody; use the service’s account-sharing or recovery tools",
+        "Everyone in a group chat"
+      ],
+      "answer": 1,
+      "scene": "",
+      "id": "s2-digital-0-2",
+      "subject": "digital",
+      "band": 0
+    },
+    {
+      "kind": "choice",
+      "prompt": "What should you check before sending?",
+      "options": [
+        "The recipient, message and attachment",
+        "Only the colour of the send button",
+        "Whether the message is very long"
+      ],
+      "answer": 0,
+      "scene": "You are emailing a completed application.",
+      "id": "s2-digital-1-0",
+      "subject": "digital",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Where should you start checking a service rule?",
+      "options": [
+        "The service’s official website",
+        "An unlabelled screenshot",
+        "The most confident comment"
+      ],
+      "answer": 0,
+      "scene": "",
+      "id": "s2-digital-1-1",
+      "subject": "digital",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which address is suitable for job applications?",
+      "options": [
+        "party-anytime@example.com",
+        "lee.morgan@example.com",
+        "password123@example.com"
+      ],
+      "answer": 1,
+      "scene": "These are made-up email addresses. Choose a clear, professional name.",
+      "id": "s2-digital-1-2",
+      "subject": "digital",
+      "band": 1
+    },
+    {
+      "kind": "choice",
+      "prompt": "What is the safest way to check the request?",
+      "options": [
+        "Use the organisation’s known website or contact details.",
+        "Tap the message link and pay quickly.",
+        "Send a photo of your ID in reply."
+      ],
+      "answer": 0,
+      "scene": "An unexpected text demands an urgent payment through a link.",
+      "id": "s2-digital-2-0",
+      "subject": "digital",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "How can you check whether the claim is reliable?",
+      "options": [
+        "Look for the original source and other independent evidence.",
+        "Trust it because the picture looks real.",
+        "Trust it if many people shared it."
+      ],
+      "answer": 0,
+      "scene": "A realistic image is being used to support a surprising claim.",
+      "id": "s2-digital-2-1",
+      "subject": "digital",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "What should you do with private information?",
+      "options": [
+        "Remove it before asking a public AI tool for help.",
+        "Paste all of it because AI always keeps secrets.",
+        "Post it publicly first."
+      ],
+      "answer": 0,
+      "scene": "You want help rewriting a message that contains personal account details.",
+      "id": "s2-digital-2-2",
+      "subject": "digital",
+      "band": 2
+    },
+    {
+      "kind": "choice",
+      "prompt": "What is a sound next step?",
+      "options": [
+        "Run a small test, inspect the result and check the explanation.",
+        "Submit it without opening it.",
+        "Assume a long answer must be correct."
+      ],
+      "answer": 0,
+      "scene": "An AI tool gives you a spreadsheet formula.",
+      "id": "s2-digital-3-0",
+      "subject": "digital",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "Which workflow keeps you in control?",
+      "options": [
+        "Keep the original, review the changes, then test them.",
+        "Delete the original before checking.",
+        "Accept every change at once."
+      ],
+      "answer": 0,
+      "scene": "An assistant offers to change several files in your project.",
+      "id": "s2-digital-3-1",
+      "subject": "digital",
+      "band": 3
+    },
+    {
+      "kind": "choice",
+      "prompt": "What would best show that you understand the result?",
+      "options": [
+        "Explain it and solve a changed example yourself.",
+        "Repeat the tool’s answer word for word.",
+        "Point to how quickly it answered."
+      ],
+      "answer": 0,
+      "scene": "",
+      "id": "s2-digital-3-2",
+      "subject": "digital",
+      "band": 3
+    }
+  ],
+  "starts": {
+    "math": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "reading": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "writing": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "science": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "social": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "digital": [
+      1,
+      3,
+      5,
+      7
+    ]
+  },
+  "writing": {
+    "prompt": "You will be late to meet Jo. You will arrive at 4:15 pm. Write Jo a short message.",
+    "review": [
+      "Does the message say the writer will be late?",
+      "Does it give the arrival time?",
+      "Could Jo understand the plan? Focus on meaning before spelling."
+    ]
+  },
+  "legacy": {
+    "version": 1,
+    "subjects": [
+      "math",
+      "reading",
+      "writing",
+      "science",
+      "social"
+    ],
+    "questions": [
+      {
+        "id": "math-3-a",
+        "subject": "math",
+        "grade": 3,
+        "prompt": "There are 4 bags with 3 apples in each bag. How many apples altogether?",
+        "options": [
+          "7",
+          "12",
+          "43",
+          "9"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "math-3-b",
+        "subject": "math",
+        "grade": 3,
+        "prompt": "There are 5 boxes with 2 pencils in each box. How many pencils altogether?",
+        "options": [
+          "7",
+          "3",
+          "10",
+          "52"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "math-6-a",
+        "subject": "math",
+        "grade": 6,
+        "prompt": "A drink needs 2 cups of juice for every 3 cups of water. With 6 cups of juice, how many cups of water keep the same taste?",
+        "options": [
+          "7",
+          "9",
+          "6",
+          "4"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "math-6-b",
+        "subject": "math",
+        "grade": 6,
+        "prompt": "A mix needs 3 cups of oats for every 2 cups of seeds. With 9 cups of oats, how many cups of seeds keep the same mix?",
+        "options": [
+          "8",
+          "11",
+          "3",
+          "6"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "math-9-a",
+        "subject": "math",
+        "grade": 9,
+        "prompt": "Bike hire costs C dollars for h hours, using $C=4+2h$. Which number is the extra cost for each additional hour?",
+        "options": [
+          "4",
+          "6",
+          "2",
+          "h"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "math-9-b",
+        "subject": "math",
+        "grade": 9,
+        "prompt": "A delivery costs C dollars for d kilometres, using $C=5+3d$. Which number is the extra cost for each additional kilometre?",
+        "options": [
+          "3",
+          "5",
+          "8",
+          "d"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "reading-3-a",
+        "subject": "reading",
+        "grade": 3,
+        "scene": "First wash the cup. Next dry it. Then put it on the shelf.",
+        "prompt": "What happens just before the cup goes on the shelf?",
+        "options": [
+          "Wash it",
+          "Dry it",
+          "Use it",
+          "Get a shelf"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "reading-3-b",
+        "subject": "reading",
+        "grade": 3,
+        "scene": "Before leaving, Sam packed lunch. Then Sam put on a coat and walked to the bus.",
+        "prompt": "What did Sam do immediately after packing lunch?",
+        "options": [
+          "Walked to the bus",
+          "Ate lunch",
+          "Put on a coat",
+          "Left the bus"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "reading-6-a",
+        "subject": "reading",
+        "grade": 6,
+        "scene": "The pool opens at 8 on weekdays and 10 on weekends. Its cafe opens at 9 every day.",
+        "prompt": "Which detail tells you when you can first swim on Saturday?",
+        "options": [
+          "The cafe opens at 9",
+          "The pool opens at 8 on weekdays",
+          "The pool opens at 10 on weekends",
+          "The cafe opens every day"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "reading-6-b",
+        "subject": "reading",
+        "grade": 6,
+        "scene": "The library lends books for three weeks. Games must be returned after one week. You can renew books once.",
+        "prompt": "Which detail supports returning a borrowed game in seven days?",
+        "options": [
+          "Books can be renewed",
+          "Games are lent for one week",
+          "Books are lent for three weeks",
+          "The library lends books"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "reading-9-a",
+        "subject": "reading",
+        "grade": 9,
+        "scene": "A shop says its new sign increased sales. Its evidence: sales rose the week the sign arrived. That week the shop also cut every price in half.",
+        "prompt": "What most weakens the claim about the sign?",
+        "options": [
+          "Sales did not change",
+          "The price cut could explain the increase",
+          "A sign can never affect sales",
+          "The evidence proves the sign worked"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "reading-9-b",
+        "subject": "reading",
+        "grade": 9,
+        "scene": "An advert says everyone loves a new game. It asked 12 people in the game's fan club; 11 said they loved it.",
+        "prompt": "Which conclusion is best supported?",
+        "options": [
+          "Everyone loves the game",
+          "Only one person dislikes the game",
+          "Most people everywhere love the game",
+          "Most of these fan-club members love it"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "writing-3-a",
+        "subject": "writing",
+        "grade": 3,
+        "prompt": "Which instruction gives a reader a clear action?",
+        "options": [
+          "The blue thing",
+          "Put the blue folder on the desk.",
+          "Over there, maybe",
+          "Folders and desks"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "writing-3-b",
+        "subject": "writing",
+        "grade": 3,
+        "prompt": "Which message clearly says when to meet?",
+        "options": [
+          "Meet when it is time.",
+          "Meet me at the park.",
+          "Meet me at 4 this afternoon.",
+          "We should meet."
+        ],
+        "answer": 2
+      },
+      {
+        "id": "writing-6-a",
+        "subject": "writing",
+        "grade": 6,
+        "prompt": "You need a schedule before planning a ride. Which request includes what you need and when?",
+        "options": [
+          "Why isn't this ready?",
+          "Can you send my Friday work hours by Thursday noon?",
+          "Send something soon.",
+          "I work on Fridays."
+        ],
+        "answer": 1
+      },
+      {
+        "id": "writing-6-b",
+        "subject": "writing",
+        "grade": 6,
+        "prompt": "You missed a lesson. Which message makes a specific request for catching up?",
+        "options": [
+          "Please send today's worksheet before tomorrow's class.",
+          "It happened again.",
+          "I wasn't there.",
+          "Send everything sometime."
+        ],
+        "answer": 0
+      },
+      {
+        "id": "writing-9-a",
+        "subject": "writing",
+        "grade": 9,
+        "scene": "Draft: The bus is always late. I timed five morning trips. Four arrived between 5 and 8 minutes late.",
+        "prompt": "Which revision makes the claim fit the evidence?",
+        "options": [
+          "The bus never arrives.",
+          "All buses are usually late.",
+          "Four of the five trips I timed were late.",
+          "The bus is always exactly 8 minutes late."
+        ],
+        "answer": 2
+      },
+      {
+        "id": "writing-9-b",
+        "subject": "writing",
+        "grade": 9,
+        "scene": "Draft: Nobody uses the park. I counted three visitors during a rainy hour on Tuesday.",
+        "prompt": "Which revision accurately reports the observation?",
+        "options": [
+          "The park is never used.",
+          "Only three people in town use parks.",
+          "Rain makes everyone stay home.",
+          "I counted three visitors during one rainy hour."
+        ],
+        "answer": 3
+      },
+      {
+        "id": "science-3-a",
+        "subject": "science",
+        "grade": 3,
+        "prompt": "A plant needs light and water. Which observation best suggests it needs water now?",
+        "options": [
+          "Its pot is blue",
+          "Its soil is very dry",
+          "It has a name label",
+          "It sits near another pot"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "science-3-b",
+        "subject": "science",
+        "grade": 3,
+        "prompt": "Which item gives an earthworm a damp, sheltered place to live?",
+        "options": [
+          "A hot, dry pavement",
+          "An empty glass shelf",
+          "Moist soil under leaves",
+          "A sealed metal tin without air"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "science-6-a",
+        "subject": "science",
+        "grade": 6,
+        "prompt": "Ice melts in a closed jar. No water escapes. What happens to the total mass of the jar and its contents?",
+        "options": [
+          "It doubles",
+          "It decreases because liquid is lighter",
+          "It stays the same",
+          "It becomes zero"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "science-6-b",
+        "subject": "science",
+        "grade": 6,
+        "prompt": "Salt dissolves in water in a sealed container. Nothing enters or leaves. What happens to the total mass?",
+        "options": [
+          "It stays the same",
+          "It falls because the salt disappears",
+          "It rises because mixing adds matter",
+          "It depends on the colour of the lid"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "science-9-a",
+        "subject": "science",
+        "grade": 9,
+        "scene": "Two equal-sized plants get the same soil and water. One gets 2 hours of light each day; the other gets 8 hours. Their growth is measured for a month.",
+        "prompt": "Why keep the soil and water the same?",
+        "options": [
+          "To guarantee both plants grow equally",
+          "To make light the main difference being tested",
+          "To avoid measuring growth",
+          "To prove every plant needs 8 hours"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "science-9-b",
+        "subject": "science",
+        "grade": 9,
+        "scene": "One phone battery lasted 4 hours in a test. A second lasted 7 hours, but used a much dimmer screen.",
+        "prompt": "What should change before comparing the batteries fairly?",
+        "options": [
+          "Use the same screen brightness and tasks",
+          "Choose the phone with the brightest case",
+          "Stop timing the first phone",
+          "Assume the second battery is better"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "social-3-a",
+        "subject": "social",
+        "grade": 3,
+        "prompt": "Someone says, 'Put it over there.' You are unsure what they mean. Which reply helps clarify?",
+        "options": [
+          "I'll guess.",
+          "You always confuse me.",
+          "Which item, and where should I put it?",
+          "I agree, it is over there."
+        ],
+        "answer": 2
+      },
+      {
+        "id": "social-3-b",
+        "subject": "social",
+        "grade": 3,
+        "prompt": "A task has three steps, but you missed the second. What could help you complete it?",
+        "options": [
+          "Could you repeat or write down step two?",
+          "I will leave out step two.",
+          "I know it already.",
+          "I'll do a different task without saying."
+        ],
+        "answer": 0
+      },
+      {
+        "id": "social-6-a",
+        "subject": "social",
+        "grade": 6,
+        "prompt": "A noisy workspace makes spoken directions hard to follow. Which request explains a useful adjustment?",
+        "options": [
+          "I'll pretend I heard.",
+          "Could you write the steps so I can check them?",
+          "Everyone must stop working forever.",
+          "I'll start without the directions."
+        ],
+        "answer": 1
+      },
+      {
+        "id": "social-6-b",
+        "subject": "social",
+        "grade": 6,
+        "prompt": "You need more time to understand a new task. Which reply helps you get started accurately?",
+        "options": [
+          "Yes, I understand everything.",
+          "I can't do any tasks.",
+          "Could you show one example, then let me try it?",
+          "Do it all for me every time."
+        ],
+        "answer": 2
+      },
+      {
+        "id": "social-9-a",
+        "subject": "social",
+        "grade": 9,
+        "prompt": "Your bus is delayed and you will arrive 15 minutes late for work. Which message is most useful?",
+        "options": [
+          "Not my fault.",
+          "I'll be there sometime.",
+          "Buses are annoying.",
+          "My bus is delayed. I expect to arrive at 9:15, 15 minutes late. Is there anything I should do first?"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "social-9-b",
+        "subject": "social",
+        "grade": 9,
+        "prompt": "You find a spill beside the stockroom door. Which message gives a coworker useful information?",
+        "options": [
+          "There's water by the stockroom door. I've kept people clear; can you help arrange the cleanup?",
+          "Something is wrong somewhere.",
+          "Someone must have done this on purpose.",
+          "The stockroom is always a disaster."
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  "extended": {
+    "version": 4,
+    "subjects": [
+      "math",
+      "reading",
+      "science",
+      "life",
+      "digital",
+      "work"
+    ],
+    "questions": [
+      {
+        "kind": "number",
+        "prompt": "How many drinks are there in all?",
+        "answer": 7,
+        "scene": "You have 4 drinks. You add 3 more.",
+        "answerLabel": "Your answer",
+        "visual": {
+          "groups": [
+            4,
+            3
+          ],
+          "label": "4 drinks, then 3 more"
+        },
+        "id": "s4-math-0-0",
+        "subject": "math",
+        "band": 0,
+        "skill": "interpret"
+      },
+      {
+        "kind": "number",
+        "prompt": "How many more do you need?",
+        "answer": 4,
+        "scene": "The order needs 9 items. You have packed 5.",
+        "answerLabel": "Your answer",
+        "id": "s4-math-0-1",
+        "subject": "math",
+        "band": 0,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which calculation counts all the items?",
+        "options": [
+          "$3\\times4=12$",
+          "$3+4=7$",
+          "$4-3=1$"
+        ],
+        "answer": 0,
+        "scene": "There are 3 bags. Each bag holds 4 items.",
+        "id": "s4-math-0-2",
+        "subject": "math",
+        "band": 0,
+        "skill": "reason"
+      },
+      {
+        "kind": "number",
+        "prompt": "What change should you get?",
+        "answer": 3.75,
+        "scene": "You pay 10 dollars for an item costing 6.25 dollars.",
+        "answerLabel": "Change, in dollars",
+        "id": "s4-math-1-0",
+        "subject": "math",
+        "band": 1,
+        "skill": "interpret"
+      },
+      {
+        "kind": "number",
+        "prompt": "What is half of 18?",
+        "answer": 9,
+        "scene": "",
+        "answerLabel": "Your answer",
+        "id": "s4-math-1-1",
+        "subject": "math",
+        "band": 1,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which amount is the same as $\\frac{3}{4}$?",
+        "options": [
+          "$0.34$",
+          "$0.75$",
+          "$3.4$"
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-math-1-2",
+        "subject": "math",
+        "band": 1,
+        "skill": "reason"
+      },
+      {
+        "kind": "number",
+        "prompt": "What is $25\\%$ of 40?",
+        "answer": 10,
+        "scene": "",
+        "answerLabel": "Your answer",
+        "id": "s4-math-2-0",
+        "subject": "math",
+        "band": 2,
+        "skill": "interpret"
+      },
+      {
+        "kind": "number",
+        "prompt": "Find $x$: $2x+3=11$.",
+        "answer": 4,
+        "scene": "",
+        "answerLabel": "Your answer",
+        "id": "s4-math-2-1",
+        "subject": "math",
+        "band": 2,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which expression gives the total cost?",
+        "options": [
+          "$3+2x$",
+          "$3x+2$",
+          "$5x$"
+        ],
+        "answer": 0,
+        "scene": "A service costs 3 dollars to start, then 2 dollars per hour. You use it for $x$ hours.",
+        "id": "s4-math-2-2",
+        "subject": "math",
+        "band": 2,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Where should you go?",
+        "options": [
+          "The main door",
+          "The side door",
+          "The back gate"
+        ],
+        "answer": 1,
+        "scene": "Please use the side door today.",
+        "id": "s4-reading-0-0",
+        "subject": "reading",
+        "band": 0,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you bring?",
+        "options": [
+          "A pen",
+          "A book",
+          "A bag"
+        ],
+        "answer": 0,
+        "scene": "Meet Lee at the library at 3 pm. Bring a pen.",
+        "id": "s4-reading-0-1",
+        "subject": "reading",
+        "band": 0,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which detail is missing?",
+        "options": [
+          "The day",
+          "The place",
+          "The time"
+        ],
+        "answer": 2,
+        "scene": "Meet me at the park gate tomorrow.",
+        "id": "s4-reading-0-2",
+        "subject": "reading",
+        "band": 0,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What is the main point?",
+        "options": [
+          "Sam is getting ready for work.",
+          "Sam is buying new clothes.",
+          "Sam is changing jobs."
+        ],
+        "answer": 0,
+        "scene": "Sam checks the bus time, packs lunch, and puts their work shirt by the door.",
+        "id": "s4-reading-1-0",
+        "subject": "reading",
+        "band": 1,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Why does Jo cover the bag?",
+        "options": [
+          "To keep the rain out",
+          "To make it lighter",
+          "To show what is inside"
+        ],
+        "answer": 0,
+        "scene": "Rain is forecast, so Jo covers the bag before going outside.",
+        "id": "s4-reading-1-1",
+        "subject": "reading",
+        "band": 1,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What does “charge” mean here?",
+        "options": [
+          "Fill a battery",
+          "A fee",
+          "Run forward"
+        ],
+        "answer": 1,
+        "scene": "The receipt lists a delivery charge of five dollars.",
+        "id": "s4-reading-1-2",
+        "subject": "reading",
+        "band": 1,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which detail supports the idea that Ari is planning ahead?",
+        "options": [
+          "Ari has a blue coat.",
+          "Ari checks tomorrow’s route tonight.",
+          "Ari walks past a shop."
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-reading-2-0",
+        "subject": "reading",
+        "band": 2,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What can this message support?",
+        "options": [
+          "Every bus is always late.",
+          "This bus was late today.",
+          "The driver chose to be late."
+        ],
+        "answer": 1,
+        "scene": "My bus arrived ten minutes late this morning.",
+        "id": "s4-reading-2-1",
+        "subject": "reading",
+        "band": 2,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which detail should you check before treating this as current news?",
+        "options": [
+          "The date of the event",
+          "The colour of the headline",
+          "The number of emojis"
+        ],
+        "answer": 0,
+        "scene": "A post shared today describes a road closure. The linked notice was written three years ago.",
+        "id": "s4-reading-2-2",
+        "subject": "reading",
+        "band": 2,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which conclusion uses both pieces of evidence?",
+        "options": [
+          "Later hours have no cost.",
+          "Try later hours and compare use with staffing costs.",
+          "Visitor counts prove all residents want later hours."
+        ],
+        "answer": 1,
+        "scene": "A library trial found more evening visitors. Staffing the extra hours also cost more.",
+        "id": "s4-reading-3-0",
+        "subject": "reading",
+        "band": 3,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which wording matches the evidence?",
+        "options": [
+          "Everyone benefits from the service.",
+          "People who replied reported benefits; others may differ.",
+          "Nobody outside the survey can benefit."
+        ],
+        "answer": 1,
+        "scene": "A voluntary survey of service users reports mostly positive experiences.",
+        "id": "s4-reading-3-1",
+        "subject": "reading",
+        "band": 3,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What extra information would help compare these reports?",
+        "options": [
+          "Whether both measured the same time and group",
+          "Which writer has the shorter name",
+          "Whether their headings use the same font"
+        ],
+        "answer": 0,
+        "scene": "One report says attendance rose. Another says it fell. They do not give their dates or who they counted.",
+        "id": "s4-reading-3-2",
+        "subject": "reading",
+        "band": 3,
+        "skill": "reading"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which message gives a clear action?",
+        "options": [
+          "My blue folder.",
+          "Please bring my blue folder.",
+          "Blue, please."
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-reading-writing-0-0",
+        "subject": "reading",
+        "band": 0,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which version is a complete sentence?",
+        "options": [
+          "At the bus stop.",
+          "The bus stops here.",
+          "Because the bus."
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-reading-writing-0-1",
+        "subject": "reading",
+        "band": 0,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which detail makes the message useful?",
+        "options": [
+          "Meet me sometime.",
+          "Meet me at the library at 4 pm.",
+          "Meet me, you know."
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-reading-writing-0-2",
+        "subject": "reading",
+        "band": 0,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which order makes the instructions easy to follow?",
+        "options": [
+          "Open the lid, put the items in, close the lid.",
+          "Close the lid, put the items in, open the lid.",
+          "Put the items in, close the lid, open the lid."
+        ],
+        "answer": 0,
+        "scene": "Explain how to pack an empty box with a closed lid.",
+        "id": "s4-reading-writing-1-0",
+        "subject": "reading",
+        "band": 1,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which sentence belongs in this paragraph?",
+        "options": [
+          "I water them when the soil is dry.",
+          "My bus has new seats.",
+          "My phone needs charging."
+        ],
+        "answer": 0,
+        "scene": "I grow herbs by the window. They need light and water.",
+        "id": "s4-reading-writing-1-1",
+        "subject": "reading",
+        "band": 1,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which question asks for the missing detail clearly?",
+        "options": [
+          "What?",
+          "Which shelf should I use for these boxes?",
+          "Why is everything confusing?"
+        ],
+        "answer": 1,
+        "scene": "Someone asks you to put boxes on a shelf but does not say which shelf.",
+        "id": "s4-reading-writing-1-2",
+        "subject": "reading",
+        "band": 1,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which revision gives the reader enough information?",
+        "options": [
+          "It happened there.",
+          "Water is leaking under the kitchen sink.",
+          "The thing is doing that again."
+        ],
+        "answer": 1,
+        "scene": "You are reporting a leak so someone can arrange a repair.",
+        "id": "s4-reading-writing-2-0",
+        "subject": "reading",
+        "band": 2,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which sentence supports the request with evidence?",
+        "options": [
+          "We need more chairs because I said so.",
+          "All meetings everywhere lack chairs.",
+          "At our last meeting, four people had no chair."
+        ],
+        "answer": 2,
+        "scene": "You want to explain why this meeting room needs more chairs.",
+        "id": "s4-reading-writing-2-1",
+        "subject": "reading",
+        "band": 2,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which subject line helps the reader find your message?",
+        "options": [
+          "Hi",
+          "Question about my Friday shift",
+          "IMPORTANT!!!"
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-reading-writing-2-2",
+        "subject": "reading",
+        "band": 2,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which revision avoids claiming more than the evidence shows?",
+        "options": [
+          "This trial suggests the new layout may help.",
+          "The layout will always work for everyone.",
+          "The trial proves nobody needs help."
+        ],
+        "answer": 0,
+        "scene": "In one short trial, people found items faster with a new layout.",
+        "id": "s4-reading-writing-3-0",
+        "subject": "reading",
+        "band": 3,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which sentence addresses a reasonable concern?",
+        "options": [
+          "There are no downsides.",
+          "A trial would let us measure the benefit before paying for a full change.",
+          "People who disagree do not count."
+        ],
+        "answer": 1,
+        "scene": "A proposal may save time, but the new equipment costs money.",
+        "id": "s4-reading-writing-3-1",
+        "subject": "reading",
+        "band": 3,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What would make the proposal easier to judge?",
+        "options": [
+          "More impressive words",
+          "A clear goal, steps, costs and a way to check the result",
+          "Removing every source"
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-reading-writing-3-2",
+        "subject": "reading",
+        "band": 3,
+        "skill": "writing"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which is something you can observe?",
+        "options": [
+          "The cup feels cold.",
+          "The cup is the best cup.",
+          "The cup wants more water."
+        ],
+        "answer": 0,
+        "scene": "",
+        "id": "s4-science-0-0",
+        "subject": "science",
+        "band": 0,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which item soaks up a small spill?",
+        "options": [
+          "A metal spoon",
+          "A paper towel",
+          "A glass lid"
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-science-0-1",
+        "subject": "science",
+        "band": 0,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which place helps an earthworm stay damp?",
+        "options": [
+          "Dry pavement in the sun",
+          "Moist soil under leaves",
+          "An empty glass shelf"
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-science-0-2",
+        "subject": "science",
+        "band": 0,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you keep the same?",
+        "options": [
+          "Plant type, water and soil",
+          "The amount of light only",
+          "Nothing else"
+        ],
+        "answer": 0,
+        "scene": "You want to test whether more light changes plant growth.",
+        "id": "s4-science-1-0",
+        "subject": "science",
+        "band": 1,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What happens to the total mass?",
+        "options": [
+          "It stays the same.",
+          "It disappears.",
+          "It doubles."
+        ],
+        "answer": 0,
+        "scene": "Ice melts in a closed jar. Nothing enters or leaves.",
+        "id": "s4-science-1-1",
+        "subject": "science",
+        "band": 1,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which force pulls a dropped ball toward the ground?",
+        "options": [
+          "Gravity",
+          "Friction with a table",
+          "A push from the ceiling"
+        ],
+        "answer": 0,
+        "scene": "",
+        "id": "s4-science-1-2",
+        "subject": "science",
+        "band": 1,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which result would best support the claim?",
+        "options": [
+          "Repeated trials show less cooling with the cover.",
+          "The covered cup looks nicer.",
+          "Someone likes the cover."
+        ],
+        "answer": 0,
+        "scene": "You are testing whether a cover slows a cup of water cooling.",
+        "id": "s4-science-2-0",
+        "subject": "science",
+        "band": 2,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Where does some of the electrical energy go?",
+        "options": [
+          "Into light and heat",
+          "It is all destroyed",
+          "It turns into extra mass in the wire"
+        ],
+        "answer": 0,
+        "scene": "A lamp lights up and gets warm.",
+        "id": "s4-science-2-1",
+        "subject": "science",
+        "band": 2,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What do cells use a membrane for?",
+        "options": [
+          "Controlling what enters and leaves",
+          "Making every cell the same shape",
+          "Stopping all movement forever"
+        ],
+        "answer": 0,
+        "scene": "",
+        "id": "s4-science-2-2",
+        "subject": "science",
+        "band": 2,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you conclude?",
+        "options": [
+          "The result suggests a link; other factors may matter.",
+          "The result proves one thing caused the other.",
+          "Every possible explanation is equally supported."
+        ],
+        "answer": 0,
+        "scene": "Two things increase together in a set of observations. No controlled test was done.",
+        "id": "s4-science-3-0",
+        "subject": "science",
+        "band": 3,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which change raises a wave’s frequency?",
+        "options": [
+          "More cycles in the same time",
+          "A taller wave with the same timing",
+          "Moving the drawing upward"
+        ],
+        "answer": 0,
+        "scene": "",
+        "id": "s4-science-3-1",
+        "subject": "science",
+        "band": 3,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you do when a model misses some results?",
+        "options": [
+          "Check its assumptions and revise or limit it.",
+          "Hide the results it misses.",
+          "Assume the measurements must all be wrong."
+        ],
+        "answer": 0,
+        "scene": "",
+        "id": "s4-science-3-2",
+        "subject": "science",
+        "band": 3,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which name makes the file easier to find?",
+        "options": [
+          "thing-final-new2",
+          "Friday-shift-notes",
+          "untitled"
+        ],
+        "answer": 1,
+        "scene": "You save notes about your Friday shift.",
+        "id": "s4-digital-0-0",
+        "subject": "digital",
+        "band": 0,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "How can you include a saved file in an email?",
+        "options": [
+          "Use the attachment control and select the file.",
+          "Only type the file name in the message.",
+          "Rename the email app."
+        ],
+        "answer": 0,
+        "scene": "",
+        "id": "s4-digital-0-1",
+        "subject": "digital",
+        "band": 0,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Who should get your sign-in password?",
+        "options": [
+          "Anyone who says they need it",
+          "Nobody; use the service’s account-sharing or recovery tools",
+          "Everyone in a group chat"
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-digital-0-2",
+        "subject": "digital",
+        "band": 0,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you check before sending?",
+        "options": [
+          "The recipient, message and attachment",
+          "Only the colour of the send button",
+          "Whether the message is very long"
+        ],
+        "answer": 0,
+        "scene": "You are emailing a completed application.",
+        "id": "s4-digital-1-0",
+        "subject": "digital",
+        "band": 1,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Where should you start checking a service rule?",
+        "options": [
+          "The service’s official website",
+          "An unlabelled screenshot",
+          "The most confident comment"
+        ],
+        "answer": 0,
+        "scene": "",
+        "id": "s4-digital-1-1",
+        "subject": "digital",
+        "band": 1,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which address is suitable for job applications?",
+        "options": [
+          "party-anytime@example.com",
+          "lee.morgan@example.com",
+          "password123@example.com"
+        ],
+        "answer": 1,
+        "scene": "These are made-up email addresses. Choose a clear, professional name.",
+        "id": "s4-digital-1-2",
+        "subject": "digital",
+        "band": 1,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What is the safest way to check the request?",
+        "options": [
+          "Use the organisation’s known website or contact details.",
+          "Tap the message link and pay quickly.",
+          "Send a photo of your ID in reply."
+        ],
+        "answer": 0,
+        "scene": "An unexpected text demands an urgent payment through a link.",
+        "id": "s4-digital-2-0",
+        "subject": "digital",
+        "band": 2,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "How can you check whether the claim is reliable?",
+        "options": [
+          "Look for the original source and other independent evidence.",
+          "Trust it because the picture looks real.",
+          "Trust it if many people shared it."
+        ],
+        "answer": 0,
+        "scene": "A realistic image is being used to support a surprising claim.",
+        "id": "s4-digital-2-1",
+        "subject": "digital",
+        "band": 2,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you do with private information?",
+        "options": [
+          "Remove it before asking a public AI tool for help.",
+          "Paste all of it because AI always keeps secrets.",
+          "Post it publicly first."
+        ],
+        "answer": 0,
+        "scene": "You want help rewriting a message that contains personal account details.",
+        "id": "s4-digital-2-2",
+        "subject": "digital",
+        "band": 2,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What is a sound next step?",
+        "options": [
+          "Run a small test, inspect the result and check the explanation.",
+          "Submit it without opening it.",
+          "Assume a long answer must be correct."
+        ],
+        "answer": 0,
+        "scene": "An AI tool gives you a spreadsheet formula.",
+        "id": "s4-digital-3-0",
+        "subject": "digital",
+        "band": 3,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which workflow keeps you in control?",
+        "options": [
+          "Keep the original, review the changes, then test them.",
+          "Delete the original before checking.",
+          "Accept every change at once."
+        ],
+        "answer": 0,
+        "scene": "An assistant offers to change several files in your project.",
+        "id": "s4-digital-3-1",
+        "subject": "digital",
+        "band": 3,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What would best show that you understand the result?",
+        "options": [
+          "Explain it and solve a changed example yourself.",
+          "Repeat the tool’s answer word for word.",
+          "Point to how quickly it answered."
+        ],
+        "answer": 0,
+        "scene": "",
+        "id": "s4-digital-3-2",
+        "subject": "digital",
+        "band": 3,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which reply helps you start the right task?",
+        "options": [
+          "Which item do you mean, and where should it go?",
+          "I will guess.",
+          "I will move every item."
+        ],
+        "answer": 0,
+        "scene": "Someone says, “Put it over there.” You are not sure what they mean.",
+        "id": "s4-work-0-0",
+        "subject": "work",
+        "band": 0,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What could help you finish the task?",
+        "options": [
+          "Skip the missing step.",
+          "Ask them to repeat or write down step two.",
+          "Start a different task without saying."
+        ],
+        "answer": 1,
+        "scene": "You heard steps one and three, but missed step two.",
+        "id": "s4-work-0-1",
+        "subject": "work",
+        "band": 0,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What could you say?",
+        "options": [
+          "I need a hand with this box. Can someone help?",
+          "I must lift it without help.",
+          "I will leave it in the doorway."
+        ],
+        "answer": 0,
+        "scene": "A box is too heavy for you to lift comfortably.",
+        "id": "s4-work-0-2",
+        "subject": "work",
+        "band": 0,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which request explains what would help?",
+        "options": [
+          "Could you write the steps so I can check them?",
+          "I will pretend I heard.",
+          "Nobody should speak again."
+        ],
+        "answer": 0,
+        "scene": "A noisy room makes spoken instructions hard to follow.",
+        "id": "s4-work-1-0",
+        "subject": "work",
+        "band": 1,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which response gives you time to understand?",
+        "options": [
+          "I agree to everything.",
+          "Could you show one example, then let me try?",
+          "Please do every task for me."
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-work-1-1",
+        "subject": "work",
+        "band": 1,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should the group agree first?",
+        "options": [
+          "Who will do each part and when to check in",
+          "That nobody can ask questions",
+          "That the fastest person makes every decision"
+        ],
+        "answer": 0,
+        "scene": "Three people are sharing a packing task.",
+        "id": "s4-work-1-2",
+        "subject": "work",
+        "band": 1,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which message gives useful information?",
+        "options": [
+          "I will be there sometime.",
+          "The bus is late. I expect to arrive at 9:15, fifteen minutes late.",
+          "The bus is annoying."
+        ],
+        "answer": 1,
+        "scene": "Your shift starts at 9 am. Your bus is delayed.",
+        "id": "s4-work-2-0",
+        "subject": "work",
+        "band": 2,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "What is a useful next step?",
+        "options": [
+          "Check which instruction applies before continuing.",
+          "Pick one and tell nobody.",
+          "Assume the other person is trying to cause trouble."
+        ],
+        "answer": 0,
+        "scene": "Two people give you different instructions for the same task.",
+        "id": "s4-work-2-1",
+        "subject": "work",
+        "band": 2,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which reply sets a clear boundary?",
+        "options": [
+          "I can help until 4 pm, then I need to leave.",
+          "Fine, I will stay as long as anyone wants.",
+          "You always ask too much."
+        ],
+        "answer": 0,
+        "scene": "You can help with a task today, but you have another commitment at 4 pm.",
+        "id": "s4-work-2-2",
+        "subject": "work",
+        "band": 2,
+        "skill": "reason"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which feedback is specific enough to act on?",
+        "options": [
+          "Your report is bad.",
+          "The report is clear. Adding the delivery date would help us schedule it.",
+          "Be more professional somehow."
+        ],
+        "answer": 1,
+        "scene": "",
+        "id": "s4-work-3-0",
+        "subject": "work",
+        "band": 3,
+        "skill": "interpret"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which reply moves the disagreement toward a solution?",
+        "options": [
+          "Let’s compare the deadlines and decide which task comes first.",
+          "My idea must win.",
+          "We should never work together again."
+        ],
+        "answer": 0,
+        "scene": "You and a coworker disagree about which task is most urgent.",
+        "id": "s4-work-3-1",
+        "subject": "work",
+        "band": 3,
+        "skill": "apply"
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which example gives useful evidence of a skill?",
+        "options": [
+          "I am perfect at organising.",
+          "I labelled our shared supplies so people could find them.",
+          "Only paid work counts as experience."
+        ],
+        "answer": 1,
+        "scene": "You are asked about being organised in a job conversation.",
+        "id": "s4-work-3-2",
+        "subject": "work",
+        "band": 3,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-math-0-fresh-3",
+        "subject": "math",
+        "band": 0,
+        "kind": "number",
+        "scene": "You packed 6 books. You add 2 more.",
+        "prompt": "How many books are packed now?",
+        "answer": 8,
+        "answerLabel": "Number of books",
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-math-0-fresh-4",
+        "subject": "math",
+        "band": 0,
+        "kind": "number",
+        "scene": "There are 10 seats and 7 people.",
+        "prompt": "How many seats are empty?",
+        "answer": 3,
+        "answerLabel": "Number of seats",
+        "skill": "apply"
+      },
+      {
+        "id": "s4-math-0-fresh-5",
+        "subject": "math",
+        "band": 0,
+        "kind": "choice",
+        "scene": "Three bags each contain 5 apples.",
+        "prompt": "Which calculation counts all the apples?",
+        "options": [
+          "3 × 5 = 15",
+          "3 + 5 = 8",
+          "5 − 3 = 2"
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-math-1-fresh-3",
+        "subject": "math",
+        "band": 1,
+        "kind": "number",
+        "scene": "Lunch costs 6.75 dollars. You pay 10 dollars.",
+        "prompt": "How much change should you get?",
+        "answer": 3.25,
+        "answerLabel": "Change, in dollars",
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-math-1-fresh-4",
+        "subject": "math",
+        "band": 1,
+        "kind": "number",
+        "scene": "A 40-minute trip starts at 2:10 pm.",
+        "prompt": "How many minutes after 2 pm will it finish?",
+        "answer": 50,
+        "answerLabel": "Minutes after 2 pm",
+        "skill": "apply"
+      },
+      {
+        "id": "s4-math-1-fresh-5",
+        "subject": "math",
+        "band": 1,
+        "kind": "choice",
+        "scene": "Four equal portions use 8 potatoes.",
+        "prompt": "How many potatoes are needed for two portions?",
+        "options": [
+          "4 potatoes",
+          "6 potatoes",
+          "16 potatoes"
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-math-2-fresh-3",
+        "subject": "math",
+        "band": 2,
+        "kind": "number",
+        "scene": "One bag costs 6 dollars for 3 kg.",
+        "prompt": "What is the cost for each kg?",
+        "answer": 2,
+        "answerLabel": "Dollars per kg",
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-math-2-fresh-4",
+        "subject": "math",
+        "band": 2,
+        "kind": "number",
+        "scene": "An item costs 80 dollars before a 25% discount.",
+        "prompt": "How many dollars is the discount?",
+        "answer": 20,
+        "answerLabel": "Discount, in dollars",
+        "skill": "apply"
+      },
+      {
+        "id": "s4-math-2-fresh-5",
+        "subject": "math",
+        "band": 2,
+        "kind": "choice",
+        "scene": "The plan has 60 dollars available. The costs are 25, 20 and 18 dollars.",
+        "prompt": "Which statement fits the plan?",
+        "options": [
+          "It is 3 dollars over the available money.",
+          "There are 3 dollars left.",
+          "It fits with exactly no money left."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-math-3-fresh-0",
+        "subject": "math",
+        "band": 3,
+        "kind": "number",
+        "scene": "A delivery charge is 4 dollars plus 2 dollars for each box.",
+        "prompt": "What is the charge for 6 boxes?",
+        "answer": 16,
+        "answerLabel": "Total charge, in dollars",
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-math-3-fresh-1",
+        "subject": "math",
+        "band": 3,
+        "kind": "number",
+        "scene": "A worker packs 36 items evenly over 3 hours.",
+        "prompt": "What is the average number packed per hour?",
+        "answer": 12,
+        "answerLabel": "Items per hour",
+        "skill": "apply"
+      },
+      {
+        "id": "s4-math-3-fresh-2",
+        "subject": "math",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A room needs 12 square metres of floor covering. Each pack covers 5 square metres. Only whole packs are sold.",
+        "prompt": "How many packs are needed?",
+        "options": [
+          "3 packs",
+          "2 packs",
+          "12 packs"
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-math-3-fresh-3",
+        "subject": "math",
+        "band": 3,
+        "kind": "number",
+        "scene": "A budget has 120 dollars. A bill takes 45 dollars and travel takes 30 dollars.",
+        "prompt": "How much remains for food and other needs?",
+        "answer": 45,
+        "answerLabel": "Money remaining, in dollars",
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-math-3-fresh-4",
+        "subject": "math",
+        "band": 3,
+        "kind": "number",
+        "scene": "A recipe for 4 portions uses 300 mL of milk.",
+        "prompt": "How many mL are needed for 6 portions?",
+        "answer": 450,
+        "answerLabel": "Milk, in mL",
+        "skill": "apply"
+      },
+      {
+        "id": "s4-math-3-fresh-5",
+        "subject": "math",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A 10% discount reduces a 50-dollar price by 5 dollars. A 5-dollar delivery fee is added.",
+        "prompt": "What is the final cost?",
+        "options": [
+          "50 dollars",
+          "45 dollars",
+          "55 dollars"
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-science-0-fresh-3",
+        "subject": "science",
+        "band": 0,
+        "kind": "choice",
+        "scene": "Water drips from a wet cloth onto a plate.",
+        "prompt": "Which statement reports what was seen?",
+        "options": [
+          "Water reached the plate.",
+          "The cloth is the best cloth.",
+          "The plate wanted the water."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-science-0-fresh-4",
+        "subject": "science",
+        "band": 0,
+        "kind": "choice",
+        "scene": "A metal lid and paper towel are beside a water spill.",
+        "prompt": "Which item can soak up the water?",
+        "options": [
+          "The paper towel",
+          "The metal lid",
+          "Both must absorb the same amount"
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-science-0-fresh-5",
+        "subject": "science",
+        "band": 0,
+        "kind": "choice",
+        "scene": "A plant is dry and its soil feels dry.",
+        "prompt": "Which next step gathers useful information?",
+        "options": [
+          "Check its care instructions and recent watering.",
+          "Assume every plant needs identical watering.",
+          "Change its pot colour without checking."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-science-1-fresh-3",
+        "subject": "science",
+        "band": 1,
+        "kind": "choice",
+        "scene": "Two cups start with equally warm water. One is wrapped in insulation.",
+        "prompt": "What should you measure to compare cooling?",
+        "options": [
+          "Both temperatures after the same time.",
+          "The cup names on different days.",
+          "Only the wrapped cup’s starting temperature."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-science-1-fresh-4",
+        "subject": "science",
+        "band": 1,
+        "kind": "choice",
+        "scene": "A flashlight shines toward a wall. An opaque card is placed in the light’s path.",
+        "prompt": "What should appear behind the card?",
+        "options": [
+          "A shadow",
+          "A brighter copy of the flashlight",
+          "No change because cards cannot block light"
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-science-1-fresh-5",
+        "subject": "science",
+        "band": 1,
+        "kind": "choice",
+        "scene": "A magnet attracts one tested object but not another.",
+        "prompt": "What does this show?",
+        "options": [
+          "The tested objects respond differently to this magnet.",
+          "Every metal must respond identically.",
+          "The second object has no mass."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-science-2-fresh-3",
+        "subject": "science",
+        "band": 2,
+        "kind": "choice",
+        "scene": "The same amount of water is poured through two soil samples. One drains faster.",
+        "prompt": "What is supported by this test?",
+        "options": [
+          "The samples drained at different rates in this setup.",
+          "Every soil always drains at the faster rate.",
+          "The slower soil contains no water."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-science-2-fresh-4",
+        "subject": "science",
+        "band": 2,
+        "kind": "choice",
+        "scene": "Small drops appear on the outside of a cold glass.",
+        "prompt": "Which explanation fits condensation?",
+        "options": [
+          "Water vapour in the air changes to liquid on the cold surface.",
+          "The glass creates new water from nothing.",
+          "Water must pass straight through unbroken glass."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-science-2-fresh-5",
+        "subject": "science",
+        "band": 2,
+        "kind": "choice",
+        "scene": "A switch opens the path in a simple battery-and-lamp model.",
+        "prompt": "Why does the lamp stop lighting?",
+        "options": [
+          "The closed path has been broken.",
+          "The lamp’s colour was erased.",
+          "An open path always carries the same current."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-science-3-fresh-3",
+        "subject": "science",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A survey finds homes using a heating timer used less energy. The homes also differ in size.",
+        "prompt": "What can you conclude?",
+        "options": [
+          "There may be a link; home size and other differences need checking.",
+          "The timer alone is proved to cause every difference.",
+          "The survey proves every home is identical."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-science-3-fresh-4",
+        "subject": "science",
+        "band": 3,
+        "kind": "choice",
+        "scene": "Two similar-size appliance labels show 200 and 300 kWh per year under their stated test conditions.",
+        "prompt": "Which statement fits the labels?",
+        "options": [
+          "The 200 kWh model has the lower stated annual energy use.",
+          "Both labels promise the same actual bill for every household.",
+          "The 300 kWh model must have the lower stated energy use."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-science-3-fresh-5",
+        "subject": "science",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A bucket holds 10 litres. A model predicts 14 litres will flow into it.",
+        "prompt": "What can remain in that bucket without overflowing?",
+        "options": [
+          "At most 10 litres",
+          "All 14 litres",
+          "The bucket capacity no longer matters"
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-digital-0-fresh-3",
+        "subject": "digital",
+        "band": 0,
+        "kind": "choice",
+        "scene": "The words on a web page are too small.",
+        "prompt": "Which setting could help you read them?",
+        "options": [
+          "Increase page zoom.",
+          "Delete the browser.",
+          "Change the Wi-Fi password."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-digital-0-fresh-4",
+        "subject": "digital",
+        "band": 0,
+        "kind": "choice",
+        "scene": "You need to switch from a note to the calendar app.",
+        "prompt": "Which action fits the task?",
+        "options": [
+          "Select the calendar’s window or app control.",
+          "Delete the note to reveal the calendar.",
+          "Turn off the screen."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-digital-0-fresh-5",
+        "subject": "digital",
+        "band": 0,
+        "kind": "choice",
+        "scene": "You save a shopping list.",
+        "prompt": "How can you check the save worked?",
+        "options": [
+          "Reopen the saved list and check it.",
+          "Change the wallpaper.",
+          "Assume an empty folder is the list."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-digital-1-fresh-3",
+        "subject": "digital",
+        "band": 1,
+        "kind": "choice",
+        "scene": "An email draft needs your saved résumé attached.",
+        "prompt": "What should you check before sending?",
+        "options": [
+          "The recipient and the actual attached file.",
+          "Only the email’s background colour.",
+          "Only the first word of the file name."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-digital-1-fresh-4",
+        "subject": "digital",
+        "band": 1,
+        "kind": "choice",
+        "scene": "A library’s page lists its opening hours. An old post gives different hours.",
+        "prompt": "Which source should you check?",
+        "options": [
+          "The library’s current page or verified contact.",
+          "The old post just because it appears first.",
+          "An unrelated library in another city."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-digital-1-fresh-5",
+        "subject": "digital",
+        "band": 1,
+        "kind": "choice",
+        "scene": "An organiser changes a meeting from 2 pm to 3 pm.",
+        "prompt": "What should you change in your calendar?",
+        "options": [
+          "The original event and its reminder if needed.",
+          "Only the event colour.",
+          "Add the new event but keep the wrong original."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-digital-2-fresh-3",
+        "subject": "digital",
+        "band": 2,
+        "kind": "choice",
+        "scene": "A text claims to be your bank and asks you to sign in through its link.",
+        "prompt": "What is a useful check?",
+        "options": [
+          "Open the bank’s official app or address yourself.",
+          "Send the sender your password.",
+          "Trust the link because the logo looks familiar."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-digital-2-fresh-4",
+        "subject": "digital",
+        "band": 2,
+        "kind": "choice",
+        "scene": "A photo for a repair request includes private papers.",
+        "prompt": "What should you do before sharing?",
+        "options": [
+          "Remove unnecessary private details from the shared copy.",
+          "Send it publicly to get more answers.",
+          "Assume photos cannot show private details."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-digital-2-fresh-5",
+        "subject": "digital",
+        "band": 2,
+        "kind": "choice",
+        "scene": "A form marks a date field as incomplete.",
+        "prompt": "What should you inspect?",
+        "options": [
+          "The message beside that field and its required format.",
+          "Only the device’s colour.",
+          "A password from an unrelated account."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-digital-3-fresh-3",
+        "subject": "digital",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A laptop fails. Your backup is on a separate storage service.",
+        "prompt": "What should you check when recovering the work?",
+        "options": [
+          "The saved version and its needed contents.",
+          "Only the original laptop’s wallpaper.",
+          "That an unrelated empty folder has the same name."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-digital-3-fresh-4",
+        "subject": "digital",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A spreadsheet total is wrong after a row was added.",
+        "prompt": "What should you check first?",
+        "options": [
+          "The data and cells included in the total.",
+          "Only the text colour.",
+          "The speaker volume."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-digital-3-fresh-5",
+        "subject": "digital",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A tool produces an answer but gives no source.",
+        "prompt": "What should you do before relying on it?",
+        "options": [
+          "Check the claim against a relevant source or test.",
+          "Treat confident wording as proof.",
+          "Skip checking because the answer is short."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-life-0-fresh-0",
+        "subject": "life",
+        "band": 0,
+        "kind": "choice",
+        "scene": "You are about to prepare lunch.",
+        "prompt": "What should you do before handling the food?",
+        "options": [
+          "Wash your hands using the full routine.",
+          "Wipe only one fingertip.",
+          "Handle the food before washing."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-life-0-fresh-1",
+        "subject": "life",
+        "band": 0,
+        "kind": "choice",
+        "scene": "Your daily plan includes clean clothes and a shower.",
+        "prompt": "What helps you follow the plan?",
+        "options": [
+          "Prepare the needed supplies and a workable time.",
+          "Wait until every supply is missing.",
+          "Ignore your actual schedule."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-life-0-fresh-2",
+        "subject": "life",
+        "band": 0,
+        "kind": "choice",
+        "scene": "A label says this shirt should be washed with similar colours.",
+        "prompt": "What should guide the wash?",
+        "options": [
+          "The care label and the washer’s instructions.",
+          "Only the shirt’s price.",
+          "The instructions from an unrelated garment."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-life-0-fresh-3",
+        "subject": "life",
+        "band": 0,
+        "kind": "choice",
+        "scene": "A recipe lists four steps in order.",
+        "prompt": "Where should you start?",
+        "options": [
+          "Read the recipe and prepare the needed ingredients and tools.",
+          "Skip the ingredient list.",
+          "Invent a cooking time without reading."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-life-0-fresh-4",
+        "subject": "life",
+        "band": 0,
+        "kind": "choice",
+        "scene": "There is an appointment on Thursday at 10 am.",
+        "prompt": "What should you put in your plan?",
+        "options": [
+          "The time, place and time needed to get there.",
+          "Only the appointment’s title.",
+          "A different date you prefer."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-life-0-fresh-5",
+        "subject": "life",
+        "band": 0,
+        "kind": "choice",
+        "scene": "A kitchen floor has an obstruction in the walking route.",
+        "prompt": "What is a useful next action?",
+        "options": [
+          "Clear the route safely or ask for help if needed.",
+          "Hide the obstruction under a cloth.",
+          "Step over it forever without checking."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-life-1-fresh-0",
+        "subject": "life",
+        "band": 1,
+        "kind": "choice",
+        "scene": "A meal needs 4 wraps. You already have 1.",
+        "prompt": "How many more wraps are needed?",
+        "options": [
+          "3 wraps",
+          "4 wraps",
+          "5 wraps"
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-life-1-fresh-1",
+        "subject": "life",
+        "band": 1,
+        "kind": "choice",
+        "scene": "The recipe says to use a clean board for ready-to-eat food.",
+        "prompt": "Which plan follows the instruction?",
+        "options": [
+          "Use a separate clean board from raw-food preparation.",
+          "Reuse a dirty raw-food board without cleaning it.",
+          "Choose a board only by its colour."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-life-1-fresh-2",
+        "subject": "life",
+        "band": 1,
+        "kind": "choice",
+        "scene": "A bus arrives at 9:40 am. The appointment is 15 minutes from the stop and starts at 10 am.",
+        "prompt": "Which statement fits the plan?",
+        "options": [
+          "It allows 5 minutes beyond the walk in this example.",
+          "It arrives at the appointment after 10 am.",
+          "The walk has no effect on arrival."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-life-1-fresh-3",
+        "subject": "life",
+        "band": 1,
+        "kind": "choice",
+        "scene": "A bill lists a payment due date.",
+        "prompt": "What should the plan include?",
+        "options": [
+          "The due date and a checked payment method.",
+          "Only the bill’s logo colour.",
+          "A random date with no connection to the bill."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-life-1-fresh-4",
+        "subject": "life",
+        "band": 1,
+        "kind": "choice",
+        "scene": "Two groceries are on the list, but one is already available.",
+        "prompt": "What should you check before shopping?",
+        "options": [
+          "Which amount is still missing.",
+          "Only the total recipe amount, ignoring supplies.",
+          "Whether buying more always costs nothing."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-life-1-fresh-5",
+        "subject": "life",
+        "band": 1,
+        "kind": "choice",
+        "scene": "The clothes label says air dry.",
+        "prompt": "What follows that instruction?",
+        "options": [
+          "Use a suitable air-drying method.",
+          "Assume the hottest dryer setting is required.",
+          "Ignore the label because the shirt is familiar."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-life-2-fresh-0",
+        "subject": "life",
+        "band": 2,
+        "kind": "choice",
+        "scene": "The food label gives a storage instruction.",
+        "prompt": "What should guide storage?",
+        "options": [
+          "The food’s label and current food-safety guidance.",
+          "Smell alone in every situation.",
+          "Only the container’s colour."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-life-2-fresh-1",
+        "subject": "life",
+        "band": 2,
+        "kind": "choice",
+        "scene": "A return bus does not run after your visit ends.",
+        "prompt": "What should you check?",
+        "options": [
+          "A realistic return route or a change to the visit plan.",
+          "Only the outward journey.",
+          "An arrival time for a service that does not run."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-life-2-fresh-2",
+        "subject": "life",
+        "band": 2,
+        "kind": "choice",
+        "scene": "A rental advert gives rent but leaves out utilities.",
+        "prompt": "What do you need before comparing total costs?",
+        "options": [
+          "Which utilities and other costs are included.",
+          "Only the picture of the room.",
+          "An assumption that every extra is free."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-life-2-fresh-3",
+        "subject": "life",
+        "band": 2,
+        "kind": "choice",
+        "scene": "A home repair request needs to describe a leak.",
+        "prompt": "Which message is useful?",
+        "options": [
+          "The location, what you observed and when it happens.",
+          "Everything is always broken.",
+          "A diagnosis invented without checking."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-life-2-fresh-4",
+        "subject": "life",
+        "band": 2,
+        "kind": "choice",
+        "scene": "A cleaner’s label says not to mix it with other products.",
+        "prompt": "What should you do?",
+        "options": [
+          "Follow the label and use the product separately as directed.",
+          "Mix products to make them stronger.",
+          "Ignore the label if the smell is pleasant."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-life-2-fresh-5",
+        "subject": "life",
+        "band": 2,
+        "kind": "choice",
+        "scene": "The plan has too little money for all the bills.",
+        "prompt": "What is a useful next step?",
+        "options": [
+          "List the gap and ask early about relevant help or payment options.",
+          "Hide the due dates.",
+          "Assume the gap disappears without action."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-life-3-fresh-0",
+        "subject": "life",
+        "band": 3,
+        "kind": "choice",
+        "scene": "Two homes have different rent, utility and travel costs.",
+        "prompt": "What makes a useful comparison?",
+        "options": [
+          "Compare the whole costs and practical needs.",
+          "Compare rent alone and ignore known extras.",
+          "Assume the largest photo proves the best fit."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-life-3-fresh-1",
+        "subject": "life",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A tax-result letter lists a balance and a payment date.",
+        "prompt": "What should you check?",
+        "options": [
+          "The actual details and the official route for questions.",
+          "An unrelated social-media claim.",
+          "Only the envelope colour."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-life-3-fresh-2",
+        "subject": "life",
+        "band": 3,
+        "kind": "choice",
+        "scene": "Your usual bus connection is cancelled.",
+        "prompt": "What makes a workable backup?",
+        "options": [
+          "A checked route, timing and a way home.",
+          "A service that has already stopped running.",
+          "Only a promise to arrive without checking."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-life-3-fresh-3",
+        "subject": "life",
+        "band": 3,
+        "kind": "choice",
+        "scene": "An important bill has a detail you do not understand.",
+        "prompt": "How should you ask for help?",
+        "options": [
+          "Name the detail and use the provider’s verified contact.",
+          "Send the entire bill to a random public account.",
+          "Invent a meaning and treat it as confirmed."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-life-3-fresh-4",
+        "subject": "life",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A home problem may need a qualified repair person.",
+        "prompt": "What is a useful limit?",
+        "options": [
+          "Report what you observed and ask through the appropriate repair route.",
+          "Start an unfamiliar hazardous repair without training.",
+          "Hide the issue so it cannot be assessed."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-life-3-fresh-5",
+        "subject": "life",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A support service cannot help with the requested need.",
+        "prompt": "What should you ask about?",
+        "options": [
+          "A relevant referral or another suitable service.",
+          "Why every service must do exactly the same job.",
+          "An unrelated person’s private records."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-work-0-fresh-3",
+        "subject": "work",
+        "band": 0,
+        "kind": "choice",
+        "scene": "You helped a group organise its supplies.",
+        "prompt": "What is useful when describing that skill?",
+        "options": [
+          "A real example of what you did.",
+          "An invented paid job title.",
+          "A claim that someone else’s work was yours."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-work-0-fresh-4",
+        "subject": "work",
+        "band": 0,
+        "kind": "choice",
+        "scene": "A job posting lists evening hours.",
+        "prompt": "What should you compare with those hours?",
+        "options": [
+          "Your actual availability and travel plan.",
+          "Only the job title.",
+          "Only the advert’s colour."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-work-0-fresh-5",
+        "subject": "work",
+        "band": 0,
+        "kind": "choice",
+        "scene": "A task instruction is unclear.",
+        "prompt": "What should you do before starting?",
+        "options": [
+          "Ask the responsible person to clarify it.",
+          "Guess and hide the uncertainty.",
+          "Start an unrelated task without saying."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-work-1-fresh-3",
+        "subject": "work",
+        "band": 1,
+        "kind": "choice",
+        "scene": "A job posting says applications close on Friday.",
+        "prompt": "Which date should guide your plan?",
+        "options": [
+          "The stated closing date.",
+          "A date guessed from an old comment.",
+          "Any day after the closing date."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-work-1-fresh-4",
+        "subject": "work",
+        "band": 1,
+        "kind": "choice",
+        "scene": "A résumé draft contains an old contact number.",
+        "prompt": "What should you do before sending it?",
+        "options": [
+          "Correct the detail and reopen the saved version to check.",
+          "Send it unchanged because the layout is attractive.",
+          "Replace every fact with an invented one."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-work-1-fresh-5",
+        "subject": "work",
+        "band": 1,
+        "kind": "choice",
+        "scene": "A new work task requires training you have not received.",
+        "prompt": "What is a useful next step?",
+        "options": [
+          "Pause and ask for the required training or support.",
+          "Claim that reading the title means you are trained.",
+          "Ignore the task requirement."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-work-2-fresh-3",
+        "subject": "work",
+        "band": 2,
+        "kind": "choice",
+        "scene": "An offer states the pay but not the usual hours.",
+        "prompt": "What should you ask before deciding?",
+        "options": [
+          "Ask the verified employer contact to confirm the hours.",
+          "Assume the hours match any other job.",
+          "Invent a schedule without asking."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-work-2-fresh-4",
+        "subject": "work",
+        "band": 2,
+        "kind": "choice",
+        "scene": "A timesheet has a different end time from your shift note.",
+        "prompt": "How should you raise the difference?",
+        "options": [
+          "Name the entry and the details that need checking.",
+          "Say every record is wrong without an example.",
+          "Change another worker’s record without permission."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-work-2-fresh-5",
+        "subject": "work",
+        "band": 2,
+        "kind": "choice",
+        "scene": "An interview asks for a task you completed with a group.",
+        "prompt": "What should your example explain?",
+        "options": [
+          "The situation, your action and its result.",
+          "Only that the group was excellent.",
+          "Every other person’s work claimed as yours."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      },
+      {
+        "id": "s4-work-3-fresh-3",
+        "subject": "work",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A customer’s issue is outside your role.",
+        "prompt": "What should you do?",
+        "options": [
+          "Use the workplace’s help route and give a clear update.",
+          "Promise a result you cannot confirm.",
+          "Publish the customer’s private information."
+        ],
+        "answer": 0,
+        "skill": "interpret"
+      },
+      {
+        "id": "s4-work-3-fresh-4",
+        "subject": "work",
+        "band": 3,
+        "kind": "choice",
+        "scene": "A delivery has a damaged item.",
+        "prompt": "What makes the report useful?",
+        "options": [
+          "The order, affected item and observed problem.",
+          "Only a guess about who caused it.",
+          "An unrelated product’s details."
+        ],
+        "answer": 0,
+        "skill": "apply"
+      },
+      {
+        "id": "s4-work-3-fresh-5",
+        "subject": "work",
+        "band": 3,
+        "kind": "choice",
+        "scene": "Feedback says a handover needs delivery dates.",
+        "prompt": "Which next step is checkable?",
+        "options": [
+          "Add the dates to the next handover and ask the reviewer to check it.",
+          "Promise to be better without naming an action.",
+          "Ignore the specific detail."
+        ],
+        "answer": 0,
+        "skill": "reason"
+      }
+    ],
+    "starts": {
+      "math": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "reading": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "science": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "life": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "digital": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "work": [
+        1,
+        4,
+        7,
+        10
+      ]
+    },
+    "suggestions": {
+      "math": [
+        "math-1",
+        "math-remainders",
+        "math-cash",
+        "math-prices"
+      ],
+      "reading": [
+        "reading-1",
+        "writing-2",
+        "reading-4",
+        "writing-5"
+      ],
+      "science": [
+        "science-1",
+        "science-6",
+        "science-light",
+        "science-water"
+      ],
+      "life": [
+        "life-hands",
+        "life-meal-plan",
+        "life-leftovers",
+        "life-appointment"
+      ],
+      "digital": [
+        "pc-start",
+        "typing-words",
+        "digital-1",
+        "digital-3"
+      ],
+      "work": [
+        "work-strengths",
+        "work-availability",
+        "work-application",
+        "work-offer"
+      ]
+    },
+    "questionsPerArea": 8
+  },
+  "foundation": {
+    "version": 5,
+    "subjects": [
+      "math",
+      "reading",
+      "science",
+      "life"
+    ],
+    "stepsPerArea": 6,
+    "questions": [
+      {
+        "kind": "number",
+        "prompt": "How many cartons still need to go in the bag?",
+        "answer": 3,
+        "scene": "An order needs 8 cartons. There are 5 in the bag.",
+        "answerLabel": "Cartons to add",
+        "skill": "quantity",
+        "id": "s5-math-0-0",
+        "subject": "math",
+        "band": 0
+      },
+      {
+        "kind": "number",
+        "prompt": "How many boxes should come out?",
+        "answer": 2,
+        "scene": "A shelf has 9 boxes. The label says to keep 7.",
+        "answerLabel": "Boxes to remove",
+        "skill": "quantity",
+        "id": "s5-math-0-1",
+        "subject": "math",
+        "band": 0
+      },
+      {
+        "kind": "number",
+        "prompt": "How many cups are there altogether?",
+        "answer": 9,
+        "scene": "There are 6 cups on the table and 3 on the tray.",
+        "answerLabel": "Number of cups",
+        "skill": "quantity",
+        "id": "s5-math-0-2",
+        "subject": "math",
+        "band": 0
+      },
+      {
+        "kind": "number",
+        "prompt": "How many pencils are packed?",
+        "answer": 12,
+        "scene": "There are 3 packs, with 4 pencils in each pack.",
+        "answerLabel": "Number of pencils",
+        "skill": "groups",
+        "id": "s5-math-0-3",
+        "subject": "math",
+        "band": 0
+      },
+      {
+        "kind": "number",
+        "prompt": "How many notebooks are there?",
+        "answer": 24,
+        "scene": "Two sealed packs each hold 10 notebooks. There are also 4 loose notebooks.",
+        "answerLabel": "Number of notebooks",
+        "skill": "groups",
+        "id": "s5-math-0-4",
+        "subject": "math",
+        "band": 0
+      },
+      {
+        "kind": "number",
+        "prompt": "How many markers go in each tray?",
+        "answer": 4,
+        "scene": "Share 12 markers equally between 3 trays.",
+        "answerLabel": "Markers per tray",
+        "skill": "groups",
+        "id": "s5-math-0-5",
+        "subject": "math",
+        "band": 0
+      },
+      {
+        "kind": "number",
+        "prompt": "How much change should you receive?",
+        "answer": 3.5,
+        "scene": "The total is $6.50 CAD. You hand over $10.",
+        "answerLabel": "Change in dollars",
+        "skill": "money",
+        "id": "s5-math-1-0",
+        "subject": "math",
+        "band": 1
+      },
+      {
+        "kind": "number",
+        "prompt": "What is the total price?",
+        "answer": 7.25,
+        "scene": "A sandwich costs $4.50 and a drink costs $2.75. These prices include everything.",
+        "answerLabel": "Total in dollars",
+        "skill": "money",
+        "id": "s5-math-1-1",
+        "subject": "math",
+        "band": 1
+      },
+      {
+        "kind": "number",
+        "prompt": "How much money is left?",
+        "answer": 5.75,
+        "scene": "You have $9. You spend $3.25.",
+        "answerLabel": "Dollars left",
+        "skill": "money",
+        "id": "s5-math-1-2",
+        "subject": "math",
+        "band": 1
+      },
+      {
+        "kind": "number",
+        "prompt": "How many slices are in one equal share?",
+        "answer": 4,
+        "scene": "Share 12 slices equally among 3 people.",
+        "answerLabel": "Slices per share",
+        "skill": "fractions",
+        "id": "s5-math-1-3",
+        "subject": "math",
+        "band": 1
+      },
+      {
+        "kind": "number",
+        "prompt": "How many labels are used?",
+        "answer": 10,
+        "scene": "Use half of a sheet with 20 labels.",
+        "answerLabel": "Number of labels",
+        "skill": "fractions",
+        "id": "s5-math-1-4",
+        "subject": "math",
+        "band": 1
+      },
+      {
+        "kind": "number",
+        "prompt": "How many cups of water are needed?",
+        "answer": 1,
+        "scene": "A recipe needs half a cup of water for one batch. Make two batches.",
+        "answerLabel": "Cups of water",
+        "skill": "fractions",
+        "id": "s5-math-1-5",
+        "subject": "math",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which pack costs less per notebook?",
+        "options": [
+          "Pack A",
+          "Pack B",
+          "They cost the same per notebook"
+        ],
+        "answer": 1,
+        "scene": "Pack A: 2 notebooks for $6. Pack B: 4 notebooks for $8.",
+        "skill": "compare",
+        "id": "s5-math-2-0",
+        "subject": "math",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which option fits within the $15 budget?",
+        "options": [
+          "Two $8 kits",
+          "Three $4 kits",
+          "Four $4 kits"
+        ],
+        "answer": 1,
+        "scene": "You need at least 3 kits. The prices shown include everything.",
+        "skill": "compare",
+        "id": "s5-math-2-1",
+        "subject": "math",
+        "band": 2
+      },
+      {
+        "kind": "number",
+        "prompt": "How much will the ride cost?",
+        "answer": 11,
+        "scene": "A ride costs $3 to start, plus $2 for each kilometre. You travel 4 kilometres.",
+        "answerLabel": "Cost in dollars",
+        "skill": "compare",
+        "id": "s5-math-2-2",
+        "subject": "math",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "When should the timer finish?",
+        "options": [
+          "2:05 pm",
+          "2:45 pm",
+          "3:15 pm"
+        ],
+        "answer": 1,
+        "scene": "Start a 30-minute timer at 2:15 pm.",
+        "skill": "time",
+        "id": "s5-math-2-3",
+        "subject": "math",
+        "band": 2
+      },
+      {
+        "kind": "number",
+        "prompt": "How many minutes are available?",
+        "answer": 35,
+        "scene": "It is 9:10 am. Your appointment starts at 9:45 am.",
+        "answerLabel": "Minutes available",
+        "skill": "time",
+        "id": "s5-math-2-4",
+        "subject": "math",
+        "band": 2
+      },
+      {
+        "kind": "number",
+        "prompt": "How many hours are worked, after the break?",
+        "answer": 3.5,
+        "scene": "A shift runs from 10 am to 2 pm. There is a half-hour unpaid break.",
+        "answerLabel": "Hours worked",
+        "skill": "time",
+        "id": "s5-math-2-5",
+        "subject": "math",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Where will Jo meet you?",
+        "options": [
+          "The library entrance",
+          "The park gate",
+          "The bus stop"
+        ],
+        "answer": 1,
+        "scene": "Meet Jo at the park gate at 4 pm. Bring your blue folder.",
+        "skill": "reading",
+        "id": "s5-reading-0-0",
+        "subject": "reading",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which entrance should you use today?",
+        "options": [
+          "Main entrance",
+          "Side entrance",
+          "Either entrance"
+        ],
+        "answer": 1,
+        "scene": "The main entrance is closed today. Please use the side entrance.",
+        "skill": "reading",
+        "id": "s5-reading-0-1",
+        "subject": "reading",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should Lee bring?",
+        "options": [
+          "A notebook",
+          "A bag of books",
+          "A lunch box"
+        ],
+        "answer": 0,
+        "scene": "Lee, please bring a notebook to the meeting tomorrow. Lunch will be provided.",
+        "skill": "reading",
+        "id": "s5-reading-0-2",
+        "subject": "reading",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which message includes both the place and time?",
+        "options": [
+          "See you tomorrow.",
+          "Meet me at the library at 2 pm tomorrow.",
+          "The library is nice."
+        ],
+        "answer": 1,
+        "scene": "You are arranging a meeting at the library tomorrow at 2 pm.",
+        "skill": "writing",
+        "id": "s5-reading-0-3",
+        "subject": "reading",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which message makes a clear request?",
+        "options": [
+          "Blue folder.",
+          "Please bring my blue folder.",
+          "Wherever it is."
+        ],
+        "answer": 1,
+        "scene": "You need someone to bring your blue folder.",
+        "skill": "writing",
+        "id": "s5-reading-0-4",
+        "subject": "reading",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "What detail should you ask for?",
+        "options": [
+          "The meeting place",
+          "The meeting day",
+          "The meeting time"
+        ],
+        "answer": 2,
+        "scene": "The message says, “Meet me at the park gate on Friday.”",
+        "skill": "writing",
+        "id": "s5-reading-0-5",
+        "subject": "reading",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "Who should label the boxes?",
+        "options": [
+          "Ari",
+          "Kim",
+          "Both people"
+        ],
+        "answer": 1,
+        "scene": "Ari will pack the boxes. Kim will label them after Ari finishes.",
+        "skill": "reading",
+        "id": "s5-reading-1-0",
+        "subject": "reading",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should happen before the lid is closed?",
+        "options": [
+          "Put the note inside",
+          "Write on the closed lid",
+          "Move the box outside"
+        ],
+        "answer": 0,
+        "scene": "Pack the items. Put the note inside. Then close the lid.",
+        "skill": "reading",
+        "id": "s5-reading-1-1",
+        "subject": "reading",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which appointment should you go to?",
+        "options": [
+          "Tuesday at 10 am",
+          "Wednesday at 11 am",
+          "Both appointments"
+        ],
+        "answer": 1,
+        "scene": "Update: your Tuesday 10 am appointment has moved to Wednesday at 11 am. The place is unchanged.",
+        "skill": "reading",
+        "id": "s5-reading-1-2",
+        "subject": "reading",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which sentence makes clear who will do the task?",
+        "options": [
+          "They will take it.",
+          "Ari will take the parcel to the post office.",
+          "That will happen soon."
+        ],
+        "answer": 1,
+        "scene": "Ari has agreed to take a parcel to the post office.",
+        "skill": "writing",
+        "id": "s5-reading-1-3",
+        "subject": "reading",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which order is easiest to follow?",
+        "options": [
+          "Close the lid; open the lid; put the items inside.",
+          "Open the lid; put the items inside; close the lid.",
+          "Put the items inside; close the lid; open the lid."
+        ],
+        "answer": 1,
+        "scene": "Write instructions for packing an empty box whose lid is closed.",
+        "skill": "writing",
+        "id": "s5-reading-1-4",
+        "subject": "reading",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which question asks for the missing detail?",
+        "options": [
+          "What do you mean?",
+          "Which shelf should I use for these boxes?",
+          "Are boxes useful?"
+        ],
+        "answer": 1,
+        "scene": "You have been asked to put boxes on a shelf, but the message does not say which shelf.",
+        "skill": "writing",
+        "id": "s5-reading-1-5",
+        "subject": "reading",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "What is the main point?",
+        "options": [
+          "Sam is preparing for tomorrow’s shift.",
+          "Sam is changing jobs.",
+          "Sam is buying a new phone."
+        ],
+        "answer": 0,
+        "scene": "Sam checks the bus time, packs a lunch and puts tomorrow’s work shirt by the door.",
+        "skill": "reading",
+        "id": "s5-reading-2-0",
+        "subject": "reading",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "What does “charge” mean in this message?",
+        "options": [
+          "Fill a battery",
+          "A fee",
+          "Run forward"
+        ],
+        "answer": 1,
+        "scene": "The receipt includes a delivery charge of five dollars.",
+        "skill": "reading",
+        "id": "s5-reading-2-1",
+        "subject": "reading",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which detail supports the idea that Ari planned ahead?",
+        "options": [
+          "Ari wore a green coat.",
+          "Ari checked tomorrow’s bus route tonight.",
+          "Ari walked past a shop."
+        ],
+        "answer": 1,
+        "scene": "Ari checked tomorrow’s bus route tonight, then put a green coat by the door.",
+        "skill": "reading",
+        "id": "s5-reading-2-2",
+        "subject": "reading",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which message explains the problem clearly?",
+        "options": [
+          "It is doing that again.",
+          "Water is leaking from the pipe under the kitchen sink.",
+          "The kitchen is bad."
+        ],
+        "answer": 1,
+        "scene": "You need to report a leaking pipe under the kitchen sink.",
+        "skill": "writing",
+        "id": "s5-reading-2-3",
+        "subject": "reading",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which subject line will help the reader find your message?",
+        "options": [
+          "Hi!!!",
+          "Question about my Friday shift",
+          "Some things"
+        ],
+        "answer": 1,
+        "scene": "Your email asks which time your Friday shift starts.",
+        "skill": "writing",
+        "id": "s5-reading-2-4",
+        "subject": "reading",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which detail gives evidence for the request?",
+        "options": [
+          "Everyone always needs chairs.",
+          "Four people had no chair at our last meeting.",
+          "Chairs are the best."
+        ],
+        "answer": 1,
+        "scene": "You are asking for more chairs in a meeting room.",
+        "skill": "writing",
+        "id": "s5-reading-2-5",
+        "subject": "reading",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which note records an observation?",
+        "options": [
+          "The cup is the best cup.",
+          "The cup feels cold.",
+          "The cup wants water."
+        ],
+        "answer": 1,
+        "scene": "You are making a note about a cup in front of you.",
+        "skill": "observe",
+        "id": "s5-science-0-0",
+        "subject": "science",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which record makes the amount clear?",
+        "options": [
+          "The container holds a lot.",
+          "The container holds 250 mL.",
+          "The container looks nice."
+        ],
+        "answer": 1,
+        "scene": "You measured water in a marked container.",
+        "skill": "observe",
+        "id": "s5-science-0-1",
+        "subject": "science",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "What do these measurements show?",
+        "options": [
+          "The water became cooler.",
+          "The water became hotter.",
+          "The temperature stayed the same."
+        ],
+        "answer": 0,
+        "scene": "Water measured 30°C at the start and 24°C ten minutes later.",
+        "skill": "observe",
+        "id": "s5-science-0-2",
+        "subject": "science",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which comparison is fair?",
+        "options": [
+          "Same-size sheets, same amount of water",
+          "Different-size sheets, different amounts of water",
+          "One sheet tested; the other not tested"
+        ],
+        "answer": 0,
+        "scene": "Compare how much water two kinds of paper towel absorb.",
+        "skill": "compare",
+        "id": "s5-science-0-3",
+        "subject": "science",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should be kept the same?",
+        "options": [
+          "The material being tested",
+          "The size of each sample and amount of water",
+          "Nothing needs to stay the same"
+        ],
+        "answer": 1,
+        "scene": "Test which of two materials keeps water out better.",
+        "skill": "compare",
+        "id": "s5-science-0-4",
+        "subject": "science",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "What makes the results easier to compare?",
+        "options": [
+          "Measure both trials in the same units",
+          "Change units halfway through",
+          "Use no labels on the results"
+        ],
+        "answer": 0,
+        "scene": "Two people are measuring how far toy carts travel.",
+        "skill": "compare",
+        "id": "s5-science-0-5",
+        "subject": "science",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which material is suitable for a rain cover?",
+        "options": [
+          "A waterproof sheet",
+          "An absorbent paper towel",
+          "A sheet with many holes"
+        ],
+        "answer": 0,
+        "scene": "The cover needs to keep rain away from a bag.",
+        "skill": "materials",
+        "id": "s5-science-1-0",
+        "subject": "science",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which item will absorb a small spill?",
+        "options": [
+          "A glass lid",
+          "A paper towel",
+          "A metal spoon"
+        ],
+        "answer": 1,
+        "scene": "Choose a material that soaks water into itself.",
+        "skill": "materials",
+        "id": "s5-science-1-1",
+        "subject": "science",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which property matters for this task?",
+        "options": [
+          "Whether the label is colourful",
+          "Whether the material keeps water out",
+          "Whether the material has a long name"
+        ],
+        "answer": 1,
+        "scene": "You are choosing a cover for something that must stay dry.",
+        "skill": "materials",
+        "id": "s5-science-1-2",
+        "subject": "science",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "What happens to the ice?",
+        "options": [
+          "It becomes liquid water.",
+          "It stops being matter.",
+          "It becomes a different element."
+        ],
+        "answer": 0,
+        "scene": "Ice melts in a closed jar.",
+        "skill": "changes",
+        "id": "s5-science-1-3",
+        "subject": "science",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "What happens to the total mass?",
+        "options": [
+          "It stays the same.",
+          "It disappears.",
+          "It doubles."
+        ],
+        "answer": 0,
+        "scene": "Ice melts in a closed container. Nothing enters or leaves.",
+        "skill": "changes",
+        "id": "s5-science-1-4",
+        "subject": "science",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which result is a change of state?",
+        "options": [
+          "Ice becoming water",
+          "A cup moving across a table",
+          "A stone being placed in a box"
+        ],
+        "answer": 0,
+        "scene": "You are comparing changes you can see in a kitchen.",
+        "skill": "changes",
+        "id": "s5-science-1-5",
+        "subject": "science",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "What would separate these solids?",
+        "options": [
+          "A sieve whose holes pass sand but hold the pebbles",
+          "A closed lid",
+          "Adding more pebbles"
+        ],
+        "answer": 0,
+        "scene": "A dry mixture contains fine sand and larger pebbles.",
+        "skill": "separate",
+        "id": "s5-science-2-0",
+        "subject": "science",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you compare when choosing a sieve?",
+        "options": [
+          "Hole size and particle size",
+          "The colour of the handle only",
+          "How long the product name is"
+        ],
+        "answer": 0,
+        "scene": "You want small grains to pass through and larger pieces to stay behind.",
+        "skill": "separate",
+        "id": "s5-science-2-1",
+        "subject": "science",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which result shows separation?",
+        "options": [
+          "The larger pieces remain while smaller grains pass through.",
+          "All pieces are mixed together again.",
+          "The total mixture is simply moved to another bowl."
+        ],
+        "answer": 0,
+        "scene": "You pour a mixture through a sieve.",
+        "skill": "separate",
+        "id": "s5-science-2-2",
+        "subject": "science",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which method could separate the steel paper clips?",
+        "options": [
+          "Use a magnet",
+          "Use a lamp",
+          "Use a ruler to measure them"
+        ],
+        "answer": 0,
+        "scene": "A tray contains steel paper clips and plastic beads.",
+        "skill": "magnet",
+        "id": "s5-science-2-3",
+        "subject": "science",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "What does this result support?",
+        "options": [
+          "This steel clip is attracted to the magnet.",
+          "Every metal is attracted to every magnet.",
+          "Every object in the room is magnetic."
+        ],
+        "answer": 0,
+        "scene": "A magnet pulls a steel paper clip toward it.",
+        "skill": "magnet",
+        "id": "s5-science-2-4",
+        "subject": "science",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "How could you check whether the magnet attracts this object?",
+        "options": [
+          "Bring the magnet near it and observe what happens.",
+          "Guess from the object’s colour.",
+          "Assume every shiny object will move."
+        ],
+        "answer": 0,
+        "scene": "You have an unfamiliar object and a magnet.",
+        "skill": "magnet",
+        "id": "s5-science-2-5",
+        "subject": "science",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which plan is easiest to check?",
+        "options": [
+          "Keep a short list of the morning tasks",
+          "Remember every task without a reminder",
+          "Start a new task each time you forget"
+        ],
+        "answer": 0,
+        "scene": "You sometimes miss a step while getting ready.",
+        "skill": "routine",
+        "id": "s5-life-0-0",
+        "subject": "life",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "Where would a reminder be useful?",
+        "options": [
+          "Near the place where you do the task",
+          "Inside a box you never open",
+          "Only on a device you do not use"
+        ],
+        "answer": 0,
+        "scene": "You want to remember a regular part of your routine.",
+        "skill": "routine",
+        "id": "s5-life-0-1",
+        "subject": "life",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "What is a useful next step?",
+        "options": [
+          "Put the needed items together before starting",
+          "Search for each item only after you need it",
+          "Avoid preparing anything"
+        ],
+        "answer": 0,
+        "scene": "You are getting ready for a familiar morning task.",
+        "skill": "routine",
+        "id": "s5-life-0-2",
+        "subject": "life",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you check before using the cleaner?",
+        "options": [
+          "The product’s directions and warnings",
+          "Only the bottle’s colour",
+          "The size of the shop’s sign"
+        ],
+        "answer": 0,
+        "scene": "You have not used this cleaning product before.",
+        "skill": "instructions",
+        "id": "s5-life-0-3",
+        "subject": "life",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you do with an unclear instruction?",
+        "options": [
+          "Ask someone to explain the unclear part",
+          "Guess and continue",
+          "Ignore all of the instructions"
+        ],
+        "answer": 0,
+        "scene": "A care label has a symbol you do not recognise.",
+        "skill": "instructions",
+        "id": "s5-life-0-4",
+        "subject": "life",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which note would make the task easier to repeat?",
+        "options": [
+          "A short list in the order you do the steps",
+          "A list of unrelated items",
+          "No record of what worked"
+        ],
+        "answer": 0,
+        "scene": "You worked out a routine that is useful to you.",
+        "skill": "instructions",
+        "id": "s5-life-0-5",
+        "subject": "life",
+        "band": 0
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you check first?",
+        "options": [
+          "What food you already have",
+          "Only the most colourful packaging",
+          "Buy every item on last week’s list again"
+        ],
+        "answer": 0,
+        "scene": "You are making a grocery list for a few meals.",
+        "skill": "plan",
+        "id": "s5-life-1-0",
+        "subject": "life",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which plan fits?",
+        "options": [
+          "A 45-minute recipe",
+          "A 15-minute recipe",
+          "Two recipes that each take an hour"
+        ],
+        "answer": 1,
+        "scene": "You have 20 minutes available to prepare a meal.",
+        "skill": "plan",
+        "id": "s5-life-1-1",
+        "subject": "life",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "What would help avoid buying the same item twice?",
+        "options": [
+          "Check your cupboards against the shopping list",
+          "Use two separate lists without comparing them",
+          "Leave the list at home"
+        ],
+        "answer": 0,
+        "scene": "You have written a grocery list.",
+        "skill": "plan",
+        "id": "s5-life-1-2",
+        "subject": "life",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you check before you begin?",
+        "options": [
+          "The ingredients, equipment and steps",
+          "Only the picture of the finished meal",
+          "Only the last instruction"
+        ],
+        "answer": 0,
+        "scene": "You want to follow a recipe you have not used before.",
+        "skill": "prepare",
+        "id": "s5-life-1-3",
+        "subject": "life",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you do if the first step is unclear?",
+        "options": [
+          "Ask for an explanation before continuing",
+          "Skip it without checking",
+          "Make up an unrelated step"
+        ],
+        "answer": 0,
+        "scene": "You are following instructions for a new household task.",
+        "skill": "prepare",
+        "id": "s5-life-1-4",
+        "subject": "life",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "What makes the plan easier to follow?",
+        "options": [
+          "Group the needed items and read the steps first",
+          "Start with whichever step looks shortest",
+          "Change every instruction at once"
+        ],
+        "answer": 0,
+        "scene": "You have the ingredients for a simple meal.",
+        "skill": "prepare",
+        "id": "s5-life-1-5",
+        "subject": "life",
+        "band": 1
+      },
+      {
+        "kind": "choice",
+        "prompt": "What should you check before washing the shirt?",
+        "options": [
+          "The shirt’s care label",
+          "Only its colour in a photo",
+          "The price of an unrelated shirt"
+        ],
+        "answer": 0,
+        "scene": "This shirt is made from a fabric you have not washed before.",
+        "skill": "care",
+        "id": "s5-life-2-0",
+        "subject": "life",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which approach makes a large cleaning task manageable?",
+        "options": [
+          "Choose one small area and finish it first",
+          "Begin every area at the same time",
+          "Keep moving the same items between rooms"
+        ],
+        "answer": 0,
+        "scene": "A room needs tidying and the full task feels large.",
+        "skill": "care",
+        "id": "s5-life-2-1",
+        "subject": "life",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "What would make the task safer to start?",
+        "options": [
+          "Clear the walkway before carrying the basket",
+          "Carry the basket over scattered objects",
+          "Leave the doorway blocked"
+        ],
+        "answer": 0,
+        "scene": "You need to carry a laundry basket through a cluttered room.",
+        "skill": "care",
+        "id": "s5-life-2-2",
+        "subject": "life",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which reply makes your available time clear?",
+        "options": [
+          "I can help until 4 pm, then I need to leave.",
+          "I can stay forever.",
+          "Maybe sometime."
+        ],
+        "answer": 0,
+        "scene": "You can help today but have another commitment at 4 pm.",
+        "skill": "boundaries",
+        "id": "s5-life-2-3",
+        "subject": "life",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "Which request explains the support you need?",
+        "options": [
+          "Could you write down the steps so I can check them?",
+          "Nobody should give instructions.",
+          "I will pretend I understood."
+        ],
+        "answer": 0,
+        "scene": "You find spoken instructions difficult to follow in a noisy room.",
+        "skill": "boundaries",
+        "id": "s5-life-2-4",
+        "subject": "life",
+        "band": 2
+      },
+      {
+        "kind": "choice",
+        "prompt": "What is a useful next step?",
+        "options": [
+          "Ask what information is needed and why",
+          "Give every private detail immediately",
+          "Publish the information for everyone to see"
+        ],
+        "answer": 0,
+        "scene": "Someone asks for private information that seems unrelated to the task.",
+        "skill": "boundaries",
+        "id": "s5-life-2-5",
+        "subject": "life",
+        "band": 2
+      }
+    ],
+    "starts": {
+      "math": [
+        1,
+        4,
+        7
+      ],
+      "reading": [
+        1,
+        4,
+        7
+      ],
+      "science": [
+        1,
+        4,
+        7
+      ],
+      "life": [
+        1,
+        4,
+        7
+      ]
+    },
+    "suggestions": {
+      "math": [
+        "math-1",
+        "math-4",
+        "math-prices"
+      ],
+      "reading": [
+        "reading-1",
+        "reading-3",
+        "reading-4"
+      ],
+      "science": [
+        "science-1",
+        "science-6",
+        "science-light"
+      ],
+      "life": [
+        "life-hands",
+        "life-meal-plan",
+        "life-home-care"
+      ]
+    }
+  }
+}

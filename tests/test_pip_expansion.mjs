@@ -1,0 +1,50 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {COMPANIONS,companionSprite} from '../public/companion.js';
+import {PIP_ANCHORS,pipArtwork} from '../public/pip-art.js';
+import {PIP_ACTIONS} from '../public/pip-moves.js';
+import {homeItemArtwork,foodBowlArtwork,pipRoomScene} from '../public/pip-items.js';
+import {configureProfile,validateProfile,profileForm,profilePreview} from '../public/profile.js';
+const options=JSON.parse(fs.readFileSync(new URL('../public/profile-options.json',import.meta.url)));
+configureProfile(options);
+const added=['dog','badger','rat','squirrel','bat','goblin','rock','hedgehog','otter','moth','snail','mushroom'];
+assert.equal(COMPANIONS.length,28);
+assert.equal(new Set(options.companions).size,28);
+assert.equal(new Set(options.accessories.map(a=>a.id)).size,26);
+const basic={alias:'Pip',avatar:'fox',accessory:'none',badge:'plain',accent:'navy',motivation:'confidence',interests:[],nextWin:''};
+for(const id of added){
+  assert.equal(validateProfile({...basic,avatar:id},false,{},0).avatar,id);
+  assert.equal(PIP_ANCHORS[id].cx,32);
+  assert.match(pipArtwork(id),/sprite-head/);
+  assert.match(pipArtwork(id),/sprite-eyes/);
+  assert.ok(pipArtwork(id).includes(PIP_ACTIONS[id].part.slice(1)),id+' action must animate an existing part');
+  assert.match(companionSprite(id,44),new RegExp('data-species="'+id+'"'));
+}
+for(const item of options.accessories.filter(a=>a.modules>0)){
+  assert.throws(()=>validateProfile({...basic,accessory:item.id},true,basic,item.modules-1),/Pass/);
+  assert.equal(validateProfile({...basic,accessory:item.id},true,basic,item.modules).accessory,item.id);
+}
+const room={wall:options.home.wall.find(w=>!w.modules).id,rug:'none',furniture:'none',decor:'none',painting:'moon',shelf:'empty',bowl:'ceramic',curtains:'sage'};
+const positions={painting:{x:.44,y:.28},shelf:{x:.8,y:.2}};
+assert.deepEqual(validateProfile({...basic,home:room,homePositions:positions},false).homePositions,positions);
+for(const field of ['wall','bowl','curtains','unknown'])assert.throws(()=>validateProfile({...basic,homePositions:{[field]:{x:.5,y:.5}}}),/valid item positions/);
+const preview=profilePreview({...basic,home:room,homePositions:positions},null);
+assert.match(preview,/data-placed-kind="painting"/);
+assert.match(preview,/data-placed-kind="shelf"/);
+const at=preview.match(/data-placed-kind="painting"[^>]+style="--item-x:([^%]+)%;--item-y:([^%]+)%/);
+assert.equal(Number(at?.[1]),44);assert.ok(Math.abs(Number(at?.[2])-28)<.000001);
+assert.match(preview,/data-bowl-style="ceramic"/);
+assert.match(preview,/data-curtain-style="sage"/);
+assert.doesNotMatch(preview,/undefined|NaN/);
+assert.equal((preview.match(/data-placed-kind=/g)||[]).length,3,'The two wall items and removable curtains appear.');
+assert.match(preview,/data-pip-greet/,'A resting Pip can say hello.');
+assert.doesNotMatch(preview,/data-pip-greet disabled/,'The greeting remains available with an empty bowl.');
+assert.doesNotMatch(profilePreview({...basic,home:{...room,painting:'none',shelf:'none',curtains:'none'}}),/data-placed-kind="painting"|data-placed-kind="shelf"|pip-room-curtains/);
+for(const field of ['painting','shelf','bowl','curtains'])for(const item of options.home[field])if(item.id!=='none')assert.ok(homeItemArtwork(field,item.id),field+':'+item.id+' has artwork');
+assert.equal(new Set(options.home.bowl.map(item=>foodBowlArtwork(item.id))).size,4,'Bowl previews use distinct finishes.');
+assert.equal(new Set(options.home.curtains.map(item=>pipRoomScene('night',{curtains:item.id}))).size,5,'Curtain choices change the room itself.');
+const form=profileForm({editor:true,profile:{...basic,home:room}});
+assert.match(form,/data-pip-play disabled/,'An empty bowl still prevents active play.');
+for(const title of ['Paintings','Shelves','Food bowls','Curtains'])assert.ok(form.includes('<span>'+title+'</span>'));
+assert.match(form,/value="steppin"[^>]+disabled/);
+console.log('PASS: all 12 new companions, earned accessory boundaries, four independent home categories, saved wall-item positions and food gating.');

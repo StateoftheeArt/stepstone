@@ -1,0 +1,28 @@
+import assert from 'node:assert/strict';
+import {awardPreviewReview,previewFood,feedPreviewFood} from '../public/pip-food.js';
+import {checkpointMarkup} from '../public/checkpoint.js';
+const values=new Map(),storage={getItem:k=>values.get(k),setItem:(k,v)=>values.set(k,v)};
+const review=(unit,id,at,extras={})=>awardPreviewReview(storage,'preview',{unit,id,at,eligible:true,alreadyPassed:true,passed:true,...extras},['math-chart']);
+assert.equal(review('math-chart','first',1000,{alreadyPassed:false}).pipFoodReason,'first');
+assert.equal(previewFood(storage,'preview',['math-chart'],1000).bank,1);
+assert.equal(review('math-chart','redo',1001).pipFoodEarned,1);
+assert.equal(previewFood(storage,'preview',['math-chart'],1001).bank,2);
+assert.equal(review('math-chart','redo',1002).pipFoodEarned,1);
+assert.equal(previewFood(storage,'preview',['math-chart'],1002).bank,2);
+assert.equal(review('math-chart','too-early',87400).pipFoodReason,'cooldown');
+assert.equal(review('math-chart','clock-rollback',900).pipFoodReason,'cooldown');
+assert.equal(review('math-chart','boundary',87401).pipFoodEarned,1);
+assert.equal(review('math-chart','fail',87402,{passed:false}).pipFoodEarned,0);
+assert.equal(review('math-1','not-eligible',87402,{eligible:false}).pipFoodEarned,0);
+assert.equal(review('math-9','other-module',87402).pipFoodEarned,1);
+feedPreviewFood(storage,'preview',['math-chart'],87402);
+previewFood(storage,'preview',['math-chart'],87500);
+assert.equal(review('math-9','blocked-after-timer',87501).pipFoodReason,'cooldown','Settling and feeding preserve review cooldowns.');
+assert.equal(previewFood(storage,'another-account',[],87501).bank,0);
+const markup=checkpointMarkup({completion:{pipItems:[],pipFood:1},award:{pipFoodEarned:1,pipFoodReason:'review'}});
+assert.match(markup,/Earned by replay/);
+const blocked=checkpointMarkup({completion:{pipItems:[],pipFood:1},award:{pipFoodEarned:0,pipFoodReason:'cooldown',pipFoodNextAt:87401}});
+assert.match(blocked,/Food review ready again/);
+assert.doesNotMatch(blocked,/\+1 food portion/);
+console.log('PASS: preview first passes, replay receipts, 24-hour boundaries, independent cooldowns, failure gates and checkpoint labels.');
+

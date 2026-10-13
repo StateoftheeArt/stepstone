@@ -1,0 +1,626 @@
+{
+  "accents": [
+    {
+      "id": "mint",
+      "label": "Fresh mint"
+    },
+    {
+      "id": "sky",
+      "label": "Electric blue"
+    },
+    {
+      "id": "violet",
+      "label": "Deep violet"
+    },
+    {
+      "id": "amber",
+      "label": "Warm gold"
+    },
+    {
+      "id": "rose",
+      "label": "Rose"
+    },
+    {
+      "id": "teal",
+      "label": "Teal"
+    },
+    {
+      "id": "coral",
+      "label": "Coral"
+    },
+    {
+      "id": "slate",
+      "label": "Slate"
+    },
+    {
+      "id": "navy",
+      "label": "Midnight navy"
+    },
+    {
+      "id": "forest",
+      "label": "Forest green"
+    },
+    {
+      "id": "steel",
+      "label": "Steel blue"
+    },
+    {
+      "id": "charcoal",
+      "label": "Charcoal"
+    },
+    {
+      "id": "plum",
+      "label": "Plum"
+    },
+    {
+      "id": "copper",
+      "label": "Copper"
+    },
+    {
+      "id": "olive",
+      "label": "Olive"
+    },
+    {
+      "id": "ice",
+      "label": "Ice blue"
+    }
+  ],
+  "motivations": [
+    {
+      "id": "confidence",
+      "label": "Feel more confident"
+    },
+    {
+      "id": "independence",
+      "label": "Do more for myself"
+    },
+    {
+      "id": "work",
+      "label": "Get ready for work"
+    },
+    {
+      "id": "money",
+      "label": "Handle my money"
+    },
+    {
+      "id": "create",
+      "label": "Build something useful"
+    }
+  ],
+  "interests": [
+    {
+      "id": "math",
+      "label": "Money & numbers"
+    },
+    {
+      "id": "reading",
+      "label": "Reading"
+    },
+    {
+      "id": "writing",
+      "label": "Writing"
+    },
+    {
+      "id": "science",
+      "label": "How things work"
+    },
+    {
+      "id": "social",
+      "label": "People & communication"
+    },
+    {
+      "id": "digital",
+      "label": "Digital skills"
+    }
+  ],
+  "companions": [
+    "fox",
+    "cat",
+    "frog",
+    "axolotl",
+    "owl",
+    "bunny",
+    "robot",
+    "cloud",
+    "duck",
+    "penguin",
+    "turtle",
+    "dragon",
+    "hamster",
+    "raccoon",
+    "bee",
+    "octopus",
+    "dog",
+    "badger",
+    "rat",
+    "squirrel",
+    "bat",
+    "goblin",
+    "rock",
+    "hedgehog",
+    "otter",
+    "moth",
+    "snail",
+    "mushroom"
+  ],
+  "accessories": [
+    {
+      "id": "none",
+      "label": "No accessory",
+      "modules": 0
+    },
+    {
+      "id": "sprout",
+      "label": "Little sprout",
+      "modules": 2,
+      "legacyModules": 1
+    },
+    {
+      "id": "bandana",
+      "label": "Trail bandana",
+      "modules": 4,
+      "legacyModules": 0
+    },
+    {
+      "id": "cap",
+      "label": "Navy cap",
+      "modules": 6,
+      "legacyModules": 0
+    },
+    {
+      "id": "bow",
+      "label": "Rose ribbon",
+      "modules": 10
+    },
+    {
+      "id": "pendant",
+      "label": "Copper pendant",
+      "modules": 12,
+      "legacyModules": 0
+    },
+    {
+      "id": "scarf",
+      "label": "Golden scarf",
+      "modules": 16,
+      "legacyModules": 3
+    },
+    {
+      "id": "beanie",
+      "label": "Cosy beanie",
+      "modules": 18
+    },
+    {
+      "id": "beret",
+      "label": "Soft beret",
+      "modules": 20,
+      "legacyModules": 0
+    },
+    {
+      "id": "glasses",
+      "label": "Round glasses",
+      "modules": 22
+    },
+    {
+      "id": "neckbow",
+      "label": "Mint bow tie",
+      "modules": 26
+    },
+    {
+      "id": "leafpin",
+      "label": "Leaf brooch",
+      "modules": 30,
+      "legacyModules": 0
+    },
+    {
+      "id": "flowers",
+      "label": "Flower crown",
+      "modules": 32
+    },
+    {
+      "id": "rainhat",
+      "label": "Rainy-day hat",
+      "modules": 40
+    },
+    {
+      "id": "sunglasses",
+      "label": "Tinted glasses",
+      "modules": 44,
+      "legacyModules": 0
+    },
+    {
+      "id": "headphones",
+      "label": "Headphones",
+      "modules": 48,
+      "legacyModules": 5
+    },
+    {
+      "id": "explorer",
+      "label": "Explorer hat",
+      "modules": 52
+    },
+    {
+      "id": "starpin",
+      "label": "Star pin",
+      "modules": 56
+    },
+    {
+      "id": "bucket",
+      "label": "Bucket hat",
+      "modules": 60,
+      "legacyModules": 0
+    },
+    {
+      "id": "backpack",
+      "label": "Little backpack",
+      "modules": 64
+    },
+    {
+      "id": "satchel",
+      "label": "Canvas satchel",
+      "modules": 72,
+      "legacyModules": 0
+    },
+    {
+      "id": "crown",
+      "label": "Celebration crown",
+      "modules": 76
+    },
+    {
+      "id": "wizard",
+      "label": "Stargazer hat",
+      "modules": 88,
+      "legacyModules": 0
+    },
+    {
+      "id": "knitted",
+      "label": "Knitted scarf",
+      "modules": 104,
+      "legacyModules": 0
+    },
+    {
+      "id": "moonpin",
+      "label": "Moon brooch",
+      "modules": 120,
+      "legacyModules": 0
+    },
+    {
+      "id": "steppin",
+      "label": "Stepstone pin",
+      "modules": 144,
+      "legacyModules": 0
+    }
+  ],
+  "badges": [
+    {
+      "id": "plain",
+      "label": "Classic teal"
+    },
+    {
+      "id": "aurora",
+      "label": "Aurora glow"
+    },
+    {
+      "id": "sunset",
+      "label": "Sunset glow"
+    }
+  ],
+  "home": {
+    "wall": [
+      {
+        "id": "teal",
+        "label": "Cosy teal",
+        "modules": 0
+      },
+      {
+        "id": "sand",
+        "label": "Warm sand",
+        "modules": 0
+      },
+      {
+        "id": "lavender",
+        "label": "Soft lavender",
+        "modules": 0
+      },
+      {
+        "id": "night",
+        "label": "Night sky",
+        "modules": 8,
+        "legacyModules": 2
+      },
+      {
+        "id": "sage",
+        "label": "Garden sage",
+        "modules": 28
+      },
+      {
+        "id": "rose",
+        "label": "Dusky rose",
+        "modules": 68
+      },
+      {
+        "id": "sky",
+        "label": "Morning sky",
+        "modules": 100
+      }
+    ],
+    "rug": [
+      {
+        "id": "round",
+        "label": "Round rug",
+        "modules": 0
+      },
+      {
+        "id": "striped",
+        "label": "Striped mat",
+        "modules": 0
+      },
+      {
+        "id": "woven",
+        "label": "Woven rug",
+        "modules": 4,
+        "legacyModules": 1
+      },
+      {
+        "id": "star",
+        "label": "Star rug",
+        "modules": 20,
+        "legacyModules": 3
+      },
+      {
+        "id": "none",
+        "label": "No rug",
+        "modules": 0
+      },
+      {
+        "id": "cloud",
+        "label": "Cloud rug",
+        "modules": 34
+      },
+      {
+        "id": "patchwork",
+        "label": "Patchwork rug",
+        "modules": 72
+      },
+      {
+        "id": "leaf",
+        "label": "Leaf rug",
+        "modules": 104
+      }
+    ],
+    "furniture": [
+      {
+        "id": "cushion",
+        "label": "Soft cushion",
+        "modules": 0
+      },
+      {
+        "id": "stool",
+        "label": "Wooden stool",
+        "modules": 0
+      },
+      {
+        "id": "none",
+        "label": "Open floor",
+        "modules": 0
+      },
+      {
+        "id": "chair",
+        "label": "Cosy armchair",
+        "modules": 12,
+        "legacyModules": 2
+      },
+      {
+        "id": "desk",
+        "label": "Little desk",
+        "modules": 30,
+        "legacyModules": 4
+      },
+      {
+        "id": "beanbag",
+        "label": "Comfy beanbag",
+        "modules": 44
+      },
+      {
+        "id": "table",
+        "label": "Tea table",
+        "modules": 80
+      },
+      {
+        "id": "sofa",
+        "label": "Cosy sofa",
+        "modules": 96
+      },
+      {
+        "id": "bed",
+        "label": "Little bed",
+        "modules": 112
+      },
+      {
+        "id": "booknook",
+        "label": "Reading nook",
+        "modules": 120
+      }
+    ],
+    "decor": [
+      {
+        "id": "plant",
+        "label": "House plant",
+        "modules": 0
+      },
+      {
+        "id": "photo",
+        "label": "Photo frame",
+        "modules": 0
+      },
+      {
+        "id": "flowers",
+        "label": "Flower jar",
+        "modules": 0
+      },
+      {
+        "id": "lamp",
+        "label": "Reading lamp",
+        "modules": 6,
+        "legacyModules": 1
+      },
+      {
+        "id": "books",
+        "label": "Bookshelf",
+        "modules": 24,
+        "legacyModules": 3
+      },
+      {
+        "id": "stars",
+        "label": "Hanging stars",
+        "modules": 36,
+        "legacyModules": 5
+      },
+      {
+        "id": "none",
+        "label": "No decoration",
+        "modules": 0
+      },
+      {
+        "id": "poster",
+        "label": "Mountain print",
+        "modules": 60
+      },
+      {
+        "id": "clock",
+        "label": "Wall clock",
+        "modules": 84
+      },
+      {
+        "id": "terrarium",
+        "label": "Tiny garden",
+        "modules": 88
+      },
+      {
+        "id": "lights",
+        "label": "Fairy lights",
+        "modules": 92
+      },
+      {
+        "id": "aquarium",
+        "label": "Fish tank",
+        "modules": 108
+      },
+      {
+        "id": "music",
+        "label": "Record player",
+        "modules": 116
+      }
+    ],
+    "painting": [
+      {
+        "id": "landscape",
+        "label": "Landscape painting",
+        "modules": 0
+      },
+      {
+        "id": "moon",
+        "label": "Moon painting",
+        "modules": 0
+      },
+      {
+        "id": "abstract",
+        "label": "Abstract painting",
+        "modules": 12,
+        "legacyModules": 0
+      },
+      {
+        "id": "starmap",
+        "label": "Star map",
+        "modules": 60,
+        "legacyModules": 0
+      },
+      {
+        "id": "none",
+        "label": "No painting",
+        "modules": 0
+      }
+    ],
+    "shelf": [
+      {
+        "id": "books",
+        "label": "Book shelf",
+        "modules": 0
+      },
+      {
+        "id": "empty",
+        "label": "Floating shelf",
+        "modules": 0
+      },
+      {
+        "id": "plants",
+        "label": "Plant shelf",
+        "modules": 28,
+        "legacyModules": 0
+      },
+      {
+        "id": "none",
+        "label": "No shelf",
+        "modules": 0
+      }
+    ],
+    "bowl": [
+      {
+        "id": "gold",
+        "label": "Golden bowl",
+        "modules": 0
+      },
+      {
+        "id": "ceramic",
+        "label": "Ceramic bowl",
+        "modules": 0
+      },
+      {
+        "id": "steel",
+        "label": "Steel bowl",
+        "modules": 12,
+        "legacyModules": 0
+      },
+      {
+        "id": "speckled",
+        "label": "Speckled bowl",
+        "modules": 30,
+        "legacyModules": 0
+      }
+    ],
+    "curtains": [
+      {
+        "id": "linen",
+        "label": "Linen curtains",
+        "modules": 0
+      },
+      {
+        "id": "sage",
+        "label": "Sage curtains",
+        "modules": 0
+      },
+      {
+        "id": "striped",
+        "label": "Striped curtains",
+        "modules": 8,
+        "legacyModules": 0
+      },
+      {
+        "id": "navy",
+        "label": "Navy curtains",
+        "modules": 20,
+        "legacyModules": 0
+      },
+      {
+        "id": "none",
+        "label": "No curtains",
+        "modules": 0
+      }
+    ]
+  },
+  "food": {
+    "portionSeconds": 1800,
+    "bowlPortions": 3,
+    "perModule": 1
+  },
+  "rewardSchedule": 2
+}
