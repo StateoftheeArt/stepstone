@@ -8,12 +8,12 @@ import zipfile
 ROOT=Path(__file__).resolve().parents[1]
 RUNTIME=('preview_checks.py','pip_rewards.py','human_text.py','ai_support.py','backups.py','check_sampling.py','course_access.py','daily_tasks.py','laptop_finder.py','device_work.py','foundation.py',
          'host_runtime.py','mentor_accounts.py','mentor_messages.py','placement.py','projects.py','reward_program.py','gift_cards.py','server.py',
-         'text_filter.py','tutorial.py','typing_evidence.py','voice.py')
-TOOLS=('build_assets.py','hosted_server.py','backup_records.py','text_filter_terms.py','voice_worker.py')
+         'text_filter.py','tutorial.py','typing_evidence.py','voice.py','wsgi_app.py')
+TOOLS=('build_assets.py','hosted_server.py','pythonanywhere_wsgi.py','backup_records.py','text_filter_terms.py','voice_worker.py')
 
 
 def source_files(root=ROOT):
-    files=[root/name for name in (*RUNTIME,'.python-version','render.yaml','LICENSE','HOSTING.md','OPERATIONS.md')]
+    files=[root/name for name in (*RUNTIME,'.python-version','render.yaml','LICENSE','FREE_HOSTING.md','HOSTING.md','OPERATIONS.md')]
     files += [root/'tools'/name for name in TOOLS]
     files += [root/'content/checkpoints.json']
     for path in (root/'public').rglob('*'):

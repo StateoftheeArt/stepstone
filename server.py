@@ -232,7 +232,7 @@ class Handler(SimpleHTTPRequestHandler):
         if getattr(self,'path','').startswith('/api/'): return
         # Request fragments never arrive here; discard query strings as well.
         super().log_message('%s %s', self.command, urlparse(getattr(self,'path','')).path)
-    def end_headers(self):
+    def security_headers(self):
         self.send_header('X-Content-Type-Options','nosniff')
         self.send_header('Referrer-Policy','no-referrer')
         self.send_header('X-Frame-Options','DENY')
@@ -240,6 +240,8 @@ class Handler(SimpleHTTPRequestHandler):
         self.send_header('Content-Security-Policy',f"default-src 'self'; script-src 'self' {PREVIEW_SCRIPT}; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'")
         if self.path.startswith('/api/'): self.send_header('Cache-Control','no-store')
         else: self.send_header('Cache-Control','no-cache')
+    def end_headers(self):
+        self.security_headers()
         super().end_headers()
     def boundary(self,mutation=False):
         host=self.headers.get('Host','').lower()
@@ -836,11 +838,11 @@ class StepstoneServer(ThreadingHTTPServer):
         if os.name=='nt': self.socket.setsockopt(socket.SOL_SOCKET,socket.SO_EXCLUSIVEADDRUSE,1)
         super().server_bind()
 
-def create_server(host='127.0.0.1',port=8090,data=None,allowed_host=None,secure=False,desktop=False,public_url='',trust_forwarded=False):
+def configure_server(server,data=None,allowed_host=None,secure=False,desktop=False,public_url='',trust_forwarded=False,voice=None):
+    """Share account and security configuration with a socket-free WSGI host."""
     public_url=shared_address(public_url,secure)
-    server=StepstoneServer((host,port),Handler)
     actual=server.server_address[1]
-    server.store=Store(data or ROOT/'data');server.secure_cookies=secure;server.logins={};server.voice=VoiceEngine()
+    server.store=Store(data or ROOT/'data');server.secure_cookies=secure;server.logins={};server.voice=voice if voice is not None else VoiceEngine()
     server.trust_forwarded=trust_forwarded
     server.accounts=mentor_accounts.Accounts(server.store,Store,Problem,automatic_backups=desktop or bool(public_url))
     server.backups=server.store.backups
@@ -853,6 +855,15 @@ def create_server(host='127.0.0.1',port=8090,data=None,allowed_host=None,secure=
     if allowed_host: server.allowed_hosts.update(h.lower() for h in allowed_host)
     if public_url: server.allowed_hosts.add(urlparse(public_url).netloc)
     return server
+
+def create_server(host='127.0.0.1',port=8090,data=None,allowed_host=None,secure=False,desktop=False,public_url='',trust_forwarded=False):
+    public_url=shared_address(public_url,secure)
+    server=StepstoneServer((host,port),Handler)
+    try:
+        return configure_server(server,data,allowed_host,secure,desktop,public_url,trust_forwarded)
+    except Exception:
+        server.server_close()
+        raise
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)

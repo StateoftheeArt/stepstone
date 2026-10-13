@@ -25,6 +25,12 @@ The example domain and storage path are placeholders, not configured services. T
 
 ## Prepared shared-host option (not deployed)
 
+A free full-app route is now prepared: [PythonAnywhere setup](FREE_HOSTING.md).
+It preserves learner and mentor records on the free account's filesystem,
+requires monthly web-app renewal, and is intended for a small supervised pilot.
+The Render option below is optional paid infrastructure; no subscription is
+required to use the free route.
+
 `render.yaml` describes one Python web service and a 1 GB persistent disk. Render
 supplies HTTPS and its own app address; no purchased domain is required. The
 startup wrapper requires durable storage and reads `RENDER_EXTERNAL_URL` (or an

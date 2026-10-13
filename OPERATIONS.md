@@ -30,6 +30,11 @@ then about once every 24 hours while running. The latest 14 managed copies stay
 under the data directory's `recovery/` folder. Older managed copy/checksum pairs
 rotate only after a new copy passes validation. Other files are left alone.
 
+The free WSGI entry instead checks the visited workspace after each request and
+makes a due copy synchronously, without a timer or background thread. An idle
+workspace gets its next automatic copy when someone visits it. Manual copies
+remain available. Check [FREE_HOSTING.md](FREE_HOSTING.md) for storage and renewal.
+
 Each copy uses SQLite's backup operation, followed by an integrity check, table
 counts and SHA-256. It includes private account and reward records. It is never a
 public web asset. Report exports are not a substitute for database recovery.

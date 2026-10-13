@@ -28,6 +28,10 @@ Localhost works on the computer running the app. For learners on other devices, 
 
 Each installation has its own records. Learner records, credentials, private invitations and reward details live in `data/`; never commit or publicly upload that directory. The source package contains no learner databases, account records, private links, backups or voice models.
 
+## Run the full app online for free
+
+[Free-host setup](FREE_HOSTING.md) describes a PythonAnywhere Beginner installation with persistent records, separate mentor accounts, invitations and shared feedback. It uses the existing Python routes through a WSGI entry point. Visitors need no GitHub account. The free plan has one worker, 512 MiB storage and monthly renewal; qualify a small pilot before expanding. The guide and adapter do not by themselves establish a live hosted service.
+
 ## What testers can help with
 
 - Learners and mentors: confusing wording, unclear examples, missing instructions and difficulty returning to an activity.

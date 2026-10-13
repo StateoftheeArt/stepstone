@@ -177,7 +177,7 @@ class BackupManager:
         finally:
             self.lock.release()
 
-    def tick(self):
+    def tick(self, *, background=True):
         now = time.time()
         if not self.enabled or now - self.last_try < 300 or self.lock.locked():
             return
@@ -196,8 +196,11 @@ class BackupManager:
                 self.create()
             except Exception:
                 pass  # The private mentor status reports the failure.
-        self.worker = threading.Thread(target=run, daemon=True)
-        self.worker.start()
+        if background:
+            self.worker = threading.Thread(target=run, daemon=True)
+            self.worker.start()
+        else:
+            run()  # A WSGI host may forbid threads; complete the copy in this request.
 
     def close(self):
         if self.worker:

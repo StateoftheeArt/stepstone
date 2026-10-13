@@ -1,5 +1,18 @@
 # Changes
 
+## Free full-app hosting support — 13 October 2026
+
+- Added a socket-free WSGI entry point using the existing learner and mentor
+  routes, grading, cookie and ownership rules. Public proxy requests cannot
+  claim local records or manage the owner's laptop.
+- Added synchronous daily recovery copies for hosts that prohibit background
+  threads. Local desktop and standalone hosted servers retain their existing
+  background recovery behavior.
+- Added a PythonAnywhere configuration template and free-host guide, with
+  persistent storage, HTTPS, monthly renewal and free-plan limits.
+- The hosting archive includes only reviewed app code and the new entry point;
+  no existing account records or browser-demo practice is migrated.
+
 ## Interface 119 / server 41 — first public-source candidate, 12 October 2026
 
 - Replaced five Museum image extracts with original MIT-licensed money-value SVG diagrams. The cash lessons link the Museum as a separate real-cash learning resource.
