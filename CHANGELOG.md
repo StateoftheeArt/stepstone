@@ -1,5 +1,16 @@
 # Changes
 
+## Interface 123 / server 41 — 15 October 2026
+
+- Rounded and outlined side-view paws replace the rectangular toe extensions.
+  Side-view faces, ears and accessories now follow the head when it moves.
+- Walking uses individual feet, folding legs for hops and bounds, wing beats,
+  head movement and each companion's signature parts. The rock keeps its rigid
+  shape during travel, dances, greetings and settling; robots move smoothly.
+- Quiet visuals and reduced-motion settings still stop roaming and animations.
+  Refreshed cached assets and browser demo revision 5. Learning and account
+  records are unchanged.
+
 ## Interface 122 / server 41 — 15 October 2026
 
 - Pip's initial hint, button description and tooltip now match whether Pip is

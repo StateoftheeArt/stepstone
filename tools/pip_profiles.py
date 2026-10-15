@@ -5,6 +5,7 @@ and tail remain separate so each Pip keeps its own signature motion.
 """
 from pathlib import Path
 import json
+import xml.etree.ElementTree as ET
 from pixel_art import Pixels, INK, WHITE, shape
 from pip_drawings import paired_feet
 
@@ -26,6 +27,31 @@ def eye(x, y, size=4):
     p = Pixels().ellipse(x, y, size, size, INK)
     p.rect(x+1, y+1, 1, 1, WHITE)
     return layer(p, 'sprite-eyes')
+
+
+def profile_paws(palette, species):
+    """Connected ankles and rounded toes, shaded after the whole silhouette."""
+    base, dark, light = palette
+    paws = shaded(lambda p, c: p.ellipse(19, 46, 10, 12, c)
+                  .ellipse(20, 54, 14 if species == 'bunny' else 12, 6, c)
+                  .ellipse(38, 45, 9, 13, c).ellipse(39, 54, 14, 6, c), palette)
+    # Small toe creases stay inside the paw, rather than extending it as a box.
+    paws.line((28, 57), (28, 58), dark).line((47, 57), (47, 58), dark)
+    paws.rect(23, 55, 4, 1, light).rect(43, 55, 4, 1, light)
+    return paired_feet(paws, 35)
+
+
+def rig_head(art):
+    """Carry the face, ears and worn item with the head when it nods."""
+    root = ET.fromstring('<svg>'+art+'</svg>')
+    head = next(node for node in root if 'sprite-head' in node.get('class', '').split())
+    attached = {'sprite-eyes', 'sprite-smile', 'sprite-ears', 'sprite-beak', 'sprite-whiskers'}
+    for node in list(root):
+        if attached.intersection(node.get('class', '').split()):
+            root.remove(node)
+            head.append(node)
+    head.append(ET.Comment('pip-headwear'))
+    return ''.join(ET.tostring(node, encoding='unicode') for node in root)
 
 
 FUR = {
@@ -84,9 +110,7 @@ def fur_profile(species):
         wing = shaded(lambda p, c: p.polygon([(29, 37), (20, 21), (12, 21), (10, 35), (16, 32), (23, 43), (32, 44)], c), ('#649499', '#416e7b', '#abd0bd'))
         wing.line((18, 26), (26, 38), '#c3d8ad')
         parts.append(layer(wing, 'sprite-wings sprite-wing-left', '29px 39px'))
-    feet = shaded(lambda p, c: p.ellipse(19, 48, 10, 12, c).ellipse(38, 47, 10, 13, c), palette)
-    feet.rect(23, 56, 9, 4, light).rect(41, 56, 11, 4, light)
-    parts.append(paired_feet(feet, 35))
+    parts.append(profile_paws(palette, species))
     arm = shaded(lambda p, c: p.ellipse(33, 39, 8, 14, c), palette)
     parts.append(layer(arm, 'sprite-arms', '37px 40px'))
     top = 23 if species == 'bunny' else 18
@@ -125,7 +149,7 @@ def fur_profile(species):
     parts.append(eye(44, top+8))
     parts.append(layer(mouth, 'sprite-smile'))
     if species in ('cat', 'rat', 'otter', 'hamster'):
-        parts.append(layer(Pixels().line((52, top+19), (62, top+16), '#cdd3cd').line((52, top+20), (62, top+23), '#b9c5c5')))
+        parts.append(layer(Pixels().line((52, top+19), (62, top+16), '#cdd3cd').line((52, top+20), (62, top+23), '#b9c5c5'), 'sprite-whiskers'))
     return ''.join(parts), dict(cx=43, top=top, eye=top+10, width=23, neck=top+24)
 
 
@@ -142,7 +166,7 @@ def bird_profile(species):
     beak = shaded(lambda p, c: p.polygon([(49, 26), (58, 29), (57, 32), (49, 33)], c), ('#caaa6d', '#917644', '#efd397'))
     wing = shaded(lambda p, c: p.ellipse(21, 32, 19, 20, c), palette)
     wing.line((26, 39), (34, 46), palette[1]).line((25, 43), (30, 49), palette[2])
-    return layer(body)+paired_feet(feet, 38)+layer(wing, 'sprite-wings sprite-wing-left', '32px 34px')+layer(head, 'sprite-head')+layer(beak)+eye(44, 23), dict(cx=42, top=13, eye=25, width=22, neck=36)
+    return layer(body)+paired_feet(feet, 38)+layer(wing, 'sprite-wings sprite-wing-left', '32px 34px')+layer(head, 'sprite-head')+layer(beak, 'sprite-beak')+eye(44, 23), dict(cx=42, top=13, eye=25, width=22, neck=36)
 
 
 def small_profile(species):
@@ -182,7 +206,9 @@ def small_profile(species):
         head = shaded(lambda p, c: p.rect(28, 13, 21, 19, c).rect(47, 20, 7, 10, c), ('#a1becb', '#6c889e', '#d9e7e5'))
         head.rect(43, 18, 9, 9, '#355a68')
         display = Pixels().rect(46, 21, 5, 3, '#bee9e7')
-        feet = shaded(lambda p, c: p.rect(25, 52, 7, 8, c).rect(40, 52, 7, 8, c).rect(28, 57, 9, 4, c).rect(43, 57, 9, 4, c), ('#789cb5', '#4d718a', '#b7d1df'))
+        feet = shaded(lambda p, c: p.ellipse(25, 50, 7, 8, c).polygon([(26, 55), (31, 55), (35, 57), (37, 59), (36, 61), (25, 61), (24, 59)], c)
+                      .ellipse(40, 50, 7, 8, c).polygon([(41, 55), (46, 55), (50, 57), (52, 59), (51, 61), (40, 61), (39, 59)], c), ('#789cb5', '#4d718a', '#b7d1df'))
+        feet.rect(27, 52, 3, 2, '#d9e7e5').rect(42, 52, 3, 2, '#d9e7e5')
         arm = shaded(lambda p, c: p.rect(30, 36, 6, 16, c).rect(29, 48, 8, 6, c), ('#9ebac7', '#637f98', '#d3e3e6'))
         antenna = Pixels().rect(36, 7, 2, 6, '#92aeb2').ellipse(34, 3, 6, 5, '#d5bd80')
         parts = [paired_feet(feet, 39), layer(body), layer(arm, 'sprite-arms', '33px 38px'), layer(antenna, 'sprite-ears', '37px 12px'), layer(head, 'sprite-head'), layer(display, 'sprite-eyes', '48px 22px')]
@@ -253,11 +279,11 @@ def build():
     for maker in MAKERS:
         name = maker.__name__
         drawing = fur_profile(name) if name in FUR else bird_profile(name) if name in ('owl', 'duck', 'penguin') else flying_profile(name) if name in ('bee', 'bat', 'moth') else small_profile(name)
-        art[name], anchors[name] = drawing
+        art[name], anchors[name] = rig_head(drawing[0]), drawing[1]
     source = '// Generated by tools/pip_profiles.py; walking profiles face right.\n'
     source += 'const ART='+json.dumps(art, separators=(',', ':'))+';\n'
     source += 'export const PIP_PROFILE_ANCHORS='+json.dumps(anchors, separators=(',', ':'))+';\n'
-    source += 'export function pipProfileArtwork(id){return ART[id]||ART.fox;}\n'
+    source += "export function pipProfileArtwork(id,headwear=''){return (ART[id]||ART.fox).replace('<!--pip-headwear-->',headwear);}\n"
     target = Path(__file__).resolve().parents[1]/'public'/'pip-profile-art.js'
     target.write_text(source, encoding='utf-8', newline='\n')
     print(f'Built {len(art)} walking profiles ({len(source):,} bytes).')

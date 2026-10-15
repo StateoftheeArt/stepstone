@@ -1,5 +1,5 @@
-import {activeUnits,suggestedStart,canonicalSubject} from './curriculum.js?build=122';
-import {escapeHTML as esc} from './engine.js?build=122';
+import {activeUnits,suggestedStart,canonicalSubject} from './curriculum.js?build=123';
+import {escapeHTML as esc} from './engine.js?build=123';
 
 export function previewFoundation(plan) {
   const groups=plan.groups.map(group=>({...group,passed:[],completed:0,total:group.units.length}));

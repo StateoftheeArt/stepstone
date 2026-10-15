@@ -1,14 +1,14 @@
-import {stockModelMarkup,stockTakeMarkup} from './stock-visual.js?build=122';
-import {commonPitfall} from './lesson-help.js?build=122';
-import {languageAllowed,displayUserText,LANGUAGE_MESSAGE} from './language.js?build=122';
-import {successMarkup} from './lesson-feedback.js?build=122';
-import {mountLessonGame} from './lesson-games.js?build=122';
-import {mountScienceVisual} from './science-model.js?build=122';
-import {escapeHTML as esc,numberValue} from './engine.js?build=122';
-import {mountMathVisual} from './math-visual.js?build=122';
-import {mountPC,pcComplete} from './pc-lab.js?build=122';
-import {mountTyping,typingComplete} from './typing-lab.js?build=122';
-import {activityDiagram} from './lesson-diagrams.js?build=122';
+import {stockModelMarkup,stockTakeMarkup} from './stock-visual.js?build=123';
+import {commonPitfall} from './lesson-help.js?build=123';
+import {languageAllowed,displayUserText,LANGUAGE_MESSAGE} from './language.js?build=123';
+import {successMarkup} from './lesson-feedback.js?build=123';
+import {mountLessonGame} from './lesson-games.js?build=123';
+import {mountScienceVisual} from './science-model.js?build=123';
+import {escapeHTML as esc,numberValue} from './engine.js?build=123';
+import {mountMathVisual} from './math-visual.js?build=123';
+import {mountPC,pcComplete} from './pc-lab.js?build=123';
+import {mountTyping,typingComplete} from './typing-lab.js?build=123';
+import {activityDiagram} from './lesson-diagrams.js?build=123';
 
 // Supported mission tasks live inside the existing lesson draft and transitions.
 export function scenarioState(u,phase,draft){

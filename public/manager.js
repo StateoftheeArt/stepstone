@@ -1,6 +1,6 @@
-import {escapeHTML as esc} from './engine.js?build=122';
-import {companionSprite} from './companion.js?build=122';
-import {INTERFACE_BUILD} from './release.js?build=122';
+import {escapeHTML as esc} from './engine.js?build=123';
+import {companionSprite} from './companion.js?build=123';
+import {INTERFACE_BUILD} from './release.js?build=123';
 
 const hubMarks={
  account:'<path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2"/>',

@@ -1,5 +1,5 @@
-import {PIP_PERSONALITIES} from './pip-personalities.js?build=122';
-import {playPipAction,stopPipAction,pipView} from './pip-moves.js?build=122';
+import {PIP_PERSONALITIES} from './pip-personalities.js?build=123';
+import {playPipAction,stopPipAction,pipView} from './pip-moves.js?build=123';
 
 // Pace, gait and favourite places keep each companion recognisable in the room.
 const characters={
@@ -36,7 +36,7 @@ export const PIP_ROOM_PERSONALITIES=Object.fromEntries(Object.entries(characters
 const gaits={
  tiptoe:['none','translateY(-1px) rotate(-2deg)','none','translateY(-1px) rotate(2deg)','none'],
  prowl:['none','scale(1.025,.985) rotate(-1deg)','none','scale(.985,1.015) rotate(1deg)','none'],
- hop:['none','scale(1.04,.92)','translateY(-6px)','scale(.98,1.03)','none'],
+ hop:['none','translateY(1px) scale(1.04,.92)','translateY(-3px) scale(.98,1.04)','translateY(-6px) rotate(-2deg)','translateY(-5px)','translateY(-2px) rotate(2deg)','scale(1.04,.94)','scale(.99,1.02)','none'],
  waddle:['none','rotate(-4deg) translateY(-1px)','none','rotate(4deg) translateY(-1px)','none'],
  flutter:['none','translateY(-3px) rotate(-2deg)','translateY(-1px)','translateY(-4px) rotate(2deg)','none'],
  march:['none','translateY(-2px) rotate(-2deg)','none','translateY(-2px) rotate(2deg)','none'],
@@ -45,7 +45,7 @@ const gaits={
  stomp:['none','translateY(-3px) rotate(-2deg)','scale(1.03,.96)','translateY(-3px) rotate(2deg)','none'],
  scurry:['none','translateY(-1.5px) rotate(-2deg)','none','translateY(-1.5px) rotate(2deg)','none'],
  sway:['none','translateY(-1px) rotate(-3deg)','scale(1.015,.985)','translateY(-1px) rotate(3deg)','none'],
- bound:['none','scale(1.03,.94)','translateY(-4px) rotate(-2deg)','translateY(-1px) rotate(2deg)','none'],
+ bound:['none','scale(1.03,.94)','translateY(-2px) rotate(-2deg)','translateY(-4px) scale(1.03,.98)','translateY(-3px)','translateY(-1px) rotate(2deg)','scale(1.02,.96)','scale(.99,1.02)','none'],
  trundle:['none','translateY(-.7px) rotate(-1deg)','none','translateY(-.7px) rotate(1deg)','none'],
  jig:['none','rotate(-3deg) translateY(-2px)','scale(1.02,.98)','rotate(3deg) translateY(-2px)','none'],
  roll:['none','rotate(-6deg) translateY(-.5px)','none','rotate(6deg) translateY(-.5px)','none'],
@@ -58,11 +58,33 @@ export function pipGait(species,{duration=3000,scale=1.375,speed}={}){
  const p=PIP_ROOM_PERSONALITIES[species]||PIP_ROOM_PERSONALITIES.fox;
  // Complete whole strides so stopping never drops a raised paw onto the floor.
  const cycles=Math.max(1,Math.round(duration/p.beat)),beat=duration/cycles;
- const stride=clamp((speed??p.speed)*beat/1000/(4*scale),1.3,5),lift=p.gait==='crawl'||p.gait==='sway'?1:2;
- const frames=(xs,ys)=>xs.map((x,i)=>({transform:i===0||i===xs.length-1?'none':`translate(${x.toFixed(2)}px,${ys[i].toFixed(2)}px)`}));
- return {beat,cycles,body:gaits[p.gait].map(transform=>({transform})),
-  front:frames([0,-stride/2,-stride,-stride/2,0,stride/2,stride,stride/2,0],[0,0,0,-lift/2,-lift,-lift/2,0,0,0]),
-  back:frames([0,stride/2,stride,stride/2,0,-stride/2,-stride,-stride/2,0],[0,-lift,0,0,0,0,0,-lift,0])};
+ const stride=clamp((speed??p.speed)*beat/1000/(4*scale),1.3,4),lift=p.gait==='crawl'||p.gait==='sway'?1.3:2.8;
+ const frames=transforms=>transforms.map((transform,i)=>({transform,offset:i/(transforms.length-1)}));
+ const foot=(xs,ys,angles)=>xs.map((x,i)=>({offset:i/(xs.length-1),transform:i===0||i===xs.length-1?'none':`translate(${x.toFixed(2)}px,${ys[i].toFixed(2)}px) rotate(${angles[i]}deg)`}));
+ let front=foot([0,-stride/2,-stride,-stride/2,0,stride/2,stride,stride/2,0],[0,0,0,-lift*.7,-lift,-lift*.7,0,0,0],[0,2,5,9,-4,-8,-4,-2,0]);
+ let back=foot([0,stride/2,stride,stride/2,0,-stride/2,-stride,-stride/2,0],[0,-lift*.7,-lift,-lift*.7,0,0,0,0,0],[0,-8,-4,9,5,2,-2,-3,0]);
+ if(p.gait==='hop'||p.gait==='bound'){
+  front=frames(['none','rotate(5deg) scaleY(.9)','translateY(-1px) rotate(-8deg)','translateY(-2px) rotate(-14deg) scaleY(.8)','translateY(-1px) rotate(-8deg)','rotate(6deg)','scaleY(.9)','rotate(2deg)','none']);
+  back=frames(['none','rotate(-8deg) scaleY(.82)','rotate(10deg) scaleY(1.05)','translateY(-1px) rotate(16deg) scaleY(.82)','translateY(-2px) rotate(8deg) scaleY(.84)','rotate(-6deg)','scaleY(.9)','rotate(-2deg)','none']);
+ }
+ const body=frames(gaits[p.gait]),parts=[{selector:'.sprite-body',frames:body}];
+ // A pebble can tip and roll, but it never stretches or articulates a face.
+ if(species==='rock')return {beat,cycles,body,front:[],back:[],parts};
+ const add=(selector,transforms,frequency=1)=>parts.push({selector,frames:frames(transforms),frequency,easing:'ease-in-out'});
+ const flying=p.gait==='flutter';
+ if(!['float','glide','flutter'].includes(p.gait)&&species!=='octopus')parts.push({selector:'.sprite-foot-front',frames:front},{selector:'.sprite-foot-back',frames:back});
+ if(flying){
+  add('.sprite-wing-left',['none','rotate(-26deg) scaleX(.68)','rotate(14deg) scaleX(1.02)','rotate(-18deg) scaleX(.76)','none'],species==='bee'?2:1);
+  add('.sprite-feet',['none','translate(1px,-1px) rotate(-7deg)','translate(0,-2px) rotate(4deg)','none']);
+ }else if(['duck','penguin','dragon'].includes(species))add('.sprite-wing-left',['none','rotate(-5deg)','rotate(4deg)','none']);
+ add('.sprite-head',species==='turtle'?['none','translate(1px,-.5px) rotate(-2deg)','translate(-.5px,.3px) rotate(1deg)','none']:['none','translate(.4px,-.6px) rotate(-1.5deg)','translate(-.3px,.3px) rotate(1deg)','none']);
+ const signature=PIP_PERSONALITIES[species]||PIP_PERSONALITIES.fox;
+ if(!parts.some(part=>part.selector===signature.part)&&signature.part!=='.sprite-feet'&&signature.part!=='.sprite-wings')add(signature.part,signature.greetFrames);
+ if(['fox','cat','dog','bunny','rat','squirrel'].includes(species)&&signature.part!=='.sprite-ears')add('.sprite-ears',['none','rotate(3deg)','rotate(-2deg)','none']);
+ if(species==='robot')add('.sprite-arms',['none','rotate(9deg)','rotate(-9deg)','none']);
+ if(species==='snail')add('.sprite-feet',['none','scale(1.035,.91)','scale(.98,1.02)','none']);
+ if(species==='octopus')for(let i=0;i<3;i++)add('.sprite-arm-'+i,['none',`rotate(${i%2?-9:9}deg) scaleY(.94)`,`rotate(${i%2?7:-7}deg)`,'none']);
+ return {beat,cycles,body,front,back,parts};
 }
 export function pipTravelFrames(from,to,duration){
  const ramp=Math.min(.12,180/duration);
@@ -144,24 +166,18 @@ export function createPipRoomLife({root=document,motion=()=>true,fed=()=>false,n
   animate(s,s.stage,pipTravelFrames(s.point,plan.point,duration),{duration,easing:'linear',fill:'forwards'});
   const view=pipView(s.room),body=view.querySelector('.sprite-body');
   if(body?.style){body.style.transformBox='view-box';body.style.transformOrigin='32px 60px';}
-  const gait=pipGait(s.species,{duration,scale:g.petWidth/64,speed:distance/duration*1000}),timing={duration:gait.beat,iterations:gait.cycles,easing:'ease-in-out'};
-  animate(s,body,gait.body,timing);
-  if(!['hop','bound','flutter','float','glide','roll'].includes(plan.gait)){
-   for(const [selector,frames] of [['.sprite-foot-front',gait.front],['.sprite-foot-back',gait.back]]){
-    const foot=view.querySelector(selector);
-    if(foot?.style){foot.style.transformBox='view-box';foot.style.transformOrigin=foot.dataset.pipOrigin||'32px 54px';}
-    animate(s,foot,frames,timing);
-   }
+  const gait=pipGait(s.species,{duration,scale:g.petWidth/64,speed:distance/duration*1000});
+  for(const track of gait.parts){
+   const part=view.querySelector(track.selector),frequency=track.frequency||1;
+   if(part?.style){part.style.transformBox='view-box';part.style.transformOrigin=part.dataset.pipOrigin||'32px 54px';}
+   animate(s,part,track.frames,{duration:gait.beat/frequency,iterations:gait.cycles*frequency,easing:track.easing||'linear'});
   }
-  const signature=PIP_PERSONALITIES[s.species]||PIP_PERSONALITIES.fox,part=view.querySelector(signature.part);
-  if(part?.style){part.style.transformBox='view-box';part.style.transformOrigin=part.dataset?.pipOrigin||signature.origin;}
-  if(signature.part!=='.sprite-feet')animate(s,part,signature.greetFrames.map(transform=>({transform})),{duration:duration/Math.max(1,Math.round(gait.cycles/2)),iterations:Math.max(1,Math.round(gait.cycles/2)),easing:'ease-in-out'});
   later(s,duration,()=>{
    if(sessions.get(s.room)!==s)return;
    place(s,plan.point);cancel(s,{freeze:false,faceFront:false});
    if(!visible(s.room)){stop(s);return;}
    s.room.dataset.pipRoomState='settling';
-   animate(s,body,[{transform:'none'},{transform:'translateY(.6px) scale(1.008,.99)'},{transform:'none'}],{duration:220,easing:'ease-out'});
+   animate(s,body,[{transform:'none'},{transform:s.species==='rock'?'translateY(.4px)':'translateY(.6px) scale(1.008,.99)'},{transform:'none'}],{duration:220,easing:'ease-out'});
    later(s,220,()=>{if(sessions.get(s.room)!==s)return;cancel(s,{freeze:false,faceFront:false});inspect(s,plan.item);});
   });
  }

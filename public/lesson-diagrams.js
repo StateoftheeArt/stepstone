@@ -1,6 +1,6 @@
-import {stockDiagram} from './stock-visual.js?build=122';
-import {canadianTen,canadianCoin} from './canadian-money.js?build=122';
-import {escapeHTML as esc} from './engine.js?build=122';
+import {stockDiagram} from './stock-visual.js?build=123';
+import {canadianTen,canadianCoin} from './canadian-money.js?build=123';
+import {escapeHTML as esc} from './engine.js?build=123';
 
 const text=(x,y,s,fill='#e0efea',size=18)=>`<text x="${x}" y="${y}" text-anchor="middle" fill="${fill}" font-size="${size}" font-family="sans-serif">${esc(s)}</text>`;
 const box=(x,y,w,h,fill='#356c71',rx=10)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${fill}"/>`;

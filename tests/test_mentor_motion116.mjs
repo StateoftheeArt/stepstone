@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {COMPANIONS,companionSprite} from '../public/companion.js';
 import {pipGait,pipTravelFrames} from '../public/pip-room.js';
+import {pipProfileArtwork} from '../public/pip-profile-art.js';
+import {pipDance} from '../public/pip-moves.js';
 import {configureProfile,profilePreview} from '../public/profile.js';
 import {learnerSpace,managerNavigation} from '../public/manager.js';
 
@@ -10,11 +12,26 @@ for(const {id} of COMPANIONS)for(const duration of [1300,7500,14000]){
  assert.ok(Number.isInteger(gait.cycles)&&gait.cycles>0);
  assert.ok(Math.abs(gait.beat*gait.cycles-duration)<.001,'Each trip finishes its final stride.');
  for(const part of ['body','front','back']){
+  if(id==='rock'&&part!=='body')continue;
   assert.equal(gait[part][0].transform,'none');
   assert.equal(gait[part].at(-1).transform,'none');
   assert.ok(gait[part].every(f=>!f.transform.includes('NaN')));
  }
- assert.notDeepEqual(gait.front,gait.back,id+' has alternating footfalls.');
+ if(id!=='rock')assert.notDeepEqual(gait.front,gait.back,id+' has alternating footfalls.');
+ const drawing='<g class="sprite-body">'+pipProfileArtwork(id)+'</g>',targets=new Set();
+ for(const track of gait.parts){
+  const group=[...drawing.matchAll(/<g\b[^>]*class="([^"]*)"[^>]*>/g)].find(m=>m[1].split(/\s+/).includes(track.selector.slice(1)));
+  assert.ok(group,id+' walks using an existing '+track.selector);
+  assert.ok(!targets.has(group.index),id+' must not apply competing gait animations to the same SVG group');targets.add(group.index);
+  assert.equal(track.frames[0].transform,'none');assert.equal(track.frames.at(-1).transform,'none');
+  assert.ok(track.frames.some(f=>f.transform!=='none'));
+ }
+ if(id==='rock'){
+  assert.deepEqual(gait.parts.map(p=>p.selector),['.sprite-body']);
+  assert.doesNotMatch(JSON.stringify(gait.parts),/scale|skew/,'The rock stays rigid while travelling.');
+  for(const dance of [1,2,3])assert.doesNotMatch(pipDance(id,dance).body.join(' '),/scale|skew/,'Dancing cannot squash a rock.');
+ }else assert.ok(gait.parts.length>=3,id+' moves individual parts as well as its body.');
+ if(['bunny','frog','dog','squirrel'].includes(id))for(const paw of ['front','back'])assert.ok(gait.parts.some(p=>p.selector==='.sprite-foot-'+paw),'Hops and bounds fold and extend both legs.');
 }
 for(const [from,to] of [[{x:.2,y:.75},{x:.8,y:.9}],[{x:.8,y:.9},{x:.2,y:.75}]]){
  const frames=pipTravelFrames(from,to,4000);
@@ -34,4 +51,4 @@ assert.match(profilePreview(),/--item-x:50%;--item-y:84.5%/);
 assert.match(profilePreview({homePositions:{rug:{x:.26,y:.86}}}),/--item-x:26%;--item-y:86%/,'A deliberately moved rug keeps its saved position.');
 assert.match(learnerSpace(null),/class="learner-mentor-space" aria-labelledby="mentor-space-title"/);
 assert.doesNotMatch(managerNavigation({}),/learner-mentor-space/,'The mentor management dashboard keeps its own layout.');
-console.log('PASS: planted alternating footfalls for 28 Pips, complete stride timing, gentle travel endpoints, genuine facing bodies, centred default carpet and preserved moved items.');
+console.log('PASS: 28 gait profiles with existing non-competing articulated parts, folding hops, rigid rock dances/travel, planted stride endpoints, gentle travel, centred default carpet and preserved moved items.');

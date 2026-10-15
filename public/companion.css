@@ -50,7 +50,7 @@ html{scroll-padding-top:calc(var(--topbar-height,84px) + 16px)}
 .sprite-tail,.sprite-wing-left,.sprite-wing-right,.sprite-ears,.sprite-feet,.sprite-eyes,.sprite-smile{transform-box:fill-box}
 .sprite-tail{transform-origin:15% 80%}.sprite-wing-left{transform-origin:85% 20%}.sprite-wing-right{transform-origin:15% 20%}.sprite-ears{transform-origin:50% 100%}.sprite-feet{transform-origin:50% 30%}.sprite-eyes,.sprite-smile{transform-origin:center}
 @media(prefers-reduced-motion:no-preference){
- html:not(.quiet) [data-pose=idle] .sprite-body{animation:pip-breathe 5.2s ease-in-out infinite}
+ html:not(.quiet) [data-pose=idle]:not([data-species=rock]) .sprite-body{animation:pip-breathe 5.2s ease-in-out infinite}
  html:not(.quiet) [data-pose=idle][data-species=cloud] .sprite-body{animation:pip-drift 4.8s ease-in-out infinite}
  html:not(.quiet) :is(.companion-dock,[data-home-room])[data-pose=idle] .sprite-eyes{animation:pip-blink 8.4s linear infinite}
 }
@@ -250,7 +250,7 @@ html:not(.quiet) [data-pose=dance][data-species=goblin][data-dance="3"] .sprite-
 html:not(.quiet) [data-species=goblin] .sprite-eyes{animation-delay:-2.55s}
 @keyframes pip-rock-1{0%,100%{transform:none}25%{transform:translate(-2.96px,-1.5px) rotate(-4.38deg)}50%{transform:translateY(-2.5px)}75%{transform:translate(2.96px,-1.5px) rotate(4.38deg)}}
 html:not(.quiet) [data-pose=dance][data-species=rock][data-dance="1"] .sprite-body{animation:pip-rock-1 1.6s cubic-bezier(.36,0,.26,1)}
-@keyframes pip-rock-2{0%,100%{transform:none}20%{transform:scale(1.02,.98) rotate(-4.38deg)}45%{transform:translateY(-3.5px) rotate(4.38deg)}70%{transform:translateX(2.96px) scale(.985,1.02)}}
+@keyframes pip-rock-2{0%,100%{transform:none}20%{transform:rotate(-4.38deg)}45%{transform:translateY(-3.5px) rotate(4.38deg)}70%{transform:translateX(2.96px) rotate(2deg)}}
 html:not(.quiet) [data-pose=dance][data-species=rock][data-dance="2"] .sprite-body{animation:pip-rock-2 1.6s cubic-bezier(.36,0,.26,1)}
 @keyframes pip-rock-3{0%,100%{transform:none}25%{transform:translateX(2.96px) rotate(6.38deg)}50%{transform:translateY(-1.5px) rotate(-7.38deg)}75%{transform:translateX(-2.96px) rotate(4.38deg)}}
 html:not(.quiet) [data-pose=dance][data-species=rock][data-dance="3"] .sprite-body{animation:pip-rock-3 1.6s cubic-bezier(.36,0,.26,1)}
@@ -294,6 +294,6 @@ html:not(.quiet) [data-species=mushroom] .sprite-eyes{animation-delay:-5.01s}
 
 /* A resting Pip still breathes and blinks; food continues to gate active play. */
 @media(prefers-reduced-motion:no-preference){
- html:not(.quiet) [data-pose=resting] .sprite-body{animation:pip-breathe 7.8s ease-in-out infinite}
+ html:not(.quiet) [data-pose=resting]:not([data-species=rock]) .sprite-body{animation:pip-breathe 7.8s ease-in-out infinite}
  html:not(.quiet) :is(.companion-dock,[data-home-room])[data-pose=resting] .sprite-eyes{animation:pip-blink 10.4s linear infinite}
 }

@@ -1,5 +1,5 @@
-import {escapeHTML as esc} from './engine.js?build=122';
-import {money} from './rewards.js?build=122';
+import {escapeHTML as esc} from './engine.js?build=123';
+import {money} from './rewards.js?build=123';
 
 const names={chatgpt:'ChatGPT',claude:'Claude',gemini:'Gemini',unsure:'Not sure yet',none:'Keep the free route'};
 const states={allocated:'Funding set aside · finish your preparation',pending:'Your mentor is reviewing your request',approved:'Approved plan · arrange it with your mentor',active:'One month recorded',closed:'Month finished · keep your project',released:'Unused funding released'};

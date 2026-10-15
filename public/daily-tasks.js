@@ -1,4 +1,4 @@
-import {escapeHTML as esc} from './engine.js?build=122';
+import {escapeHTML as esc} from './engine.js?build=123';
 
 export function dailyDay(at=Date.now()){
   // Manitoba's permanent UTC-5 rule takes effect on 31 October 2026.

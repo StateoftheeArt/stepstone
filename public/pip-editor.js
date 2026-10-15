@@ -1,9 +1,9 @@
-import {playPipAction,pipPlayLabel,stopAllPipActions} from './pip-moves.js?build=122';
-import {escapeHTML as esc} from './engine.js?build=122';
-import {companionSprite} from './companion.js?build=122';
-import {itemIcon} from './wins.js?build=122';
-import {foodRemaining,canFeedPip,canPipPlay} from './pip-food.js?build=122';
-import {createPipRoomLife} from './pip-room.js?build=122';
+import {playPipAction,pipPlayLabel,stopAllPipActions} from './pip-moves.js?build=123';
+import {escapeHTML as esc} from './engine.js?build=123';
+import {companionSprite} from './companion.js?build=123';
+import {itemIcon} from './wins.js?build=123';
+import {foodRemaining,canFeedPip,canPipPlay} from './pip-food.js?build=123';
+import {createPipRoomLife} from './pip-room.js?build=123';
 
 export function pictureDropdown({id,label,name,items,selected,avatar='fox',completed=0,owned=[]}){
   const choice=items.find(c=>c.id===selected)||items[0];

@@ -1,4 +1,4 @@
-import {PIP_PERSONALITIES} from './pip-personalities.js?build=122';
+import {PIP_PERSONALITIES} from './pip-personalities.js?build=123';
 export const PIP_ACTIONS=Object.fromEntries(Object.entries(PIP_PERSONALITIES).map(([id,p])=>[id,{label:p.response,frames:p.bodyFrames,part:p.part}]));
 export const pipPlayLabel=id=>(PIP_PERSONALITIES[id]||PIP_PERSONALITIES.fox).playLabel;
 export function pipDance(species,dance=1){
@@ -8,8 +8,8 @@ export function pipDance(species,dance=1){
  const label=(names[id]||['shuffle','bounce','twist'].map(word=>p.toy.charAt(0).toUpperCase()+p.toy.slice(1)+' '+word))[dance-1]||'Little shuffle';
  const body=[
   ['none',`translate(${-step}px,-1px) rotate(${-turn/2}deg)`,`translateY(-${lift/2}px)`,`translate(${step}px,-1px) rotate(${turn/2}deg)`,'none'],
-  ['none','scale(1.06,.93)',`translateY(-${lift}px) rotate(2deg)`,'scale(.98,1.02)',`translateY(-${lift*.75}px) rotate(-2deg)`,'none'],
-  ['none',`translateX(-2px) rotate(-${turn}deg)`,`translateX(2px) rotate(${turn}deg)`,'scale(1.03,.97)',`rotate(-${turn*.8}deg)`,`rotate(${turn*.8}deg)`,'none']
+  ['none',id==='rock'?'rotate(-3deg)':'scale(1.06,.93)',`translateY(-${lift}px) rotate(2deg)`,id==='rock'?'rotate(3deg)':'scale(.98,1.02)',`translateY(-${lift*.75}px) rotate(-2deg)`,'none'],
+  ['none',`translateX(-2px) rotate(-${turn}deg)`,`translateX(2px) rotate(${turn}deg)`,id==='rock'?'translateY(-.5px)':'scale(1.03,.97)',`rotate(-${turn*.8}deg)`,`rotate(${turn*.8}deg)`,'none']
  ][dance-1]||p.bodyFrames;
  const part=dance===2?['none',p.greetFrames[1]||'none','none',p.playFrames[1]||'none','none']:dance===3?[...p.playFrames].reverse():p.playFrames;
  return {label,body,part};
@@ -64,14 +64,14 @@ export function playPipAction(room,species,{dance=0,snack=false,interaction=snac
  const note=room.closest?.('.pip-studio')?.querySelector('[data-pip-status]')||room.querySelector('[data-pip-status]')||room.querySelector('[data-pip-note]');if(note){note.setAttribute('aria-live',announce?'polite':'off');note.textContent=statusText||(steps?name+' tries the '+steps.label.toLowerCase()+'.':name+' '+(interaction==='greet'?p.hello:interaction==='snack'?p.snack:p.response));}
  function animate(selector,frames,origin='32px 44px',options={}){
   const part=pipView(room).querySelector(selector);if(!motion||!part?.animate)return;if(part.style){part.style.transformBox='view-box';part.style.transformOrigin=part.dataset?.pipOrigin||origin;}
-  s.animations.push(part.animate(frames.map(transform=>({transform})),{duration,easing:species==='robot'?'steps(3,end)':'ease-in-out',...options}));
+  s.animations.push(part.animate(frames.map(transform=>({transform})),{duration,easing:'ease-in-out',...options}));
  }
  if(interaction==='greet'){animate('.sprite-body',species==='rock'?['none','rotate(-3deg)','rotate(3deg)','none']:['none','translateY(1px) scaleY(.99)','none']);animate(p.part,p.greetFrames,p.origin);}
- else if(interaction==='snack'){animate('.sprite-body',['none','translateY(1px) scaleY(.98)','none','translateY(.5px)','none']);animate(p.part,['none',p.greetFrames[1],'none'],p.origin);}
+ else if(interaction==='snack'){animate('.sprite-body',['none',species==='rock'?'rotate(-2deg)':'translateY(1px) scaleY(.98)','none','translateY(.5px)','none']);animate(p.part,['none',p.greetFrames[1],'none'],p.origin);}
  else if(interaction==='inspect'){
-  animate('.sprite-body',['rug','furniture'].includes(itemKind)?['none','translateY(1px) scale(1.025,.97)','translateY(.5px) scale(.99,1.01)','none']:['none','rotate(-2deg)','rotate(2deg)','none']);
+  animate('.sprite-body',species!=='rock'&&['rug','furniture'].includes(itemKind)?['none','translateY(1px) scale(1.025,.97)','translateY(.5px) scale(.99,1.01)','none']:['none','rotate(-2deg)','rotate(2deg)','none']);
   animate(p.part,p.greetFrames,p.origin);
-  if(!['rug','furniture'].includes(itemKind)&&p.part!=='.sprite-head')animate('.sprite-head',['none','rotate(-4deg)','rotate(3deg)','none'],'32px 33px');
+  if(species!=='rock'&&!['rug','furniture'].includes(itemKind)&&p.part!=='.sprite-head')animate('.sprite-head',['none','rotate(-4deg)','rotate(3deg)','none'],'32px 33px');
  }
  else{
   animate('.sprite-body',steps?.body||p.bodyFrames,'32px 60px');animate(p.part,steps?.part||p.playFrames,p.origin);

@@ -1,8 +1,8 @@
-import {playPipAction,stopPipAction} from './pip-moves.js?build=122';
-import {escapeHTML as esc} from './engine.js?build=122';
-import {pipArtwork} from './pip-art.js?build=122';
-import {pipProfileArtwork,PIP_PROFILE_ANCHORS} from './pip-profile-art.js?build=122';
-import {accessoryArtwork} from './pip-items.js?build=122';
+import {playPipAction,stopPipAction} from './pip-moves.js?build=123';
+import {escapeHTML as esc} from './engine.js?build=123';
+import {pipArtwork} from './pip-art.js?build=123';
+import {pipProfileArtwork,PIP_PROFILE_ANCHORS} from './pip-profile-art.js?build=123';
+import {accessoryArtwork} from './pip-items.js?build=123';
 
 export const COMPANIONS=[
   {id:'fox',label:'Fox',colour:'#ce945f',light:'#e8b782'},
@@ -38,7 +38,7 @@ export const COMPANIONS=[
 export function companionSprite(id='fox',size=64,accessory='none',{walkingViews=false}={}){
   const c=COMPANIONS.find(c=>c.id===id)||COMPANIONS[0],pixels=Number.isFinite(Number(size))?Math.max(16,Math.min(256,Number(size))):64;
   const extra=accessoryArtwork(accessory,c.id);
-  const front=pipArtwork(c.id)+extra,side=walkingViews?pipProfileArtwork(c.id)+accessoryArtwork(accessory,c.id,PIP_PROFILE_ANCHORS[c.id]):'';
+  const front=pipArtwork(c.id)+extra,side=walkingViews?pipProfileArtwork(c.id,accessoryArtwork(accessory,c.id,PIP_PROFILE_ANCHORS[c.id])):'';
   const body=art=>`<g class="sprite-body" data-pip-origin="32px 60px">${art}</g>`;
   const drawing=walkingViews?`<g data-pip-view="front">${body(front)}</g><g data-pip-view="right">${body(side)}</g><g data-pip-view="left" transform="translate(64 0) scale(-1 1)">${body(side)}</g>`:body(front);
   return `<svg class="companion-sprite" data-species="${c.id}" width="${pixels}" height="${pixels}" viewBox="0 0 64 64" shape-rendering="crispEdges" aria-hidden="true"><ellipse class="sprite-shadow" cx="32" cy="61" rx="20" ry="2" fill="#061c32" opacity=".3"/>${drawing}<g class="sprite-pop" fill="#f4d595"><path d="M28 0h8v8h-8ZM28 56h8v8h-8ZM0 28h8v8H0ZM56 28h8v8h-8ZM8 8h6v6H8ZM50 8h6v6h-6ZM8 50h6v6H8ZM50 50h6v6h-6Z"/></g></svg>`;

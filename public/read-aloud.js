@@ -1,5 +1,5 @@
-import {languageAllowed,LANGUAGE_MESSAGE} from './language.js?build=122';
-import {escapeHTML as esc,readable} from './engine.js?build=122';
+import {languageAllowed,LANGUAGE_MESSAGE} from './language.js?build=123';
+import {escapeHTML as esc,readable} from './engine.js?build=123';
 
 export function narrationText(target){
   const copy=target.cloneNode(true);
