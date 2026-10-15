@@ -1,4 +1,4 @@
-import {escapeHTML as esc} from './engine.js?build=121';
+import {escapeHTML as esc} from './engine.js?build=122';
 
 const statusName={waiting:'Waiting for a computer',help:'Would like help',practised:'Practised · mentor review needed',confirmed:'Demonstration confirmed'};
 export function devicePanel(u,me){

@@ -1,4 +1,4 @@
-import {escapeHTML as esc} from './engine.js?build=121';
+import {escapeHTML as esc} from './engine.js?build=122';
 const money=n=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(n/100);
 const trusted=url=>{try{const u=new URL(url);return u.protocol==='https:'&&['www.dell.com','www.hp.com'].includes(u.hostname)&&!u.username&&!u.password;}catch{return false;}};
 export function laptopFinderMarkup(result=null){

@@ -1,4 +1,4 @@
-import {PIP_PERSONALITIES} from './pip-personalities.js?build=121';
+import {PIP_PERSONALITIES} from './pip-personalities.js?build=122';
 export const PIP_ACTIONS=Object.fromEntries(Object.entries(PIP_PERSONALITIES).map(([id,p])=>[id,{label:p.response,frames:p.bodyFrames,part:p.part}]));
 export const pipPlayLabel=id=>(PIP_PERSONALITIES[id]||PIP_PERSONALITIES.fox).playLabel;
 export function pipDance(species,dance=1){

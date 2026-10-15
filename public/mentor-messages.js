@@ -1,5 +1,5 @@
-import {escapeHTML as esc} from './engine.js?build=121';
-import {avatar} from './home.js?build=121';
+import {escapeHTML as esc} from './engine.js?build=122';
+import {avatar} from './home.js?build=122';
 
 export function canMessageMentor(account){return !!account?.id&&!account.personal;}
 

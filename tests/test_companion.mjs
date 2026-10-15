@@ -47,7 +47,7 @@ for(const c of COMPANIONS)for(const dance of [1,2,3])assert.ok(css.includes(`dat
 
 let now=10000,nextId=0,animated=true,visible=true;
 const timers=new Map(),events=new Map(),nodes={};
-function el(){const classes=new Set();return {dataset:{},listeners:{},hidden:false,textContent:'',style:{removeProperty(k){delete this[k];}},classList:{add(...keys){keys.forEach(k=>classes.add(k));},remove(...keys){keys.forEach(k=>classes.delete(k));},contains:k=>classes.has(k)},getBoundingClientRect(){const left=parseFloat(this.style.left)||20,top=parseFloat(this.style.top)||20;return {left,top,right:left+64,bottom:top+64,width:64,height:64};},setAttribute(){},toggleAttribute(){},addEventListener(type,fn){this.listeners[type]=fn;},setPointerCapture(){},offsetWidth:1};}
+function el(){const classes=new Set();return {dataset:{},listeners:{},attributes:{},hidden:false,textContent:'',style:{removeProperty(k){delete this[k];}},classList:{add(...keys){keys.forEach(k=>classes.add(k));},remove(...keys){keys.forEach(k=>classes.delete(k));},contains:k=>classes.has(k)},getBoundingClientRect(){const left=parseFloat(this.style.left)||20,top=parseFloat(this.style.top)||20;return {left,top,right:left+64,bottom:top+64,width:64,height:64};},setAttribute(k,v){this.attributes[k]=String(v);},toggleAttribute(){},addEventListener(type,fn){this.listeners[type]=fn;},setPointerCapture(){},offsetWidth:1};}
 const host=el();
 host.querySelector=selector=>nodes[selector];
 Object.defineProperty(host,'innerHTML',{set(value){host.markup=value;for(const s of ['.companion-pet','.companion-magnet','.companion-profile','[data-pip-note]'])nodes[s]=el();}});
@@ -64,13 +64,15 @@ function pointer(type,x=100,y=100){nodes['.companion-pet'].listeners[type]({butt
 try{
   let edits=0,identity='one',fed=true,loggedPlays=0;const companion=createCompanion({canPlay:()=>fed,onPlay:()=>loggedPlays++,profile:()=>value,ready:()=>visible,motion:()=>animated,edit:()=>edits++,owner:()=>identity,storage:()=>positionStore});companion.update();
   assert.equal(host.hidden,false);assert.match(host.markup,/North/);assert.ok(!host.markup.includes('Mochi'));
+  assert.match(nodes['.companion-pet'].attributes['aria-label'],/Tap to dance/);
+  assert.match(host.markup,/data-pip-note>Tap to dance/);
   for(let i=1;i<=12;i++){click();assert.equal(host.dataset.pose,'dance');assert.equal(host.dataset.dance,String((i-1)%3+1));advance(100);}
   companion.celebrate();assert.equal(host.dataset.pose,'dance');advance(1600);assert.equal(host.dataset.pose,'idle');
   click();assert.equal(host.dataset.pose,'inflate','Only the thirteenth tap starts inflation.');
   advance(1200);assert.equal(host.dataset.pose,'pop');advance(420);assert.equal(host.dataset.pose,'annoyed');advance(2200);assert.equal(host.dataset.pose,'idle');
   for(let i=0;i<13;i++)click();assert.equal(host.dataset.pose,'inflate','Another thirteen taps work immediately after recovery.');advance(3820);
   pointer('pointerdown');advance(3000);assert.equal(host.dataset.pose,'idle','Holding does not explode the companion.');pointer('pointerup');
-  animated=false;companion.quiet();companion.celebrate();assert.equal(host.dataset.pose,'happy');advance(1600);for(let i=0;i<12;i++){click();assert.equal(host.dataset.pose,'happy');}
+  animated=false;companion.quiet();assert.doesNotMatch(nodes['.companion-pet'].attributes['aria-label'],/danc/i);assert.match(nodes['[data-pip-note]'].textContent,/gentle hello/);companion.celebrate();assert.equal(host.dataset.pose,'happy');advance(1600);assert.doesNotMatch(nodes['[data-pip-note]'].textContent,/danc/i);for(let i=0;i<12;i++){click();assert.equal(host.dataset.pose,'happy');assert.equal(nodes['[data-pip-note]'].textContent,'North says hello.');}
   click();assert.equal(host.dataset.pose,'still');advance(700);assert.equal(host.dataset.pose,'still');advance(420);assert.equal(host.dataset.pose,'annoyed');
   companion.quiet();assert.equal(host.dataset.pose,'idle');assert.equal(timers.size,0);
   animated=true;pointer('pointerdown');document.hidden=true;events.get('visibilitychange')();advance(4000);assert.equal(host.dataset.pose,'idle');assert.equal(timers.size,0);
@@ -97,6 +99,9 @@ try{
   pointer('pointerdown',280,200);pointer('pointermove',40,40);pointer('pointerup');click();assert.equal(positions.has('stepstone-pip-position-v1-one'),false,'Dropping onto the magnet parks the pet.');assert.equal(nodes['.companion-magnet'].hidden,true);
   nodes['.companion-pet'].listeners.keydown({key:'Home',preventDefault(){}});assert.ok(!nodes['.companion-pet'].classList.contains('is-floating'));
   fed=false;companion.update();assert.equal(host.dataset.pose,'resting');const playCount=loggedPlays;let blocked=false;nodes['.companion-pet'].listeners.keydown({key:'Enter',preventDefault(){blocked=true;}});assert.equal(blocked,false,'Enter remains available for a free greeting.');click();assert.equal(host.dataset.pose,'action');assert.equal(loggedPlays,playCount,'Resting greetings never count as daily active play.');companion.celebrate();pointer('pointerdown');pointer('pointermove',400,400);pointer('pointerup');assert.equal(host.dataset.pose,'resting','Empty bowl blocks playing, dragging and checkpoint dancing.');assert.equal(timers.size,0);fed=true;companion.update();click();assert.equal(host.dataset.pose,'dance','Feeding restores play.');companion.quiet();
+  animated=false;identity='quiet-reload';companion.update();assert.match(host.markup,/data-pip-note>Tap for a gentle hello/,'Initial quiet-mode hint matches a reload.');assert.doesNotMatch(nodes['.companion-pet'].attributes['aria-label'],/danc/i);
+  fed=false;identity='resting-reload';companion.update();assert.match(host.markup,/data-pip-note>Pip is resting/,'A resting Pip starts with its actual available interaction.');assert.doesNotMatch(nodes['.companion-pet'].attributes['aria-label'],/danc|13 times|Drag to move/i);assert.match(nodes['.companion-pet'].attributes['aria-label'],/gentle hello/);
+  fed=true;companion.update();animated=true;companion.quiet();assert.match(nodes['.companion-pet'].attributes['aria-label'],/Tap to dance/);assert.match(nodes['[data-pip-note]'].textContent,/Tap to dance/,'Turning motion back on refreshes an idle hint.');
   visible=false;companion.update();assert.equal(host.hidden,true);
 }finally{globalThis.setTimeout=realSet;globalThis.clearTimeout=realClear;Date.now=realNow;delete globalThis.document;delete globalThis.innerWidth;delete globalThis.innerHeight;delete globalThis.requestAnimationFrame;}
 console.log(`PASS: ${COMPANIONS.length} Pips with three dances, ${options.accents.length} colours, legacy profile validation, thirteen-tap pop, quiet motion, drag/cancel, magnet return and separate owners.`);

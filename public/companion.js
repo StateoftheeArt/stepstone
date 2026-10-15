@@ -1,8 +1,8 @@
-import {playPipAction,stopPipAction} from './pip-moves.js?build=121';
-import {escapeHTML as esc} from './engine.js?build=121';
-import {pipArtwork} from './pip-art.js?build=121';
-import {pipProfileArtwork,PIP_PROFILE_ANCHORS} from './pip-profile-art.js?build=121';
-import {accessoryArtwork} from './pip-items.js?build=121';
+import {playPipAction,stopPipAction} from './pip-moves.js?build=122';
+import {escapeHTML as esc} from './engine.js?build=122';
+import {pipArtwork} from './pip-art.js?build=122';
+import {pipProfileArtwork,PIP_PROFILE_ANCHORS} from './pip-profile-art.js?build=122';
+import {accessoryArtwork} from './pip-items.js?build=122';
 
 export const COMPANIONS=[
   {id:'fox',label:'Fox',colour:'#ce945f',light:'#e8b782'},
@@ -63,9 +63,10 @@ export function createCompanion({profile,ready,motion,canPlay=()=>true,onPlay=()
   const pet=()=>host.querySelector('.companion-pet');
   const magnet=()=>host.querySelector('.companion-magnet');
   function syncMagnet(){const m=magnet();if(m)m.hidden=inDialog||!pet()?.classList.contains('is-floating')&&!pet()?.classList.contains('is-guiding');}
-  function petLabel(){const p=profile(),name=p.alias||p.companionName||'Pip';pet()?.setAttribute('aria-label',(canPlay()?'Say hi to '+name+'. Tap to dance; tap 13 times for a surprise.':name+' is resting. Tap for a gentle hello; feed for active play.')+(guideAnchor?' I am guiding this step.':' Drag to move; Home returns to profile.'));}
+  function idleHint(){return !canPlay()?'Pip is resting. Tap for a gentle hello; feed for active play.':motion()?'Tap to dance. Tap 13 times for a surprise.':'Tap for a gentle hello. Tap 13 times for a surprise.';}
+  function petLabel(){const p=profile(),name=p.alias||p.companionName||'Pip',active=canPlay(),button=pet();button?.setAttribute('aria-label',(active?'Say hi to '+name+'. '+(motion()?'Tap to dance; tap 13 times for a surprise.':'Tap for a gentle hello; tap 13 times for a surprise.'):name+' is resting. Tap for a gentle hello; feed for active play.')+(guideAnchor?' I am guiding this step.':(active?' Drag to move;':'')+' Home returns to profile.'));button?.setAttribute('title',active?'Tap to greet your Pip · drag to move':'Tap for a gentle hello · feed for active play');}
   function setPose(pose,text){host.dataset.pose=pose;const note=host.querySelector('[data-pip-note]');if(note)note.textContent=text;}
-  function reset(){stopPipAction(host);clearTimeout(timer);burst=false;taps=0;setPose(canPlay()?'idle':'resting',canPlay()?'Tap to dance.':'Pip is resting. Feed Pip to play.');}
+  function reset(){stopPipAction(host);clearTimeout(timer);burst=false;taps=0;setPose(canPlay()?'idle':'resting',idleHint());petLabel();}
   function pop(){
     stopPipAction(host);
     if(!canPlay()){reset();return;}if(burst)return;
@@ -77,7 +78,7 @@ export function createCompanion({profile,ready,motion,canPlay=()=>true,onPlay=()
     onPlay();
     if(++taps===13){pop();return;}
     clearTimeout(timer);host.dataset.pose='idle';host.dataset.dance=String(danceIndex++%3+1);void host.offsetWidth;
-    setPose(motion()?'dance':'happy','Dancing.');const p=profile();host.dataset.pipResting='false';playPipAction(host,p.avatar,{dance:Number(host.dataset.dance),name:p.alias||p.companionName||'Pip',motion:motion(),duration:1520});timer=setTimeout(()=>setPose('idle','Tap to dance. Tap 13 times for a surprise.'),1600);
+    const p=profile(),name=p.alias||p.companionName||'Pip',moving=motion();setPose(moving?'dance':'happy',moving?'Dancing.':name+' says hello.');host.dataset.pipResting='false';playPipAction(host,p.avatar,{dance:Number(host.dataset.dance),name,motion:moving,statusText:moving?undefined:name+' says hello.',duration:1520});timer=setTimeout(()=>setPose(canPlay()?'idle':'resting',idleHint()),1600);
   }
   function celebrate(){
     if(host.hidden)return;if(!canPlay()){reset();return;}
@@ -85,7 +86,7 @@ export function createCompanion({profile,ready,motion,canPlay=()=>true,onPlay=()
     host.dataset.pose='idle';host.dataset.dance=String(danceIndex++%3+1);void host.offsetWidth;
     const p=profile();host.dataset.pipResting='false';playPipAction(host,p.avatar,{dance:Number(host.dataset.dance),name:p.alias||p.companionName||'Pip',motion:motion(),duration:1520});
     setPose(motion()?'dance':'happy','Checkpoint passed. Pip is cheering you on.');
-    timer=setTimeout(()=>setPose('idle','Tap to dance. Tap 13 times for a surprise.'),1600);
+    timer=setTimeout(()=>setPose(canPlay()?'idle':'resting',idleHint()),1600);
   }
   function readPosition(id){try{const p=JSON.parse(storage().getItem(positionKey(id))||'null');if(p&&Number.isFinite(p.x)&&Number.isFinite(p.y)&&p.x>=0&&p.x<=1&&p.y>=0&&p.y<=1)return p;}catch{}return null;}
   function savePosition(){try{if(position)storage().setItem(positionKey(currentOwner),JSON.stringify(position));else storage().removeItem(positionKey(currentOwner));}catch{}}
@@ -117,7 +118,7 @@ export function createCompanion({profile,ready,motion,canPlay=()=>true,onPlay=()
     const p=profile(),id=COMPANIONS.some(c=>c.id===p.avatar)?p.avatar:'fox',name=p.alias||p.companionName||'Pip';
     const key=[id,name,p.alias||'',p.accessory||'none',p.badge||'plain'].join('|');host.dataset.pipResting=String(!canPlay());if(key===look){if(!canPlay()&&!host.dataset.pipInteracting&&host.dataset.pose!=='resting')reset();else if(canPlay()&&host.dataset.pose==='resting')reset();petLabel();pet()?.setAttribute('aria-disabled','false');schedulePosition();return;}
     look=key;reset();host.dataset.badge=p.badge||'plain';host.dataset.species=id;
-    host.innerHTML=`<button class="companion-magnet" type="button" aria-label="Bring ${esc(name)} back to my profile" title="Drop your companion here or tap to put them away" hidden><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M6 5h7v12a3 3 0 0 0 6 0V5h7v12a10 10 0 0 1-20 0Z"/><path d="M6 11h7m6 0h7"/></svg></button><button class="companion-pet" type="button" title="Tap to greet your Pip · feed for active play · drag to move">${companionSprite(id,64,p.accessory)}</button><button class="companion-profile" type="button" aria-label="Edit my profile" title="${esc(name)}"><strong>My profile</strong><span>${esc(name)}</span><span class="companion-edit-label">Edit profile ↗</span></button><span class="sr-only" data-pip-note>Tap to dance. Tap 13 times for a surprise.</span>`;
+    host.innerHTML=`<button class="companion-magnet" type="button" aria-label="Bring ${esc(name)} back to my profile" title="Drop your companion here or tap to put them away" hidden><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M6 5h7v12a3 3 0 0 0 6 0V5h7v12a10 10 0 0 1-20 0Z"/><path d="M6 11h7m6 0h7"/></svg></button><button class="companion-pet" type="button" title="Tap to greet your Pip · feed for active play · drag to move">${companionSprite(id,64,p.accessory)}</button><button class="companion-profile" type="button" aria-label="Edit my profile" title="${esc(name)}"><strong>My profile</strong><span>${esc(name)}</span><span class="companion-edit-label">Edit profile ↗</span></button><span class="sr-only" data-pip-note>${esc(idleHint())}</span>`;
     const button=pet();petLabel();button.setAttribute('aria-disabled','false');
     button.addEventListener('pointerdown',e=>{if(e.button!==0||!canPlay())return;button.classList.add('pointer-interaction');suppressClick=false;const r=button.getBoundingClientRect();gesture={id:e.pointerId,x:e.clientX,y:e.clientY,lastX:e.clientX,lastY:e.clientY,left:r.left,top:r.top,moved:false,previous:position&&{...position},previousGuide:guideAnchor,previousParked:parkedGuide};button.setPointerCapture(e.pointerId);});
     button.addEventListener('pointermove',e=>{if(!gesture||gesture.id!==e.pointerId)return;const dx=e.clientX-gesture.x,dy=e.clientY-gesture.y;gesture.lastX=e.clientX;gesture.lastY=e.clientY;if(!gesture.moved&&Math.hypot(dx,dy)<8)return;if(!gesture.moved){gesture.moved=true;reset();if(guideAnchor){parkedGuide=guideKey;guideAnchor=null;}button.classList.add('is-dragging');}place({x:gesture.left+dx,y:gesture.top+dy},false);});
@@ -136,6 +137,6 @@ export function createCompanion({profile,ready,motion,canPlay=()=>true,onPlay=()
     update,returnHome,followGuide,celebrate,
     adoptPosition(oldOwner,newOwner){const p=readPosition(oldOwner);if(p&&!readPosition(newOwner))try{storage().setItem(positionKey(newOwner),JSON.stringify(p));storage().removeItem(positionKey(oldOwner));}catch{}},
     dockIn(dialog){inDialog=!!dialog?.open;guideAnchor=null;host.querySelector('.companion-profile')?.toggleAttribute('hidden',inDialog);clearPlacement();(inDialog?dialog:document.querySelector('#profile-slot')).append(host);if(!inDialog)schedulePosition();},
-    quiet(){if(look&&!motion())reset();}
+    quiet(){if(!look)return;if(!motion())reset();else if(['idle','resting'].includes(host.dataset.pose))setPose(canPlay()?'idle':'resting',idleHint());petLabel();}
   };
 }

@@ -1,4 +1,4 @@
-import {escapeHTML as esc} from './engine.js?build=121';
+import {escapeHTML as esc} from './engine.js?build=122';
 const amount=(n,max)=>Number.isInteger(n)&&n>=0&&n<=max?n:0;
 const chip='<span class="stock-label" aria-hidden="true"></span>';
 export function stockModelMarkup({tens=0,ones=0,released=0}={}, {total=false}={}){

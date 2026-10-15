@@ -1,5 +1,5 @@
-import {pipItemIcon} from './pip-items.js?build=121';
-import {escapeHTML as esc} from './engine.js?build=121';
+import {pipItemIcon} from './pip-items.js?build=122';
+import {escapeHTML as esc} from './engine.js?build=122';
 
 const byTime=(a,b)=>Number(a.finished||0)-Number(b.finished||0);
 const brief=r=>({title:r.title,score:r.score,total:r.total||6,passed:true,tryNumber:r.tryNumber||1});

@@ -1,5 +1,13 @@
 # Changes
 
+## Interface 122 / server 41 — 15 October 2026
+
+- Pip's initial hint, button description and tooltip now match whether Pip is
+  resting and whether quiet visuals or reduced motion are active. Quiet greetings
+  no longer announce an unseen dance, including after a reload or celebration.
+- Refreshed versioned assets and the offline cache; browser demo revision 4
+  includes the same correction. Lesson data, grading and account records are unchanged.
+
 ## Free full-app hosting support — 13 October 2026
 
 - Added a socket-free WSGI entry point using the existing learner and mentor

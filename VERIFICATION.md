@@ -1,6 +1,8 @@
 # Current release verification
 
-The current source interface is build 121. The browser-demo source generates revision 3, based on the same lesson and answer bank. Deployment and browser acceptance are recorded separately from source checks. Earlier preparation results below are historical evidence.
+The current source interface is build 122. The browser-demo source generates revision 4, based on the same lesson and answer bank. Deployment and browser acceptance are recorded separately from source checks. Earlier preparation results below are historical evidence.
+
+- Companion regressions cover quiet and resting hints on initial render, quiet-mode greetings and celebrations, and refreshing the idle hint when motion is restored. The lesson bank, grading and account rules are unchanged by this correction.
 
 - The free-host candidate passed all 238 backend tests, all 36 JavaScript/content suites and 55 JavaScript syntax checks on 13 October 2026. All 97 repeatable release steps passed. The command also builds assets, checks all demo samplers and privacy boundaries, and verifies an allowlisted hosting archive. Backend tests use disposable local accounts and include authentication, ownership, invitation/recovery, Host/Origin, cookie, private-file and backup boundaries.
 - Eight WSGI cases cover mentor setup, invitation, tour, server-graded report, feedback, restart persistence, private groups, browser approval, secure cookies, static-file exclusion, request guards and synchronous recovery. They exercise the actual routes through Python's WSGI validator, without a background listener or thread. The free host still needs an owner account and live HTTPS/reload/recovery acceptance before real invitations.

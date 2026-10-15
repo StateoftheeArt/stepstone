@@ -1,8 +1,8 @@
-import {createLessonAdvance} from './lesson-feedback.js?build=121';
-import {escapeHTML as esc,numberValue} from './engine.js?build=121';
-import {missionIntro,missionLesson,missionPractice,mountOrderLab,showMissionPane} from './mission.js?build=121';
-import {freshTour,evaluateTour,tourRoute,continueSavedTour} from './tutorial-state.js?build=121';
-import {createTourGuide} from './tutorial-guide.js?build=121';
+import {createLessonAdvance} from './lesson-feedback.js?build=122';
+import {escapeHTML as esc,numberValue} from './engine.js?build=122';
+import {missionIntro,missionLesson,missionPractice,mountOrderLab,showMissionPane} from './mission.js?build=122';
+import {freshTour,evaluateTour,tourRoute,continueSavedTour} from './tutorial-state.js?build=122';
+import {createTourGuide} from './tutorial-guide.js?build=122';
 
 export function createTutorial(c){
   let config,record,flight,timer,saved=true,shown=false,breakOpen=false,comfortOpen=false,finishing=false,launching=false;
