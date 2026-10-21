@@ -30819,7 +30819,7 @@
       "kind": "number",
       "prompt": "Round 35 to the nearest ten.",
       "answer": 40,
-      "explanation": "35 is nearest to 40 on a number line of tens.",
+      "explanation": "35 is halfway between 30 and 40. Using the higher ten for a halfway value gives 40.",
       "hint": "Label the amounts and the unit before calculating.",
       "id": "math-estimate-check-4",
       "caseId": "math-estimate-case-4",

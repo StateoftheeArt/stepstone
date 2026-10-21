@@ -1629,7 +1629,7 @@
             "Write the total as 6.15 dollars."
           ],
           "whyItWorks": "Two decimal places separate whole dollars from cents.",
-          "watchFor": "Write 2.40 dollars, not 2.4 dollars cents."
+          "watchFor": "Keep the unit clear: 2.40 dollars is 240 cents. Writing 2.4 dollars means the same amount."
         },
         {
           "title": "Find the change",
@@ -3479,14 +3479,14 @@
       "lessons": [
         {
           "title": "Start at zero",
-          "body": "A shelf is 150 cm long. Write its length in metres.",
+          "body": "A shelf is 150 cm long. Write its length in metres. For length, 100 centimetres (cm) = 1 metre (m). For volume, 1000 millilitres (mL) = 1 litre (L). For mass, 1000 grams (g) = 1 kilogram (kg). Choose the conversion for the quantity you are measuring.",
           "example": "150 cm = 1.5 m",
           "steps": [
             "Find the zero mark on the ruler.",
             "There are 100 centimetres in 1 metre.",
             "Divide 150 by 100: 1.5 metres."
           ],
-          "whyItWorks": "The units describe the same length at different scales.",
+          "whyItWorks": "Matching units describe the same quantity at different scales. Divide by 100 to change centimetres to metres, or by 1000 to change millilitres to litres or grams to kilograms. Reverse the conversion by multiplying: 1.2 kg = 1200 g; 250 mL = 0.25 L. Grams measure mass and millilitres measure volume; converting between them needs information about the material.",
           "watchFor": "The end of a ruler is not always its zero mark."
         },
         {
@@ -3704,7 +3704,7 @@
               "id": "math-measure-practice-4-lab",
               "kind": "number",
               "prompt": "A strip starts at 5 cm and ends at 23 cm. What is its length in cm?",
-              "hint": "Read the ending mark: 19 cm.",
+              "hint": "Subtract the starting mark, 5 cm, from the ending mark, 23 cm.",
               "why": "23 − 5 = 18 cm.",
               "answer": 18,
               "lessonDiagram": {
@@ -3722,7 +3722,7 @@
               "id": "math-measure-practice-5-lab",
               "kind": "number",
               "prompt": "A ribbon starts at 2 cm and ends at 14 cm. What is its length in cm?",
-              "hint": "Read the ending mark: 19 cm.",
+              "hint": "Subtract the starting mark, 2 cm, from the ending mark, 14 cm.",
               "why": "14 − 2 = 12 cm.",
               "answer": 12,
               "lessonDiagram": {
@@ -3740,7 +3740,7 @@
               "id": "math-measure-practice-6-lab",
               "kind": "number",
               "prompt": "A paper strip starts at 7 cm and ends at 28 cm. What is its length in cm?",
-              "hint": "Read the ending mark: 19 cm.",
+              "hint": "Subtract the starting mark, 7 cm, from the ending mark, 28 cm.",
               "why": "28 − 7 = 21 cm.",
               "answer": 21,
               "lessonDiagram": {
@@ -3803,14 +3803,14 @@
       "lessons": [
         {
           "title": "Count forward",
-          "body": "Use a 24-hour clock: 14:10 is 2:10 pm. An hour has 60 minutes. For a trip from 9:35 lasting 40 minutes, count to the next hour, then add the minutes still left.",
+          "body": "Use a 24-hour clock: 14:10 is 2:10 pm. For hours from 13 to 23, subtract 12 and use pm; the minutes stay the same. An hour has 60 minutes. For a trip from 9:35 lasting 40 minutes, count to the next hour, then add the minutes still left.",
           "example": "9:35 → 10:15",
           "steps": [
             "From 9:35 to 10:00 is 25 minutes.",
             "There are 15 minutes left in the trip.",
             "Add 15 minutes: arrive at 10:15."
           ],
-          "whyItWorks": "Splitting at the hour keeps the minutes easy to track.",
+          "whyItWorks": "Splitting at the hour keeps the minutes easy to track. To write a duration in hours, divide its minutes by 60: 15 minutes is 15 ÷ 60 = 0.25 hours, so 1 hour 15 minutes is 1.25 hours. Subtract a stated unpaid break before counting paid time.",
           "watchFor": "An hour has 60 minutes, not 100."
         },
         {
@@ -3972,7 +3972,7 @@
               "id": "math-time-practice-1-lab",
               "kind": "choice",
               "prompt": "A trip starts at 11:45 and takes 30 minutes. When does it finish?",
-              "hint": "There are 15 minutes left in the trip.",
+              "hint": "There are 15 minutes from 11:45 to noon. Subtract those from the 30-minute duration, then add the remaining minutes.",
               "why": "Splitting at the hour keeps the minutes easy to track.",
               "answer": 0,
               "options": [
@@ -3994,7 +3994,7 @@
               "id": "math-time-practice-2-lab",
               "kind": "choice",
               "prompt": "A job starts at 15:20 and takes 50 minutes. When does it finish?",
-              "hint": "There are 15 minutes left in the trip.",
+              "hint": "There are 40 minutes from 15:20 to 16:00. Subtract those from the 50-minute duration, then add the remaining minutes.",
               "why": "Splitting at the hour keeps the minutes easy to track.",
               "answer": 0,
               "options": [
@@ -4016,7 +4016,7 @@
               "id": "math-time-practice-3-lab",
               "kind": "choice",
               "prompt": "A break starts at 10:55 and lasts 15 minutes. When does it finish?",
-              "hint": "There are 15 minutes left in the trip.",
+              "hint": "There are 5 minutes from 10:55 to 11:00. Subtract those from the 15-minute duration, then add the remaining minutes.",
               "why": "Splitting at the hour keeps the minutes easy to track.",
               "answer": 0,
               "options": [
@@ -4040,7 +4040,7 @@
               "id": "math-time-practice-4-lab",
               "kind": "choice",
               "prompt": "Arrive at 12:05 after a 20-minute walk. What is the latest departure?",
-              "hint": "Subtract the remaining 15 minutes.",
+              "hint": "Count back 5 minutes from 12:05 to 12:00, then subtract the remaining 15 minutes.",
               "why": "Counting backwards finds the latest departure for the stated travel time.",
               "answer": 0,
               "options": [
@@ -4062,7 +4062,7 @@
               "id": "math-time-practice-5-lab",
               "kind": "choice",
               "prompt": "Arrive at 16:30 after a 45-minute trip. What is the latest departure?",
-              "hint": "Subtract the remaining 15 minutes.",
+              "hint": "Count back 30 minutes from 16:30 to 16:00, then subtract the remaining 15 minutes.",
               "why": "Counting backwards finds the latest departure for the stated travel time.",
               "answer": 0,
               "options": [
@@ -4084,7 +4084,7 @@
               "id": "math-time-practice-6-lab",
               "kind": "choice",
               "prompt": "Arrive at 08:10 after a 25-minute walk. What is the latest departure?",
-              "hint": "Subtract the remaining 15 minutes.",
+              "hint": "Count back 10 minutes from 08:10 to 08:00, then subtract the remaining 15 minutes.",
               "why": "Counting backwards finds the latest departure for the stated travel time.",
               "answer": 0,
               "options": [
@@ -4384,7 +4384,7 @@
             "Multiply each ingredient by 2.",
             "Use 300 g of oats for 4 portions."
           ],
-          "whyItWorks": "Keeping the same ratio keeps the recipe proportions consistent.",
+          "whyItWorks": "Keeping the same ratio keeps the recipe proportions consistent. For any new portion count, find the amount for one portion first, then multiply by the new number of portions. For example, 150 g for 3 portions is 50 g per portion, so 5 portions need 50 × 5 = 250 g. Use that method for every ingredient.",
           "watchFor": "Changing portions does not automatically double the cooking temperature or time."
         },
         {
@@ -4582,7 +4582,7 @@
               "id": "math-recipe-practice-3-lab",
               "kind": "number",
               "prompt": "A 2-portion recipe uses 200 ml of stock. How many millilitres for 6 portions?",
-              "hint": "Multiply each ingredient by 2.",
+              "hint": "Compare portions: 6 ÷ 2 = 3. Multiply each ingredient by 3.",
               "why": "Scale from 2 to 6 portions: 200 × 6 ÷ 2 = 600.",
               "answer": 600,
               "lessonDiagram": {
@@ -4620,7 +4620,7 @@
               "id": "math-recipe-practice-5-lab",
               "kind": "number",
               "prompt": "A 4-portion recipe uses 300 g of flour. How many grams for 2 portions?",
-              "hint": "Divide every ingredient by 3.",
+              "hint": "Compare portions: 2 is half of 4. Divide each ingredient by 2.",
               "why": "Scale from 4 to 2 portions: 300 × 2 ÷ 4 = 150.",
               "answer": 150,
               "lessonDiagram": {
@@ -4638,7 +4638,7 @@
               "id": "math-recipe-practice-6-lab",
               "kind": "number",
               "prompt": "An 8-portion recipe uses 640 g of vegetables. How many grams for 2 portions?",
-              "hint": "Divide every ingredient by 3.",
+              "hint": "Compare portions: 2 is one quarter of 8. Divide each ingredient by 4.",
               "why": "Scale from 8 to 2 portions: 640 × 2 ÷ 8 = 160.",
               "answer": 160,
               "lessonDiagram": {
@@ -5062,8 +5062,8 @@
             "20 × 6 is 120, so the answer should be near 120.",
             "1140 is much too large. Recheck: 19 × 6 = 114."
           ],
-          "whyItWorks": "A nearby easy calculation reveals a misplaced zero.",
-          "watchFor": "Keep the quantity and unit visible while rounding."
+          "whyItWorks": "A nearby easy calculation reveals a misplaced zero. Agreement with an estimate checks the size of a result; it does not prove that every detail is correct.",
+          "watchFor": "Check the exact final cost when an estimate is close to a budget limit. For a minimum capacity, round up: a task needing at least 2.4 litres needs three 1-litre containers, even though 2 is the nearest whole number."
         }
       ],
       "practice": [
@@ -5212,7 +5212,7 @@
               "id": "math-estimate-practice-1-lab",
               "kind": "number",
               "prompt": "Round 43 to the nearest ten.",
-              "hint": "Add 5 + 6 + 3 = 14.",
+              "hint": "Compare the distance from 43 to 40 and to 50.",
               "why": "43 rounds to 40.",
               "answer": 40,
               "lessonDiagram": {
@@ -5230,7 +5230,7 @@
               "id": "math-estimate-practice-2-lab",
               "kind": "number",
               "prompt": "Round 68 to the nearest ten.",
-              "hint": "Add 5 + 6 + 3 = 14.",
+              "hint": "Compare the distance from 68 to 60 and to 70.",
               "why": "68 rounds to 70.",
               "answer": 70,
               "lessonDiagram": {
@@ -5248,7 +5248,7 @@
               "id": "math-estimate-practice-3-lab",
               "kind": "number",
               "prompt": "Round 95 to the nearest ten.",
-              "hint": "Add 5 + 6 + 3 = 14.",
+              "hint": "95 is halfway between 90 and 100. Use the higher ten for this rounding rule.",
               "why": "95 rounds to 100.",
               "answer": 100,
               "lessonDiagram": {
@@ -5268,7 +5268,7 @@
               "id": "math-estimate-practice-4-lab",
               "kind": "number",
               "prompt": "Estimate 38 × 5 by rounding 38 to the nearest ten.",
-              "hint": "20 × 6 is 120, so the answer should be near 120.",
+              "hint": "Round 38 to the nearest ten, then multiply that rounded number by 5.",
               "why": "Round 38 to the nearest ten, then multiply by 5: about 200.",
               "answer": 200,
               "lessonDiagram": {
@@ -5286,7 +5286,7 @@
               "id": "math-estimate-practice-5-lab",
               "kind": "number",
               "prompt": "Estimate 62 × 4 by rounding 62 to the nearest ten.",
-              "hint": "20 × 6 is 120, so the answer should be near 120.",
+              "hint": "Round 62 to the nearest ten, then multiply that rounded number by 4.",
               "why": "Round 62 to the nearest ten, then multiply by 4: about 240.",
               "answer": 240,
               "lessonDiagram": {
@@ -5304,7 +5304,7 @@
               "id": "math-estimate-practice-6-lab",
               "kind": "number",
               "prompt": "Estimate 87 × 3 by rounding 87 to the nearest ten.",
-              "hint": "20 × 6 is 120, so the answer should be near 120.",
+              "hint": "Round 87 to the nearest ten, then multiply that rounded number by 3.",
               "why": "Round 87 to the nearest ten, then multiply by 3: about 270.",
               "answer": 270,
               "lessonDiagram": {
