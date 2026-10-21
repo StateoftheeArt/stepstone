@@ -33,3 +33,5 @@ for(const [original,copy] of [['public/catalog.json','dist/catalog.json'],['cont
 }
 const outcome={modules:units.length,sampledChecks:checks,answersVerified:answers,distinctCases:true,skillAndLessonCoverage:true,lessonAndAnswerBytesUnchanged:true,accountRequestsUnavailable:true};
 console.log(JSON.stringify(outcome));
+
+await import('./check-mentor-feedback.mjs');
