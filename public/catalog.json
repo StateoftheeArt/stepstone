@@ -4790,7 +4790,7 @@
         },
         {
           "kind": "number",
-          "prompt": "A 80-dollar item is discounted by 25%. What is the new price?",
+          "prompt": "An 80-dollar item is discounted by 25%. What is the new price?",
           "answer": 60.0,
           "explanation": "The discount is 20. Subtract it: $80-20=60$.",
           "hint": "Write down what you know. Then decide which operation connects the numbers.",
@@ -5385,7 +5385,7 @@
             "Folders have the highest count: 12.",
             "Pens and pads together total 8 + 5 = 13."
           ],
-          "whyItWorks": "Labels tell you what the numbers count.",
+          "whyItWorks": "Labels tell you what the numbers count. Read a bar’s end against the numbered scale, rather than counting tick marks. On a scale marked 0, 2, 4, 6, a bar ending at 4 represents four items, even though it spans two intervals. Compare bars only after checking their labels, units and scales.",
           "watchFor": "A tall bar means more of the labelled quantity, not necessarily better."
         },
         {
@@ -5397,7 +5397,7 @@
             "Subtract Monday’s 8 from Tuesday’s 12.",
             "Tuesday has 4 more orders."
           ],
-          "whyItWorks": "A difference compares counts; a total combines them.",
+          "whyItWorks": "A difference compares counts; a total combines them. Subtract the actual values even when the graph’s axis starts above zero. For example, a change from 52 to 54 is two more items, not twice as many, regardless of the visible bar heights.",
           "watchFor": "Do not add the counts when the question asks how many more."
         }
       ],
@@ -5547,7 +5547,7 @@
               "id": "math-chart-practice-1-lab",
               "kind": "number",
               "prompt": "A table lists 7 pens and 11 pads. What is the total count?",
-              "hint": "Folders have the highest count: 12.",
+              "hint": "Add the 7 pens and 11 pads; both counts belong to the total.",
               "why": "7 + 11 = 18 in total.",
               "answer": 18,
               "lessonDiagram": {
@@ -5569,7 +5569,7 @@
               "id": "math-chart-practice-2-lab",
               "kind": "number",
               "prompt": "A table lists 4 red folders and 13 blue folders. What is the total count?",
-              "hint": "Folders have the highest count: 12.",
+              "hint": "Add the 4 red folders and 13 blue folders.",
               "why": "4 + 13 = 17 in total.",
               "answer": 17,
               "lessonDiagram": {
@@ -5591,7 +5591,7 @@
               "id": "math-chart-practice-3-lab",
               "kind": "number",
               "prompt": "A table lists 16 morning orders and 8 afternoon orders. What is the total count?",
-              "hint": "Folders have the highest count: 12.",
+              "hint": "Add the 16 morning orders and 8 afternoon orders.",
               "why": "16 + 8 = 24 in total.",
               "answer": 24,
               "lessonDiagram": {
@@ -5615,7 +5615,7 @@
               "id": "math-chart-practice-4-lab",
               "kind": "number",
               "prompt": "A chart shows 7 Monday orders and 12 Tuesday orders. How many more on Tuesday?",
-              "hint": "Subtract Monday’s 8 from Tuesday’s 12.",
+              "hint": "Subtract Monday’s 7 orders from Tuesday’s 12 orders.",
               "why": "12 − 7 = 5 more.",
               "answer": 5,
               "lessonDiagram": {
@@ -5637,7 +5637,7 @@
               "id": "math-chart-practice-5-lab",
               "kind": "number",
               "prompt": "A table shows 9 morning deliveries and 17 afternoon deliveries. How many more in the afternoon?",
-              "hint": "Subtract Monday’s 8 from Tuesday’s 12.",
+              "hint": "Subtract the 9 morning deliveries from the 17 afternoon deliveries.",
               "why": "17 − 9 = 8 more.",
               "answer": 8,
               "lessonDiagram": {
@@ -5659,7 +5659,7 @@
               "id": "math-chart-practice-6-lab",
               "kind": "number",
               "prompt": "A chart shows 11 red labels and 15 blue labels. How many more blue labels?",
-              "hint": "Subtract Monday’s 8 from Tuesday’s 12.",
+              "hint": "Subtract the 11 red labels from the 15 blue labels.",
               "why": "15 − 11 = 4 more.",
               "answer": 4,
               "lessonDiagram": {
@@ -5732,7 +5732,7 @@
             "Count blue counters: 3.",
             "The chance of blue is 3 out of 4; it is likely, not certain."
           ],
-          "whyItWorks": "With a fair random pick, each individual counter has the same chance.",
+          "whyItWorks": "With a fair random pick, each individual counter has the same chance. Divide the number of matching outcomes by the total number of equally likely outcomes. One out of five is 1/5 = 0.2. A 60% chance is 60 out of 100, or 0.6: more likely than not, but still not guaranteed. A chance does not tell you what fraction of the day an event will last.",
           "watchFor": "A likely outcome can still fail to happen."
         },
         {
@@ -5908,7 +5908,7 @@
               "id": "math-chance-practice-1-lab",
               "kind": "choice",
               "prompt": "A bag has 5 green and 2 yellow counters. What is the chance of green in one fair random pick?",
-              "hint": "Count blue counters: 3.",
+              "hint": "Count the 5 green counters, then count all 5 + 2 counters for the total.",
               "why": "With a fair random pick, each individual counter has the same chance.",
               "answer": 0,
               "options": [
@@ -5929,7 +5929,7 @@
               "id": "math-chance-practice-2-lab",
               "kind": "choice",
               "prompt": "A bag has 2 red and 3 blue counters. What is the chance of red in one fair random pick?",
-              "hint": "Count blue counters: 3.",
+              "hint": "Count the 2 red counters, then count all 2 + 3 counters for the total.",
               "why": "With a fair random pick, each individual counter has the same chance.",
               "answer": 0,
               "options": [
@@ -5950,7 +5950,7 @@
               "id": "math-chance-practice-3-lab",
               "kind": "choice",
               "prompt": "A bag has 4 yellow and 5 blue counters. What is the chance of yellow in one fair random pick?",
-              "hint": "Count blue counters: 3.",
+              "hint": "Count the 4 yellow counters, then count all 4 + 5 counters for the total.",
               "why": "With a fair random pick, each individual counter has the same chance.",
               "answer": 0,
               "options": [
@@ -5973,7 +5973,7 @@
               "id": "math-chance-practice-4-lab",
               "kind": "choice",
               "prompt": "A fair six-sided die is rolled. What is the chance of a number less than 5?",
-              "hint": "Circle the three even numbers: 2, 4 and 6.",
+              "hint": "List die outcomes below 5: 1, 2, 3 and 4. Compare their count with all six outcomes.",
               "why": "Counting the outcomes compares the event with all possible results.",
               "answer": 0,
               "options": [
@@ -5994,7 +5994,7 @@
               "id": "math-chance-practice-5-lab",
               "kind": "choice",
               "prompt": "A fair six-sided die is rolled. What is the chance of a number greater than 2?",
-              "hint": "Circle the three even numbers: 2, 4 and 6.",
+              "hint": "List die outcomes above 2: 3, 4, 5 and 6. Compare their count with all six outcomes.",
               "why": "Counting the outcomes compares the event with all possible results.",
               "answer": 0,
               "options": [
@@ -6015,7 +6015,7 @@
               "id": "math-chance-practice-6-lab",
               "kind": "choice",
               "prompt": "A fair six-sided die is rolled. What is the chance of a number at least 5?",
-              "hint": "Circle the three even numbers: 2, 4 and 6.",
+              "hint": "At least 5 includes 5 and 6. Compare those two outcomes with all six outcomes.",
               "why": "Counting the outcomes compares the event with all possible results.",
               "answer": 0,
               "options": [
@@ -6886,7 +6886,7 @@
             {
               "id": "square-scale",
               "title": "Double the side",
-              "prompt": "A square side grows from 3 m to 6 m. How many times larger is its area?",
+              "prompt": "A square side grows from 3 m to 6 m. How many times as large is the new area? Divide the new area by the original area.",
               "kind": "number",
               "hint": "Compare $3^2=9$ with $6^2=36$.",
               "why": "$36\\div9=4$. Both dimensions doubled, so area grew by $2\\times2$.",
@@ -7013,7 +7013,7 @@
           "lesson": 1,
           "skill": "reason",
           "kind": "choice",
-          "prompt": "A sign has a 3 cm edge and a 4 cm edge. A proposed diagonal is 3 cm. What should you check?",
+          "prompt": "A rectangular sign has a 3 cm edge and a 4 cm edge. A proposed diagonal is 3 cm. What should you check?",
           "options": [
             {
               "id": "0",
@@ -7060,7 +7060,7 @@
           "lesson": 2,
           "skill": "reason",
           "kind": "choice",
-          "prompt": "A panel has a 6 cm edge and a 8 cm edge. A proposed diagonal is 7 cm. What should you check?",
+          "prompt": "A rectangular panel has a 6 cm edge and an 8 cm edge. A proposed diagonal is 7 cm. What should you check?",
           "options": [
             {
               "id": "0",

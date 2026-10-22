@@ -4320,7 +4320,7 @@
       "lesson": 1,
       "skill": "reason",
       "kind": "choice",
-      "prompt": "A notice board has a 5 cm edge and a 12 cm edge. A proposed diagonal is 11 cm. What should you check?",
+      "prompt": "A rectangular notice board has a 5 cm edge and a 12 cm edge. A proposed diagonal is 11 cm. What should you check?",
       "options": [
         {
           "id": "0",
@@ -4356,7 +4356,7 @@
       "lesson": 2,
       "skill": "apply",
       "kind": "number",
-      "prompt": "A proposed diagonal for a 8 cm by 15 cm rectangle is 17 cm. What is the square of 17?",
+      "prompt": "A proposed diagonal for an 8 cm by 15 cm rectangle is 17 cm. What is the square of 17?",
       "answer": 289,
       "explanation": "$17^2=289$; it matches $8^2+15^2=289$.",
       "hint": "Identify the right angle. Square both edges, add, then take a square root. Keep the unit."
@@ -4367,7 +4367,7 @@
       "lesson": 2,
       "skill": "reason",
       "kind": "choice",
-      "prompt": "A storage panel has a 8 cm edge and a 15 cm edge. A proposed diagonal is 14 cm. What should you check?",
+      "prompt": "A rectangular storage panel has an 8 cm edge and a 15 cm edge. A proposed diagonal is 14 cm. What should you check?",
       "options": [
         {
           "id": "0",
@@ -4414,7 +4414,7 @@
       "lesson": 1,
       "skill": "reason",
       "kind": "choice",
-      "prompt": "A display board has a 9 cm edge and a 12 cm edge. A proposed diagonal is 11 cm. What should you check?",
+      "prompt": "A rectangular display board has a 9 cm edge and a 12 cm edge. A proposed diagonal is 11 cm. What should you check?",
       "options": [
         {
           "id": "0",
@@ -4497,7 +4497,7 @@
       "kind": "number",
       "prompt": "Quote A is 6 dollars once plus 2 dollars per box. Quote B is 2 dollars once plus 3 dollars per box. For 3 boxes, what is the difference between their total costs in dollars?",
       "answer": 1,
-      "explanation": "A: 12; B: 11. The difference is 1 dollars.",
+      "explanation": "A: 12; B: 11. The difference is 1 dollar.",
       "skill": "apply",
       "lesson": 2,
       "hint": "Check what the question asks you to count, and keep the stated unit.",
@@ -4591,7 +4591,7 @@
       "kind": "number",
       "prompt": "Quote A is 6 dollars once plus 2 dollars per box. Quote B is 2 dollars once plus 3 dollars per box. For 5 boxes, what is the difference between their total costs in dollars?",
       "answer": 1,
-      "explanation": "A: 16; B: 17. The difference is 1 dollars.",
+      "explanation": "A: 16; B: 17. The difference is 1 dollar.",
       "skill": "apply",
       "lesson": 2,
       "hint": "Check what the question asks you to count, and keep the stated unit.",
@@ -31018,7 +31018,7 @@
         }
       ],
       "answer": "0",
-      "explanation": "There are 8 counters in total; 1 are blue.",
+      "explanation": "There are 8 counters in total; 1 is blue.",
       "hint": "Use the worked example, then compare the choices.",
       "id": "math-chance-check-1",
       "caseId": "math-chance-case-1",
