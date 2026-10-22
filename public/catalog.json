@@ -1446,7 +1446,7 @@
               "id": "math-remainders-practice-1-lab",
               "kind": "choice",
               "prompt": "Share 26 counters among 6 bags. Which result accounts for them all?",
-              "hint": "You used 5 × 4 = 20 apples.",
+              "hint": "Put the same number in each of the 6 bags. Check that the bagged counters and leftovers total 26.",
               "why": "The quotient counts each group; the remainder is the amount not shared.",
               "answer": 0,
               "options": [
@@ -1469,7 +1469,7 @@
               "id": "math-remainders-practice-2-lab",
               "kind": "choice",
               "prompt": "Share 19 apples among 4 bags. Which result accounts for them all?",
-              "hint": "You used 5 × 4 = 20 apples.",
+              "hint": "Put the same number in each of the 4 bags. Check that the bagged apples and leftovers total 19.",
               "why": "The quotient counts each group; the remainder is the amount not shared.",
               "answer": 0,
               "options": [
@@ -1492,7 +1492,7 @@
               "id": "math-remainders-practice-3-lab",
               "kind": "choice",
               "prompt": "Share 32 tiles among 5 trays. Which result accounts for them all?",
-              "hint": "You used 5 × 4 = 20 apples.",
+              "hint": "Put the same number in each of the 5 trays. Check that the tray contents and leftovers total 32.",
               "why": "The quotient counts each group; the remainder is the amount not shared.",
               "answer": 0,
               "options": [
@@ -1517,7 +1517,7 @@
               "id": "math-remainders-practice-4-lab",
               "kind": "number",
               "prompt": "Boxes hold 5 jars each. How many boxes are needed for 22 jars?",
-              "hint": "Two mugs still need a box.",
+              "hint": "Four boxes hold 20 jars. The remaining 2 jars still need a box.",
               "why": "4 full containers cannot hold all 22 items. Use 5 containers.",
               "answer": 5,
               "lessonDiagram": {
@@ -1535,7 +1535,7 @@
               "id": "math-remainders-practice-5-lab",
               "kind": "number",
               "prompt": "Trays hold 3 cups each. How many trays are needed for 14 cups?",
-              "hint": "Two mugs still need a box.",
+              "hint": "Four trays hold 12 cups. The remaining 2 cups still need a tray.",
               "why": "4 full containers cannot hold all 14 items. Use 5 containers.",
               "answer": 5,
               "lessonDiagram": {
@@ -1553,7 +1553,7 @@
               "id": "math-remainders-practice-6-lab",
               "kind": "number",
               "prompt": "Boxes hold 6 mugs each. How many boxes are needed for 25 mugs?",
-              "hint": "Two mugs still need a box.",
+              "hint": "Four boxes hold 24 mugs. The remaining mug still needs a box.",
               "why": "4 full containers cannot hold all 25 items. Use 5 containers.",
               "answer": 5,
               "lessonDiagram": {
@@ -1776,7 +1776,7 @@
               "id": "math-decimals-practice-1-lab",
               "kind": "number",
               "prompt": "A folder costs 2.35 dollars and a pen costs 1.50 dollars. What is their total in dollars?",
-              "hint": "Add 375 cents and 240 cents: 615 cents.",
+              "hint": "Add 235 cents and 150 cents, then convert the total back to dollars.",
               "why": "2.35 + 1.5 = 3.85 dollars.",
               "answer": 3.85,
               "lessonDiagram": {
@@ -1793,7 +1793,7 @@
               "id": "math-decimals-practice-2-lab",
               "kind": "number",
               "prompt": "A notebook costs 5.40 dollars and tape costs 2.25 dollars. What is their total in dollars?",
-              "hint": "Add 375 cents and 240 cents: 615 cents.",
+              "hint": "Add 540 cents and 225 cents, then convert the total back to dollars.",
               "why": "5.4 + 2.25 = 7.65 dollars.",
               "answer": 7.65,
               "lessonDiagram": {
@@ -1810,7 +1810,7 @@
               "id": "math-decimals-practice-3-lab",
               "kind": "number",
               "prompt": "A card costs 1.65 dollars and an envelope costs 0.85 dollars. What is their total in dollars?",
-              "hint": "Add 375 cents and 240 cents: 615 cents.",
+              "hint": "Add 165 cents and 85 cents, then convert the total back to dollars.",
               "why": "1.65 + 0.85 = 2.50 dollars.",
               "answer": 2.5,
               "lessonDiagram": {
@@ -1829,7 +1829,7 @@
               "id": "math-decimals-practice-4-lab",
               "kind": "number",
               "prompt": "A purchase costs 7.20 dollars and you pay 10 dollars. What is the change in dollars?",
-              "hint": "Subtract 615 from 1000: 385 cents.",
+              "hint": "Subtract 720 cents from the 1000 cents paid, then convert the change to dollars.",
               "why": "10 − 7.2 = 2.80 dollars change.",
               "answer": 2.8,
               "lessonDiagram": {
@@ -1846,7 +1846,7 @@
               "id": "math-decimals-practice-5-lab",
               "kind": "number",
               "prompt": "A purchase costs 4.55 dollars and you pay 10 dollars. What is the change in dollars?",
-              "hint": "Subtract 615 from 1000: 385 cents.",
+              "hint": "Subtract 455 cents from the 1000 cents paid, then convert the change to dollars.",
               "why": "10 − 4.55 = 5.45 dollars change.",
               "answer": 5.45,
               "lessonDiagram": {
@@ -1863,7 +1863,7 @@
               "id": "math-decimals-practice-6-lab",
               "kind": "number",
               "prompt": "A purchase costs 8.75 dollars and you pay 10 dollars. What is the change in dollars?",
-              "hint": "Subtract 615 from 1000: 385 cents.",
+              "hint": "Subtract 875 cents from the 1000 cents paid, then convert the change to dollars.",
               "why": "10 − 8.75 = 1.25 dollars change.",
               "answer": 1.25,
               "lessonDiagram": {

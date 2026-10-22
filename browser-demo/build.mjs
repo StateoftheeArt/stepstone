@@ -11,7 +11,7 @@ const release=(await fs.readFile(path.join(root,'public','release.js'),'utf8')).
 for(const name of await fs.readdir(out)){
   if(!/\.(?:js|css|html|webmanifest)$/.test(name))continue;
   const file=path.join(out,name), text=await fs.readFile(file,'utf8');
-  await fs.writeFile(file,text.replace(/\?build=\d+/g,'?build='+release).replace(/\?demo=\d+/g,'?demo=8').replace(/data-demo-release="\d+"/g,'data-demo-release="8"'));
+  await fs.writeFile(file,text.replace(/\?build=\d+/g,'?build='+release).replace(/\?demo=\d+/g,'?demo=9').replace(/data-demo-release="\d+"/g,'data-demo-release="9"'));
 }
 await fs.copyFile(path.join(root,'content','checkpoints.json'),path.join(out,'preview-checks.json'));
 for(const name of ['LICENSE','THIRD_PARTY_NOTICES.md'])await fs.copyFile(path.join(root,name),path.join(out,name));
